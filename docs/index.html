@@ -20,17 +20,12 @@
     --gold2: #D4AD8F;
     --gold-bg: rgba(181,144,122,0.08);
     --gold-border: rgba(181,144,122,0.25);
-    --red: #D44040;
-    --red-bg: rgba(212,64,64,0.08);
-    --green: #3DB86A;
-    --green-bg: rgba(61,184,106,0.08);
-    --blue: #4A8FE0;
-    --blue-bg: rgba(74,143,224,0.08);
-    --purple: #9060D0;
-    --purple-bg: rgba(144,96,208,0.08);
-    --orange: #E08040;
-    --orange-bg: rgba(224,128,64,0.08);
-    --teal: #40B0A0;
+    --positive: #8BAF7A;
+    --positive-bg: rgba(139,175,122,0.08);
+    --negative: #B85C5C;
+    --negative-bg: rgba(184,92,92,0.08);
+    --neutral: #8A9AAA;
+    --neutral-bg: rgba(138,154,170,0.08);
     --brown: #413A37;
     --brown2: #2A2523;
 }
@@ -82,39 +77,37 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .metric .val { font-size: 2em; font-weight: 700; line-height: 1.2; }
 .metric .lbl { color: var(--text3); font-size: 0.82em; margin-top: 6px; }
 .val-gold { color: var(--gold); }
-.val-red { color: var(--red); }
-.val-green { color: var(--green); }
-.val-blue { color: var(--blue); }
-.val-purple { color: var(--purple); }
-.val-orange { color: var(--orange); }
+.val-negative { color: var(--negative); }
+.val-positive { color: var(--positive); }
+.val-neutral { color: var(--neutral); }
+.val-gold { color: var(--gold); }
+.val-gold { color: var(--gold); }
 table { width: 100%; border-collapse: collapse; font-size: 0.88em; margin: 12px 0; }
 th, td { padding: 10px 14px; border-bottom: 1px solid var(--border); text-align: left; }
 th { background: var(--bg3); color: var(--gold); font-weight: 600; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.04em; position: sticky; top: 0; }
 td.r { text-align: right; font-variant-numeric: tabular-nums; }
 tr:hover { background: rgba(181,144,122,0.03); }
-.pos { color: var(--green); font-weight: 600; }
-.neg { color: var(--red); font-weight: 600; }
+.pos { color: var(--positive); font-weight: 600; }
+.neg { color: var(--negative); font-weight: 600; }
 .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.78em; font-weight: 600; }
 .b-gold { background: var(--gold-bg); color: var(--gold); border: 1px solid var(--gold-border); }
-.b-green { background: var(--green-bg); color: var(--green); border: 1px solid rgba(61,184,106,0.3); }
-.b-red { background: var(--red-bg); color: var(--red); border: 1px solid rgba(212,64,64,0.3); }
-.b-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(74,143,224,0.3); }
-.b-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid rgba(144,96,208,0.3); }
-.b-orange { background: var(--orange-bg); color: var(--orange); border: 1px solid rgba(224,128,64,0.3); }
+.b-positive { background: var(--positive-bg); color: var(--positive); border: 1px solid rgba(139,175,122,0.3); }
+.b-negative { background: var(--negative-bg); color: var(--negative); border: 1px solid rgba(184,92,92,0.3); }
+.b-neutral { background: var(--neutral-bg); color: var(--neutral); border: 1px solid rgba(138,154,170,0.3); }
 .swot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
 .swot-box { border-radius: 12px; padding: 20px; }
-.swot-s { background: rgba(61,184,106,0.06); border: 1px solid rgba(61,184,106,0.2); }
-.swot-w { background: rgba(212,64,64,0.06); border: 1px solid rgba(212,64,64,0.2); }
-.swot-o { background: rgba(74,143,224,0.06); border: 1px solid rgba(74,143,224,0.2); }
-.swot-t { background: rgba(224,128,64,0.06); border: 1px solid rgba(224,128,64,0.2); }
+.swot-s { background: rgba(139,175,122,0.06); border: 1px solid rgba(139,175,122,0.2); }
+.swot-w { background: rgba(184,92,92,0.06); border: 1px solid rgba(184,92,92,0.2); }
+.swot-o { background: rgba(138,154,170,0.06); border: 1px solid rgba(138,154,170,0.2); }
+.swot-t { background: rgba(181,144,122,0.06); border: 1px solid rgba(181,144,122,0.2); }
 .swot-box h4 { font-size: 0.95em; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
-.swot-s h4 { color: var(--green); } .swot-w h4 { color: var(--red); } .swot-o h4 { color: var(--blue); } .swot-t h4 { color: var(--orange); }
+.swot-s h4 { color: var(--positive); } .swot-w h4 { color: var(--negative); } .swot-o h4 { color: var(--neutral); } .swot-t h4 { color: var(--gold); }
 .swot-box ul { list-style: none; padding: 0; }
 .swot-box li { padding: 4px 0; font-size: 0.88em; color: var(--text2); position: relative; padding-left: 18px; }
-.swot-s li::before { content: '+'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
-.swot-w li::before { content: '\2212'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
-.swot-o li::before { content: '\2191'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
-.swot-t li::before { content: '!'; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+.swot-s li::before { content: '+'; position: absolute; left: 0; color: var(--positive); font-weight: 700; }
+.swot-w li::before { content: '\2212'; position: absolute; left: 0; color: var(--negative); font-weight: 700; }
+.swot-o li::before { content: '\2191'; position: absolute; left: 0; color: var(--neutral); font-weight: 700; }
+.swot-t li::before { content: '!'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
 .comp-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
 .comp-card .name { font-size: 1.2em; font-weight: 700; color: var(--gold2); margin-bottom: 4px; }
 .comp-card .meta { font-size: 0.82em; color: var(--text3); margin-bottom: 14px; }
@@ -127,13 +120,13 @@ tr:hover { background: rgba(181,144,122,0.03); }
 .bar-track { flex: 1; height: 26px; background: var(--bg3); border-radius: 4px; overflow: hidden; }
 .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding: 0 10px; font-size: 0.78em; font-weight: 600; color: #fff; min-width: 30px; transition: width 0.6s ease; }
 .bar-val { width: 100px; font-size: 0.82em; color: var(--text2); text-align: right; flex-shrink: 0; }
-.info-tip { display: inline-flex; align-items: center; gap: 6px; background: rgba(74,143,224,0.08); border: 1px solid rgba(74,143,224,0.2); border-radius: 8px; padding: 8px 14px; margin-bottom: 16px; font-size: 0.82em; color: var(--blue); cursor: help; position: relative; width: 100%; }
-.info-tip .ii { width: 20px; height: 20px; border-radius: 50%; background: rgba(74,143,224,0.2); color: var(--blue); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85em; flex-shrink: 0; font-style: italic; }
-.info-tip span { color: var(--text2); } .info-tip strong { color: var(--blue); }
-.correction { display: flex; gap: 20px; align-items: center; padding: 16px 20px; border-radius: 10px; margin: 10px 0; background: rgba(212,64,64,0.05); border: 1px solid rgba(212,64,64,0.2); }
-.correction .old { color: var(--red); text-decoration: line-through; flex: 1; }
+.info-tip { display: inline-flex; align-items: center; gap: 6px; background: rgba(181,144,122,0.06); border: 1px solid rgba(181,144,122,0.2); border-radius: 8px; padding: 8px 14px; margin-bottom: 16px; font-size: 0.82em; color: var(--gold); cursor: help; position: relative; width: 100%; }
+.info-tip .ii { width: 20px; height: 20px; border-radius: 50%; background: rgba(181,144,122,0.15); color: var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85em; flex-shrink: 0; font-style: italic; }
+.info-tip span { color: var(--text2); } .info-tip strong { color: var(--gold); }
+.correction { display: flex; gap: 20px; align-items: center; padding: 16px 20px; border-radius: 10px; margin: 10px 0; background: rgba(184,92,92,0.05); border: 1px solid rgba(184,92,92,0.2); }
+.correction .old { color: var(--negative); text-decoration: line-through; flex: 1; }
 .correction .arrow { color: var(--gold); font-size: 1.4em; flex-shrink: 0; }
-.correction .new { color: var(--green); font-weight: 600; flex: 1; }
+.correction .new { color: var(--positive); font-weight: 600; flex: 1; }
 .quote-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 0; margin: 16px 0; overflow: hidden; }
 .quote-header { display: flex; align-items: center; gap: 14px; padding: 16px 20px; border-bottom: 1px solid var(--border); background: var(--bg3); }
 .quote-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1em; flex-shrink: 0; }
@@ -145,7 +138,7 @@ tr:hover { background: rgba(181,144,122,0.03); }
 .quote-context { font-size: 0.82em; color: var(--text2); margin-top: 12px; padding-left: 24px; }
 .quote-footer { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-top: 1px solid var(--border); background: rgba(0,0,0,0.15); }
 .quote-date { font-size: 0.78em; color: var(--text3); }
-.quote-source { font-size: 0.78em; color: var(--blue); }
+.quote-source { font-size: 0.78em; color: var(--gold); }
 .founder-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
 .founder-head { padding: 20px; border-bottom: 1px solid var(--border); background: var(--bg3); }
 .founder-head h4 { color: var(--gold); font-size: 1.1em; margin-bottom: 4px; }
@@ -161,15 +154,15 @@ tr:hover { background: rgba(181,144,122,0.03); }
 .hm th { background:var(--bg3); color:var(--text2); font-size:0.78em; text-transform:uppercase; letter-spacing:0.05em; padding:10px 8px; }
 .hm td { padding:8px; text-align:center; border:1px solid var(--border); font-size:0.85em; white-space:nowrap; }
 .hm td:first-child { text-align:left; font-weight:600; color:var(--text); white-space:normal; min-width:120px; }
-.hm-g1 { background:rgba(61,184,106,0.08); color:var(--text2); }
-.hm-g2 { background:rgba(61,184,106,0.18); color:var(--green); }
-.hm-g3 { background:rgba(61,184,106,0.30); color:var(--green); font-weight:600; }
+.hm-g1 { background:rgba(139,175,122,0.08); color:var(--text2); }
+.hm-g2 { background:rgba(139,175,122,0.18); color:var(--positive); }
+.hm-g3 { background:rgba(139,175,122,0.30); color:var(--positive); font-weight:600; }
 .hm-y1 { background:rgba(181,144,122,0.08); color:var(--text2); }
 .hm-y2 { background:rgba(181,144,122,0.18); color:var(--gold2); }
 .hm-y3 { background:rgba(181,144,122,0.30); color:var(--gold); font-weight:600; }
-.hm-r1 { background:rgba(212,64,64,0.08); color:var(--text2); }
-.hm-r2 { background:rgba(212,64,64,0.18); color:var(--red); }
-.hm-r3 { background:rgba(212,64,64,0.30); color:var(--red); font-weight:600; }
+.hm-r1 { background:rgba(184,92,92,0.08); color:var(--text2); }
+.hm-r2 { background:rgba(184,92,92,0.18); color:var(--negative); }
+.hm-r3 { background:rgba(184,92,92,0.30); color:var(--negative); font-weight:600; }
 .hm-mr { background:rgba(181,144,122,0.12); color:var(--gold); font-weight:700; border:2px solid var(--gold-border); }
 .hm-empty { background:var(--bg3); color:var(--text3); font-style:italic; }
 .chart-container { max-width:100%; margin:24px 0; background:var(--card); border-radius:16px; padding:36px 32px 32px; border:1px solid rgba(181,144,122,0.15); box-shadow:0 8px 32px rgba(0,0,0,0.4); }
@@ -186,8 +179,8 @@ tr:hover { background: rgba(181,144,122,0.03); }
 .callout { background:var(--gold-bg); border:1px solid var(--gold-border); border-radius:12px; padding:20px 24px; margin:16px 0; }
 .callout h4 { color:var(--gold); margin-bottom:8px; }
 .callout p,.callout li { color:var(--text2); font-size:.9em; }
-.callout-red { background:var(--red-bg); border-color:rgba(212,64,64,.3); } .callout-red h4 { color:var(--red); }
-.callout-green { background:var(--green-bg); border-color:rgba(61,184,106,.3); } .callout-green h4 { color:var(--green); }
+.callout-red { background:var(--negative-bg); border-color:rgba(184,92,92,.3); } .callout-red h4 { color:var(--negative); }
+.callout-green { background:var(--positive-bg); border-color:rgba(139,175,122,.3); } .callout-green h4 { color:var(--positive); }
 .ov-grid { display:grid; gap:16px; }
 .ov-grid-5 { grid-template-columns:repeat(5,1fr); }
 .ov-grid-3 { grid-template-columns:repeat(3,1fr); }
@@ -199,8 +192,8 @@ tr:hover { background: rgba(181,144,122,0.03); }
 .ov-block h3 { color:var(--gold2); font-size:1.15em; font-weight:600; margin-bottom:14px; }
 .ov-verdict { display:flex; align-items:center; gap:12px; padding:14px 18px; border-radius:10px; margin:8px 0; font-size:0.92em; }
 .ov-verdict .icon { font-size:1.5em; flex-shrink:0; }
-.ov-verdict-red { background:var(--red-bg); border:1px solid rgba(212,64,64,0.2); color:var(--text); }
-.ov-verdict-green { background:var(--green-bg); border:1px solid rgba(61,184,106,0.2); color:var(--text); }
+.ov-verdict-red { background:var(--negative-bg); border:1px solid rgba(184,92,92,0.2); color:var(--text); }
+.ov-verdict-green { background:var(--positive-bg); border:1px solid rgba(139,175,122,0.2); color:var(--text); }
 .ov-verdict-gold { background:var(--gold-bg); border:1px solid var(--gold-border); color:var(--text); }
 .ov-action { padding:16px 18px; border-radius:10px; margin:8px 0; border-left:4px solid var(--gold); background:var(--card2); }
 .ov-action .title { font-weight:700; color:var(--gold); margin-bottom:4px; }
@@ -208,18 +201,18 @@ tr:hover { background: rgba(181,144,122,0.03); }
 .ov-cta { display:block; text-align:center; padding:20px; background:linear-gradient(135deg, rgba(181,144,122,0.12), rgba(181,144,122,0.04)); border:1px solid var(--gold-border); border-radius:12px; color:var(--gold); font-size:1.1em; font-weight:600; text-decoration:none; margin-top:28px; cursor:pointer; transition:all .2s; letter-spacing:0.04em; }
 .ov-cta:hover { background:var(--gold); color:var(--bg); }
 .alert { border-radius: 12px; padding: 20px; margin: 16px 0; display: flex; gap: 16px; align-items: flex-start; }
-.alert-red { background: var(--red-bg); border: 1px solid rgba(212,64,64,0.3); }
+.alert-red { background: var(--negative-bg); border: 1px solid rgba(184,92,92,0.3); }
 .alert-gold { background: var(--gold-bg); border: 1px solid var(--gold-border); }
 .alert-icon { font-size: 1.8em; flex-shrink: 0; line-height: 1; }
 .alert-content h4 { margin-bottom: 6px; font-size: 1em; }
 .alert-content p { font-size: 0.88em; color: var(--text2); line-height: 1.6; }
 .delta { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.72em; font-weight: 700; vertical-align: middle; margin-left: 6px; }
-.delta-up { background: rgba(61,184,106,0.15); color: var(--green); }
-.delta-down { background: rgba(212,64,64,0.15); color: var(--red); }
-.corr-high { background: rgba(61,184,106,0.2); color: var(--green); font-weight: 700; text-align: center; }
+.delta-up { background: rgba(139,175,122,0.15); color: var(--positive); }
+.delta-down { background: rgba(184,92,92,0.15); color: var(--negative); }
+.corr-high { background: rgba(139,175,122,0.2); color: var(--positive); font-weight: 700; text-align: center; }
 .corr-med { background: rgba(181,144,122,0.15); color: var(--gold2); text-align: center; }
-.corr-low { background: rgba(212,64,64,0.1); color: var(--text3); text-align: center; }
-.corr-neg { background: rgba(212,64,64,0.2); color: var(--red); font-weight: 700; text-align: center; }
+.corr-low { background: rgba(184,92,92,0.1); color: var(--text3); text-align: center; }
+.corr-neg { background: rgba(184,92,92,0.2); color: var(--negative); font-weight: 700; text-align: center; }
 footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.82em; border-top: 1px solid var(--border); margin-top: 60px; }
 @media (max-width:1024px) { .ov-grid-5 { grid-template-columns:repeat(3,1fr); } }
 @media (max-width:768px) { .hero h1 { font-size: 1.8em; } .swot-grid { grid-template-columns: 1fr; } .ov-grid-5, .ov-grid-3 { grid-template-columns:1fr 1fr; } .ov-grid-2 { grid-template-columns:1fr; } .tab-btn { padding:14px 20px; font-size:0.88em; } .bar-label { width: 100px; font-size: 0.75em; } }
@@ -229,6 +222,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <!-- HERO -->
 <div class="hero">
+    <img src="data:image/png;base64,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" alt="Овсянников" style="max-width:220px; margin-bottom:16px; filter:brightness(1.3) contrast(1.1); display:block; margin-left:auto; margin-right:auto;">
     <h1>Овсянников</h1>
     <div class="sub">Полный бизнес-анализ и Due Diligence — парфюмированная косметика для HoReCa и B2C</div>
     <div class="date">ООО «Империя Косметики» · ИНН 9705202154 · ovsyannikovsoap.ru &nbsp;|&nbsp; Февраль 2026</div>
@@ -256,11 +250,11 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div style="text-align:center; padding:30px 0 10px;">
     <p style="color:var(--text3); font-size:0.88em; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px;">Ключевой вывод</p>
     <p style="font-size:1.4em; color:var(--text); font-weight:300; max-width:900px; margin:0 auto; line-height:1.5;">
-        Овсянников — <span style="color:var(--green); font-weight:600;">самый быстрорастущий бренд</span> сегмента (+816% за год) с
-        <span style="color:var(--green); font-weight:600;">прибыльной моделью</span> (15.2М чистой прибыли) и
+        Овсянников — <span style="color:var(--positive); font-weight:600;">самый быстрорастущий бренд</span> сегмента (+816% за год) с
+        <span style="color:var(--positive); font-weight:600;">прибыльной моделью</span> (15.2М чистой прибыли) и
         <span style="color:var(--gold); font-weight:600;">1 500+ B2B партнёрами</span>, но с
-        <span style="color:var(--red); font-weight:600;">критическим digital-разрывом</span> (~5K vs 4.9M у Mixit) и
-        <span style="color:var(--orange); font-weight:600;">растущей угрозой от The Act</span> в HoReCa-нише
+        <span style="color:var(--negative); font-weight:600;">критическим digital-разрывом</span> (~5K vs 4.9M у Mixit) и
+        <span style="color:var(--gold); font-weight:600;">растущей угрозой от The Act</span> в HoReCa-нише
     </p>
 </div>
 
@@ -271,7 +265,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
         <div class="lbl">Выручка 2024<br><span class="delta delta-up">+816%</span></div>
     </div>
     <div class="ov-stat">
-        <div class="num val-green">15.2М</div>
+        <div class="num val-positive">15.2М</div>
         <div class="lbl">Чистая прибыль<br>рентабельность 10.6%</div>
     </div>
     <div class="ov-stat">
@@ -279,27 +273,27 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
         <div class="lbl">B2B партнёров<br>WRF, Novikov, S7, РЖД</div>
     </div>
     <div class="ov-stat">
-        <div class="num val-green">52</div>
+        <div class="num val-positive">52</div>
         <div class="lbl">Сотрудников<br><span class="delta delta-up">с 6 за год</span></div>
     </div>
     <div class="ov-stat">
-        <div class="num val-blue">ТОП-1%</div>
+        <div class="num val-neutral">ТОП-1%</div>
         <div class="lbl">Селлеров Ozon<br>косметика и ароматы</div>
     </div>
 </div>
 
 <!-- СВЕТОФОР -->
 <div class="ov-grid ov-grid-2" style="margin-top:24px;">
-<div class="ov-block" style="border-color:rgba(61,184,106,0.3);">
-<h3 style="color:var(--green);">Что работает</h3>
+<div class="ov-block" style="border-color:rgba(139,175,122,0.3);">
+<h3 style="color:var(--positive);">Что работает</h3>
 <div class="ov-verdict ov-verdict-green"><div class="icon">+</div><div><strong>Рост +816%</strong> — быстрее всех в сегменте (VOIS +544%, The Act +111%)</div></div>
 <div class="ov-verdict ov-verdict-green"><div class="icon">+</div><div><strong>Прибыльность с первого года</strong> — 15.2М прибыли (Mixit с 6.35 млрд в убытке!)</div></div>
 <div class="ov-verdict ov-verdict-green"><div class="icon">+</div><div><strong>Двойная модель B2B + B2C</strong> — диверсификация: HoReCa 1500+ + ТОП-1% Ozon</div></div>
 <div class="ov-verdict ov-verdict-green"><div class="icon">+</div><div><strong>Собственное производство</strong> — от 40 м² до 600 м², контроль качества и маржи</div></div>
 <div class="ov-verdict ov-verdict-green"><div class="icon">+</div><div><strong>«Честный знак» = барьер</strong> — маркировка мыла с мая 2025, шампуней с июля. Своё производство = преимущество</div></div>
 </div>
-<div class="ov-block" style="border-color:rgba(212,64,64,0.3);">
-<h3 style="color:var(--red);">Что не работает</h3>
+<div class="ov-block" style="border-color:rgba(184,92,92,0.3);">
+<h3 style="color:var(--negative);">Что не работает</h3>
 <div class="ov-verdict ov-verdict-red"><div class="icon">!</div><div><strong>Минимальный digital</strong> — ~4K Instagram vs Mixit ~3M IG + 655K TG, VOIS ~80K IG + 287K TG, The Act ~180K IG + 52K TG</div></div>
 <div class="ov-verdict ov-verdict-red"><div class="icon">!</div><div><strong>SEO отсутствует</strong> — не входит в топ по «парфюмированное мыло для отелей»</div></div>
 <div class="ov-verdict ov-verdict-red"><div class="icon">!</div><div><strong>Узкий ассортимент</strong> — 30 SKU (уже есть свечи и диффузоры) vs 290 у Giardino Magico, 200+ у The Act (1М ед./мес)</div></div>
@@ -311,20 +305,20 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <!-- 4 НЕОТЛОЖНЫХ ДЕЙСТВИЯ -->
 <div class="ov-block" style="border-color:var(--gold-border); margin-top:24px;">
 <h3>4 неотложных действия</h3>
-<div class="ov-action" style="border-left-color:var(--red);">
-    <div class="title" style="color:var(--red);">1. Запустить Telegram-канал + Instagram</div>
+<div class="ov-action" style="border-left-color:var(--negative);">
+    <div class="title" style="color:var(--negative);">1. Запустить Telegram-канал + Instagram</div>
     <div class="why">Критический разрыв: ~3-5K Instagram — это ничего. Mixit имеет ~3M Instagram + 655K TG, VOIS 287K TG + 200 блогеров в штате. Контент: backstage производства, коллаборации, новинки. Цель: 50K TG за 6 месяцев.</div>
 </div>
-<div class="ov-action" style="border-left-color:var(--orange);">
-    <div class="title" style="color:var(--orange);">2. Расширить ассортимент до 50+ SKU</div>
+<div class="ov-action" style="border-left-color:var(--gold);">
+    <div class="title" style="color:var(--gold);">2. Расширить ассортимент до 50+ SKU</div>
     <div class="why">30 SKU (свечи и диффузоры уже запущены!) vs 290 у Giardino Magico. Следующие шаги: автоароматизаторы (тестируются), бальзамы, мини-форматы для отелей. Цель 50+ SKU. Кросс-селл повышает средний чек B2B на 30-40%.</div>
 </div>
 <div class="ov-action" style="border-left-color:var(--gold);">
     <div class="title">3. Защититься от The Act в HoReCa</div>
     <div class="why">The Act (4 млрд, завод 1М ед./мес) уже продаёт диспенсеры для отелей через Gastreet и METRO. Их козырь: «бренд, который 9М+ гостей уже знают» + Cosmoscow 2025. Ответ: эксклюзивность + кастомизация + премиальное качество.</div>
 </div>
-<div class="ov-action" style="border-left-color:var(--blue);">
-    <div class="title" style="color:var(--blue);">4. Выйти в СНГ (Казахстан)</div>
+<div class="ov-action" style="border-left-color:var(--neutral);">
+    <div class="title" style="color:var(--neutral);">4. Выйти в СНГ (Казахстан)</div>
     <div class="why">Экспорт российской косметики в Казахстан +19% в 2025. Спрос удвоился. Минпромторг планирует транспортные субсидии для экспортёров косметики. Окно возможностей 2026-2027.</div>
 </div>
 </div>
@@ -338,10 +332,10 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <tr><td><strong>The Act</strong></td><td class="r">4.0 млрд</td><td class="pos">+111%</td><td class="neg">Критичная</td><td>Входит в HoReCa с диспенсерами, 9М+ клиентов знают бренд, завод 1М ед./мес, цена на 40% ниже</td></tr>
 <tr><td><strong>Giardino Magico</strong></td><td class="r">159.5 млн</td><td class="pos">+127%</td><td class="neg">Высокая</td><td>Выручка на 12% выше Овсянникова! 290 SKU, маржа 16.4%, 120+ HoReCa</td></tr>
 <tr><td><strong>Allegrini Russia</strong></td><td class="r">345 млн</td><td class="pos">+7%</td><td class="neg">Высокая</td><td>18 лет на рынке, итальянское качество, Metropol/Savoy, кастомизация аромата с парфюмерами Грасса</td></tr>
-<tr><td><strong>VOIS</strong></td><td class="r">2.5 млрд</td><td class="pos">+544%</td><td style="color:var(--orange);">Средняя</td><td>200 блогеров, 60 новинок/год, но производство в Китае и нет HoReCa</td></tr>
-<tr><td><strong>Zielinski & Rozen</strong></td><td class="r">6.8 млрд</td><td class="pos">+27%</td><td style="color:var(--orange);">Средняя ↓</td><td>Скандал Госдумы (07.2025): обвинение в финансировании ВСУ. 300+ исков. ЦУМ Киев разорвал франшизу</td></tr>
-<tr><td><strong>Tonka</strong></td><td class="r">308 млн</td><td>н/д</td><td style="color:var(--orange);">Средняя</td><td>70+ отелей, Four Seasons, но luxury-сегмент — не прямой конкурент</td></tr>
-<tr><td><strong>GRASS</strong></td><td class="r">~35 млрд</td><td class="pos">×2 за 3г</td><td style="color:var(--orange);">Фоновая</td><td>170K объектов, масс-маркет (от 3₽). Не премиум, но если двинется вверх — подавит масштабом</td></tr>
+<tr><td><strong>VOIS</strong></td><td class="r">2.5 млрд</td><td class="pos">+544%</td><td style="color:var(--gold);">Средняя</td><td>200 блогеров, 60 новинок/год, но производство в Китае и нет HoReCa</td></tr>
+<tr><td><strong>Zielinski & Rozen</strong></td><td class="r">6.8 млрд</td><td class="pos">+27%</td><td style="color:var(--gold);">Средняя ↓</td><td>Скандал Госдумы (07.2025): обвинение в финансировании ВСУ. 300+ исков. ЦУМ Киев разорвал франшизу</td></tr>
+<tr><td><strong>Tonka</strong></td><td class="r">308 млн</td><td>н/д</td><td style="color:var(--gold);">Средняя</td><td>70+ отелей, Four Seasons, но luxury-сегмент — не прямой конкурент</td></tr>
+<tr><td><strong>GRASS</strong></td><td class="r">~35 млрд</td><td class="pos">×2 за 3г</td><td style="color:var(--gold);">Фоновая</td><td>170K объектов, масс-маркет (от 3₽). Не премиум, но если двинется вверх — подавит масштабом</td></tr>
 </tbody>
 </table>
 </div>
@@ -404,8 +398,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
     <a href="#s22">Графики</a>
     <a href="#s23">Бенчмарки</a>
     <a href="#s24" style="color:var(--text3);">V. Прил.</a>
-    <a href="#s26" style="background:rgba(212,64,64,0.1); border-color:rgba(212,64,64,0.3);">VI. Фактчек</a>
-    <a href="#s29" style="background:rgba(144,96,208,0.1); border-color:rgba(144,96,208,0.3);">VII. Фаундеры</a>
+    <a href="#s26" style="background:rgba(184,92,92,0.1); border-color:rgba(184,92,92,0.3);">VI. Фактчек</a>
+    <a href="#s29" style="background:rgba(181,144,122,0.1); border-color:rgba(181,144,122,0.3);">VII. Фаундеры</a>
 </div>
 </div>
 
@@ -422,8 +416,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="grid-3">
 <div class="metric"><div class="val val-gold">1.16 трлн ₽</div><div class="lbl">Рынок красоты РФ 2025<br><span class="delta delta-up">+16.8% к 2023</span></div></div>
-<div class="metric"><div class="val val-green">68-80%</div><div class="lbl">Доля российских брендов<br>было 22% в 2022</div></div>
-<div class="metric"><div class="val val-blue">4 500</div><div class="lbl">Производителей к 2026<br><span class="delta delta-up">×3.5 vs 2021</span></div></div>
+<div class="metric"><div class="val val-positive">68-80%</div><div class="lbl">Доля российских брендов<br>было 22% в 2022</div></div>
+<div class="metric"><div class="val val-neutral">4 500</div><div class="lbl">Производителей к 2026<br><span class="delta delta-up">×3.5 vs 2021</span></div></div>
 </div>
 
 <!-- SVG: Donat рынка -->
@@ -438,11 +432,11 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <!-- Marketplaces 61% -->
 <circle cx="0" cy="0" r="120" fill="none" stroke="#B5907A" stroke-width="50" stroke-dasharray="460.1 293.5" stroke-dashoffset="188.5" opacity="0.9"/>
 <!-- Offline retail 22% -->
-<circle cx="0" cy="0" r="120" fill="none" stroke="#4A8FE0" stroke-width="50" stroke-dasharray="165.9 587.7" stroke-dashoffset="-271.6" opacity="0.8"/>
+<circle cx="0" cy="0" r="120" fill="none" stroke="#8A9AAA" stroke-width="50" stroke-dasharray="165.9 587.7" stroke-dashoffset="-271.6" opacity="0.8"/>
 <!-- B2B HoReCa 10% -->
-<circle cx="0" cy="0" r="120" fill="none" stroke="#3DB86A" stroke-width="50" stroke-dasharray="75.4 678.2" stroke-dashoffset="-437.5" opacity="0.8"/>
+<circle cx="0" cy="0" r="120" fill="none" stroke="#8BAF7A" stroke-width="50" stroke-dasharray="75.4 678.2" stroke-dashoffset="-437.5" opacity="0.8"/>
 <!-- D2C 7% -->
-<circle cx="0" cy="0" r="120" fill="none" stroke="#9060D0" stroke-width="50" stroke-dasharray="52.8 700.8" stroke-dashoffset="-512.9" opacity="0.8"/>
+<circle cx="0" cy="0" r="120" fill="none" stroke="#B5907A" stroke-width="50" stroke-dasharray="52.8 700.8" stroke-dashoffset="-512.9" opacity="0.8"/>
 <!-- Center text -->
 <text x="0" y="-8" text-anchor="middle" fill="#E8E4DC" font-size="22" font-weight="700">1.16</text>
 <text x="0" y="14" text-anchor="middle" fill="#A8A098" font-size="12">трлн ₽</text>
@@ -453,22 +447,22 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <text x="22" y="12" fill="#E8E4DC" font-size="13" font-weight="600">Маркетплейсы — 61%</text>
 <text x="22" y="28" fill="#A8A098" font-size="11">WB, Ozon, YM. Онлайн = 1.11 трлн ₽</text>
 
-<rect x="0" y="50" width="14" height="14" rx="3" fill="#4A8FE0"/>
+<rect x="0" y="50" width="14" height="14" rx="3" fill="#8A9AAA"/>
 <text x="22" y="62" fill="#E8E4DC" font-size="13" font-weight="600">Офлайн-ритейл — 22%</text>
 <text x="22" y="78" fill="#A8A098" font-size="11">Золотое Яблоко, Л'Этуаль, Подружка</text>
 
-<rect x="0" y="100" width="14" height="14" rx="3" fill="#3DB86A"/>
+<rect x="0" y="100" width="14" height="14" rx="3" fill="#8BAF7A"/>
 <text x="22" y="112" fill="#E8E4DC" font-size="13" font-weight="600">B2B HoReCa — 10%</text>
 <text x="22" y="128" fill="#A8A098" font-size="11">Отели, рестораны, офисы, авиа</text>
 
-<rect x="0" y="150" width="14" height="14" rx="3" fill="#9060D0"/>
+<rect x="0" y="150" width="14" height="14" rx="3" fill="#B5907A"/>
 <text x="22" y="162" fill="#E8E4DC" font-size="13" font-weight="600">D2C (собств. сайты) — 7%</text>
 <text x="22" y="178" fill="#A8A098" font-size="11">Прямые продажи через бренд</text>
 </g>
 <!-- Callout -->
 <g transform="translate(400,270)">
-<rect x="0" y="0" width="280" height="50" rx="8" fill="rgba(61,184,106,0.08)" stroke="rgba(61,184,106,0.2)"/>
-<text x="14" y="20" fill="#3DB86A" font-size="11" font-weight="700">ГЛОБАЛЬНЫЙ РЫНОК ОТЕЛЬНЫХ АМЕНИТИ</text>
+<rect x="0" y="0" width="280" height="50" rx="8" fill="rgba(139,175,122,0.08)" stroke="rgba(139,175,122,0.2)"/>
+<text x="14" y="20" fill="#8BAF7A" font-size="11" font-weight="700">ГЛОБАЛЬНЫЙ РЫНОК ОТЕЛЬНЫХ АМЕНИТИ</text>
 <text x="14" y="38" fill="#A8A098" font-size="11">$26 млрд → $52 млрд к 2032 (CAGR 5.9%)</text>
 </g>
 </svg>
@@ -495,8 +489,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="section-head"><div class="section-num">2</div><h2>Уход западных брендов и импортозамещение</h2></div>
 
 <div class="grid-2">
-<div class="card" style="border-left: 4px solid var(--red);">
-<h3 style="color:var(--red);">Кто ушёл / закрылся</h3>
+<div class="card" style="border-left: 4px solid var(--negative);">
+<h3 style="color:var(--negative);">Кто ушёл / закрылся</h3>
 <table>
 <thead><tr><th>Бренд</th><th>Что произошло</th><th>Год</th></tr></thead>
 <tbody>
@@ -511,8 +505,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 </table>
 </div>
 
-<div class="card" style="border-left: 4px solid var(--green);">
-<h3 style="color:var(--green);">Кто вырос / заместил</h3>
+<div class="card" style="border-left: 4px solid var(--positive);">
+<h3 style="color:var(--positive);">Кто вырос / заместил</h3>
 <table>
 <thead><tr><th>Бренд</th><th>Рост</th><th>Стратегия</th></tr></thead>
 <tbody>
@@ -532,7 +526,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <h3>AI-анализ: почему одни умирают, а другие взлетают</h3>
 <div class="grid-2">
 <div>
-<p style="color:var(--red); font-weight:700; margin-bottom:10px;">Паттерны смерти</p>
+<p style="color:var(--negative); font-weight:700; margin-bottom:10px;">Паттерны смерти</p>
 <ul style="list-style:none; padding:0;">
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2718; Зависимость от импортных поставок (Lush не смог наладить альтернативу)</li>
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2718; Смерть/арест основателя (Natura Siberica, Letique)</li>
@@ -542,7 +536,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 </ul>
 </div>
 <div>
-<p style="color:var(--green); font-weight:700; margin-bottom:10px;">Паттерны успеха</p>
+<p style="color:var(--positive); font-weight:700; margin-bottom:10px;">Паттерны успеха</p>
 <ul style="list-style:none; padding:0;">
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2714; Маркетплейсы + контент (VOIS, Золотое Яблоко)</li>
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2714; Своё производство (Mixit 2 завода 18К м², The Act 1М ед./мес)</li>
@@ -584,9 +578,9 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="section-desc">Нишевая парфюмерия +25% в H1 2025, clean beauty, «анти-люкс», аромат как самовыражение.</div>
 
 <div class="grid-3">
-<div class="metric"><div class="val val-green">+25%</div><div class="lbl">Рост нишевой парфюмерии<br>H1 2025 (Золотое Яблоко)</div></div>
-<div class="metric"><div class="val val-blue">12%</div><div class="lbl">Доля нишевой парфюмерии<br>к 2027 (Euromonitor)</div></div>
-<div class="metric"><div class="val val-purple">$106 млрд</div><div class="lbl">Глобальный рынок ароматов<br>к 2028 (McKinsey)</div></div>
+<div class="metric"><div class="val val-positive">+25%</div><div class="lbl">Рост нишевой парфюмерии<br>H1 2025 (Золотое Яблоко)</div></div>
+<div class="metric"><div class="val val-neutral">12%</div><div class="lbl">Доля нишевой парфюмерии<br>к 2027 (Euromonitor)</div></div>
+<div class="metric"><div class="val val-gold">$106 млрд</div><div class="lbl">Глобальный рынок ароматов<br>к 2028 (McKinsey)</div></div>
 </div>
 
 <div class="grid-2">
@@ -608,16 +602,16 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <h3>Что актуально для Овсянникова</h3>
 <ul style="list-style:none; padding:0;">
 <li style="padding:8px 0; font-size:0.9em; color:var(--text2); border-bottom: 1px solid var(--border);">
-<strong style="color:var(--green);">Аромат как самовыражение</strong> — TikTok/PerfumeTok взорвал спрос. Indie-ароматы +46% в США. 3 фирменных аромата Овсянникова идеально попадают в тренд.
+<strong style="color:var(--positive);">Аромат как самовыражение</strong> — TikTok/PerfumeTok взорвал спрос. Indie-ароматы +46% в США. 3 фирменных аромата Овсянникова идеально попадают в тренд.
 </li>
 <li style="padding:8px 0; font-size:0.9em; color:var(--text2); border-bottom: 1px solid var(--border);">
-<strong style="color:var(--green);">Отельные аменити</strong> — $26→52 млрд глобально. Премиальные аменити = конкурентное преимущество отеля. Le Labo, Aesop, Byredo ушли из РФ → ниша открыта.
+<strong style="color:var(--positive);">Отельные аменити</strong> — $26→52 млрд глобально. Премиальные аменити = конкурентное преимущество отеля. Le Labo, Aesop, Byredo ушли из РФ → ниша открыта.
 </li>
 <li style="padding:8px 0; font-size:0.9em; color:var(--text2); border-bottom: 1px solid var(--border);">
-<strong style="color:var(--blue);">Clean beauty</strong> — потребители требуют прозрачных составов. Овсянников уже использует натуральные эмульгаторы и неаллергенные отдушки.
+<strong style="color:var(--neutral);">Clean beauty</strong> — потребители требуют прозрачных составов. Овсянников уже использует натуральные эмульгаторы и неаллергенные отдушки.
 </li>
 <li style="padding:8px 0; font-size:0.9em; color:var(--text2);">
-<strong style="color:var(--orange);">Premiumization vs dupe culture</strong> — одновременный рост ультра-премиума и «доступного люкса». Овсянников в sweet spot: премиальное качество по доступной цене (490-2390₽).
+<strong style="color:var(--gold);">Premiumization vs dupe culture</strong> — одновременный рост ультра-премиума и «доступного люкса». Овсянников в sweet spot: премиальное качество по доступной цене (490-2390₽).
 </li>
 </ul>
 </div>
@@ -633,9 +627,9 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="grid-4">
 <div class="metric"><div class="val val-gold">61%</div><div class="lbl">Маркетплейсы<br>доля онлайн-продаж</div></div>
-<div class="metric"><div class="val val-blue">22%</div><div class="lbl">Офлайн-ритейл<br>Золотое Яблоко, Л'Этуаль</div></div>
-<div class="metric"><div class="val val-green">10%</div><div class="lbl">B2B HoReCa<br>~70 млрд ₽ (аменити + хим.)</div></div>
-<div class="metric"><div class="val val-purple">7%</div><div class="lbl">D2C (свой сайт)<br>самая высокая маржа</div></div>
+<div class="metric"><div class="val val-neutral">22%</div><div class="lbl">Офлайн-ритейл<br>Золотое Яблоко, Л'Этуаль</div></div>
+<div class="metric"><div class="val val-positive">10%</div><div class="lbl">B2B HoReCa<br>~70 млрд ₽ (аменити + хим.)</div></div>
+<div class="metric"><div class="val val-gold">7%</div><div class="lbl">D2C (свой сайт)<br>самая высокая маржа</div></div>
 </div>
 
 <div class="card">
@@ -645,8 +639,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <thead><tr><th>Канал</th><th>Маржа</th><th>CAC</th><th>LTV</th><th>Плюсы</th><th>Минусы</th></tr></thead>
 <tbody>
 <tr><td><strong>D2C (сайт)</strong></td><td class="r pos">60-70%</td><td class="r">800-2000₽</td><td class="r">3-8К₽</td><td>Полный контроль, данные клиентов</td><td>Трафик дорогой, нужен бренд</td></tr>
-<tr><td><strong>Маркетплейсы (WB/Ozon)</strong></td><td class="r" style="color:var(--orange);">25-40%</td><td class="r">150-500₽</td><td class="r">1-3К₽</td><td>Огромный трафик, логистика</td><td>Комиссии 15-25%, гонка цен</td></tr>
-<tr><td><strong>Офлайн-ритейл</strong></td><td class="r" style="color:var(--orange);">20-35%</td><td class="r">н/д</td><td class="r">н/д</td><td>Тактильный опыт, импульс</td><td>Полка дорого, ретро-бонусы</td></tr>
+<tr><td><strong>Маркетплейсы (WB/Ozon)</strong></td><td class="r" style="color:var(--gold);">25-40%</td><td class="r">150-500₽</td><td class="r">1-3К₽</td><td>Огромный трафик, логистика</td><td>Комиссии 15-25%, гонка цен</td></tr>
+<tr><td><strong>Офлайн-ритейл</strong></td><td class="r" style="color:var(--gold);">20-35%</td><td class="r">н/д</td><td class="r">н/д</td><td>Тактильный опыт, импульс</td><td>Полка дорого, ретро-бонусы</td></tr>
 <tr><td><strong>B2B HoReCa</strong></td><td class="r pos">40-55%</td><td class="r">5-15К₽</td><td class="r">50-500К₽</td><td>Долгие контракты, стабильность</td><td>Длинный цикл продаж</td></tr>
 </tbody>
 </table>
@@ -654,24 +648,24 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 </div>
 
 <div class="grid-2">
-<div class="card" style="border-left:4px solid var(--green);">
-<h3 style="color:var(--green);">B2B HoReCa: скрытый гигант</h3>
+<div class="card" style="border-left:4px solid var(--positive);">
+<h3 style="color:var(--positive);">B2B HoReCa: скрытый гигант</h3>
 <ul style="list-style:none; padding:0;">
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Рынок отельной косметики + аменити РФ: <strong style="color:var(--green);">~70 млрд ₽</strong> (оценка: GRASS 14 млрд при 20% доле). Гостиницы: 1.16 трлн (2025) → <strong>1.28 трлн (2026, +10%)</strong>, 89 млн туристов (+4.1%)</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Рынок отельной косметики + аменити РФ: <strong style="color:var(--positive);">~70 млрд ₽</strong> (оценка: GRASS 14 млрд при 20% доле). Гостиницы: 1.16 трлн (2025) → <strong>1.28 трлн (2026, +10%)</strong>, 89 млн туристов (+4.1%)</li>
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; 170 000+ средств размещения, ~1 млн номеров (GRASS: 20%). Косметика — в топ-6 закупок отелей</li>
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Средний отель тратит 50-150К₽/мес на косметику</li>
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; LTV одного B2B клиента = <strong>3-5 лет контракта</strong></li>
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Уход Le Labo, Aesop, Byredo → <strong>премиум-ниша пуста</strong></li>
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Крупнейший игрок: <strong style="color:var(--red);">GRASS (~35 млрд, 170K объектов)</strong> — масс-маркет, но масштаб подавляющий</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Крупнейший игрок: <strong style="color:var(--negative);">GRASS (~35 млрд, 170K объектов)</strong> — масс-маркет, но масштаб подавляющий</li>
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Новые игроки: Asense (премиум, Япония/Франция), Mandarinica (диспенсеры)</li>
 </ul>
 </div>
-<div class="card" style="border-left:4px solid var(--orange);">
-<h3 style="color:var(--orange);">Маркетплейсы: ловушка масштаба</h3>
+<div class="card" style="border-left:4px solid var(--gold);">
+<h3 style="color:var(--gold);">Маркетплейсы: ловушка масштаба</h3>
 <ul style="list-style:none; padding:0;">
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Комиссии растут: с 15-20% (2024) до <strong style="color:var(--red);">30%+</strong> (2025, INFOLine)</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Комиссии растут: с 15-20% (2024) до <strong style="color:var(--negative);">30%+</strong> (2025, INFOLine)</li>
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Реклама на МП: с 8% до 18% от оборота (2025)</li>
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Итого: до <strong style="color:var(--red);">50%+ выручки уходит площадке</strong></li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Итого: до <strong style="color:var(--negative);">50%+ выручки уходит площадке</strong></li>
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Онлайн = 34.2% всех продаж beauty (было 26.9%, NielsenIQ)</li>
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Доля МП к концу 2025: до 67.2% онлайна (INFOLine)</li>
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Овсянников = ТОП-1% Ozon → канал работает</li>
@@ -736,32 +730,32 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <text x="65" y="430" fill="#706858" font-size="10">Стандарт</text>
 <text x="65" y="55" fill="#706858" font-size="10">Полная</text>
 <!-- GRASS: lowest price, low custom, HUGE -->
-<circle cx="120" cy="410" r="36" fill="rgba(212,64,64,0.2)" stroke="#D44040" stroke-width="2" stroke-dasharray="4,2"/>
-<text x="120" y="407" text-anchor="middle" fill="#D44040" font-size="10" font-weight="700">GRASS</text>
-<text x="120" y="420" text-anchor="middle" fill="#D44040" font-size="7">170K объектов</text>
+<circle cx="120" cy="410" r="36" fill="rgba(184,92,92,0.2)" stroke="#B85C5C" stroke-width="2" stroke-dasharray="4,2"/>
+<text x="120" y="407" text-anchor="middle" fill="#B85C5C" font-size="10" font-weight="700">GRASS</text>
+<text x="120" y="420" text-anchor="middle" fill="#B85C5C" font-size="7">170K объектов</text>
 <!-- Natura Siberica: low price, low custom, big -->
-<circle cx="180" cy="370" r="28" fill="rgba(74,143,224,0.3)" stroke="#4A8FE0" stroke-width="2"/>
-<text x="180" y="373" text-anchor="middle" fill="#4A8FE0" font-size="9" font-weight="600">Natura</text>
-<text x="180" y="385" text-anchor="middle" fill="#4A8FE0" font-size="8">Siberica</text>
+<circle cx="180" cy="370" r="28" fill="rgba(138,154,170,0.3)" stroke="#8A9AAA" stroke-width="2"/>
+<text x="180" y="373" text-anchor="middle" fill="#8A9AAA" font-size="9" font-weight="600">Natura</text>
+<text x="180" y="385" text-anchor="middle" fill="#8A9AAA" font-size="8">Siberica</text>
 <!-- The Act: mid price, mid-low custom, big -->
-<circle cx="320" cy="320" r="24" fill="rgba(212,64,64,0.3)" stroke="#D44040" stroke-width="2"/>
-<text x="320" y="323" text-anchor="middle" fill="#D44040" font-size="9" font-weight="600">The Act</text>
+<circle cx="320" cy="320" r="24" fill="rgba(184,92,92,0.3)" stroke="#B85C5C" stroke-width="2"/>
+<text x="320" y="323" text-anchor="middle" fill="#B85C5C" font-size="9" font-weight="600">The Act</text>
 <!-- Banka Home: low-mid price, mid custom -->
-<circle cx="250" cy="240" r="12" fill="rgba(144,96,208,0.3)" stroke="#9060D0" stroke-width="2"/>
-<text x="250" y="225" text-anchor="middle" fill="#9060D0" font-size="9">Banka Home</text>
+<circle cx="250" cy="240" r="12" fill="rgba(181,144,122,0.3)" stroke="#B5907A" stroke-width="2"/>
+<text x="250" y="225" text-anchor="middle" fill="#B5907A" font-size="9">Banka Home</text>
 <!-- ОВСЯННИКОВ: mid price, mid-high custom -->
 <circle cx="380" cy="180" r="20" fill="rgba(181,144,122,0.4)" stroke="#B5907A" stroke-width="3"/>
 <text x="380" y="183" text-anchor="middle" fill="#B5907A" font-size="10" font-weight="800">OVS</text>
 <text x="380" y="160" text-anchor="middle" fill="#D4AD8F" font-size="9" font-weight="600">Овсянников</text>
 <!-- Lia Lab: mid-high price, high custom -->
-<circle cx="440" cy="140" r="11" fill="rgba(64,176,160,0.3)" stroke="#40B0A0" stroke-width="2"/>
-<text x="440" y="125" text-anchor="middle" fill="#40B0A0" font-size="9">Lia Lab</text>
+<circle cx="440" cy="140" r="11" fill="rgba(64,176,160,0.3)" stroke="#B5907A" stroke-width="2"/>
+<text x="440" y="125" text-anchor="middle" fill="#B5907A" font-size="9">Lia Lab</text>
 <!-- 22|11: high price, mid custom -->
-<circle cx="560" cy="220" r="13" fill="rgba(224,128,64,0.3)" stroke="#E08040" stroke-width="2"/>
-<text x="560" y="208" text-anchor="middle" fill="#E08040" font-size="9">22|11</text>
+<circle cx="560" cy="220" r="13" fill="rgba(181,144,122,0.3)" stroke="#B5907A" stroke-width="2"/>
+<text x="560" y="208" text-anchor="middle" fill="#B5907A" font-size="9">22|11</text>
 <!-- Giardino Magico: mid-high price, mid-high custom -->
-<circle cx="500" cy="160" r="18" fill="rgba(61,184,106,0.3)" stroke="#3DB86A" stroke-width="2"/>
-<text x="500" y="163" text-anchor="middle" fill="#3DB86A" font-size="9" font-weight="600">Giardino</text>
+<circle cx="500" cy="160" r="18" fill="rgba(139,175,122,0.3)" stroke="#8BAF7A" stroke-width="2"/>
+<text x="500" y="163" text-anchor="middle" fill="#8BAF7A" font-size="9" font-weight="600">Giardino</text>
 <!-- Great Trotter: mid-high price, low custom -->
 <circle cx="480" cy="340" r="10" fill="rgba(232,196,106,0.3)" stroke="#E8C46A" stroke-width="2"/>
 <text x="480" y="328" text-anchor="middle" fill="#E8C46A" font-size="9">Great Trotter</text>
@@ -769,19 +763,19 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <circle cx="660" cy="80" r="16" fill="rgba(181,144,122,0.3)" stroke="#D4AD8F" stroke-width="2"/>
 <text x="660" y="83" text-anchor="middle" fill="#D4AD8F" font-size="9" font-weight="600">Tonka</text>
 <!-- Zone labels -->
-<rect x="100" y="340" width="120" height="30" rx="6" fill="rgba(74,143,224,0.06)" stroke="rgba(74,143,224,0.15)"/>
-<text x="160" y="359" text-anchor="middle" fill="#4A8FE0" font-size="9">Масс HoReCa</text>
+<rect x="100" y="340" width="120" height="30" rx="6" fill="rgba(138,154,170,0.06)" stroke="rgba(138,154,170,0.15)"/>
+<text x="160" y="359" text-anchor="middle" fill="#8A9AAA" font-size="9">Масс HoReCa</text>
 <rect x="350" y="130" width="140" height="30" rx="6" fill="rgba(181,144,122,0.06)" stroke="rgba(181,144,122,0.15)"/>
 <text x="420" y="149" text-anchor="middle" fill="#B5907A" font-size="9">Премиум HoReCa</text>
-<rect x="600" y="50" width="120" height="30" rx="6" fill="rgba(144,96,208,0.06)" stroke="rgba(144,96,208,0.15)"/>
-<text x="660" y="69" text-anchor="middle" fill="#9060D0" font-size="9">Люкс аромадизайн</text>
+<rect x="600" y="50" width="120" height="30" rx="6" fill="rgba(181,144,122,0.06)" stroke="rgba(181,144,122,0.15)"/>
+<text x="660" y="69" text-anchor="middle" fill="#B5907A" font-size="9">Люкс аромадизайн</text>
 </svg>
 <div class="chart-legend">
 <div class="leg-item"><div class="leg-swatch" style="background:#B5907A;"></div>Овсянников (sweet spot)</div>
-<div class="leg-item"><div class="leg-swatch" style="background:#D44040;"></div>GRASS (35 млрд, масс-гигант) / The Act (угроза)</div>
-<div class="leg-item"><div class="leg-swatch" style="background:#3DB86A;"></div>Giardino Magico (прямой конкурент)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#B85C5C;"></div>GRASS (35 млрд, масс-гигант) / The Act (угроза)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#8BAF7A;"></div>Giardino Magico (прямой конкурент)</div>
 <div class="leg-item"><div class="leg-swatch" style="background:#D4AD8F;"></div>Tonka (люкс)</div>
-<div class="leg-item"><div class="leg-swatch" style="background:#4A8FE0;"></div>Natura Siberica (масс)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#8A9AAA;"></div>Natura Siberica (масс)</div>
 </div>
 </div>
 </div>
@@ -805,39 +799,39 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <text x="65" y="430" fill="#706858" font-size="10">Noname</text>
 <text x="65" y="55" fill="#706858" font-size="10">Культовый</text>
 <!-- Natura Siberica: low price, medium brand -->
-<circle cx="180" cy="220" r="28" fill="rgba(74,143,224,0.3)" stroke="#4A8FE0" stroke-width="2"/>
-<text x="180" y="216" text-anchor="middle" fill="#4A8FE0" font-size="9" font-weight="600">Natura</text>
-<text x="180" y="228" text-anchor="middle" fill="#4A8FE0" font-size="8">Siberica</text>
+<circle cx="180" cy="220" r="28" fill="rgba(138,154,170,0.3)" stroke="#8A9AAA" stroke-width="2"/>
+<text x="180" y="216" text-anchor="middle" fill="#8A9AAA" font-size="9" font-weight="600">Natura</text>
+<text x="180" y="228" text-anchor="middle" fill="#8A9AAA" font-size="8">Siberica</text>
 <!-- Mixit: low-mid price, medium brand, huge -->
-<circle cx="260" cy="200" r="32" fill="rgba(144,96,208,0.3)" stroke="#9060D0" stroke-width="2"/>
-<text x="260" y="203" text-anchor="middle" fill="#9060D0" font-size="10" font-weight="600">Mixit</text>
+<circle cx="260" cy="200" r="32" fill="rgba(181,144,122,0.3)" stroke="#B5907A" stroke-width="2"/>
+<text x="260" y="203" text-anchor="middle" fill="#B5907A" font-size="10" font-weight="600">Mixit</text>
 <!-- The Act: mid price, growing brand -->
-<circle cx="380" cy="160" r="24" fill="rgba(212,64,64,0.3)" stroke="#D44040" stroke-width="2"/>
-<text x="380" y="163" text-anchor="middle" fill="#D44040" font-size="9" font-weight="600">The Act</text>
+<circle cx="380" cy="160" r="24" fill="rgba(184,92,92,0.3)" stroke="#B85C5C" stroke-width="2"/>
+<text x="380" y="163" text-anchor="middle" fill="#B85C5C" font-size="9" font-weight="600">The Act</text>
 <!-- VOIS: mid price, viral brand -->
-<circle cx="340" cy="120" r="22" fill="rgba(224,128,64,0.3)" stroke="#E08040" stroke-width="2"/>
-<text x="340" y="123" text-anchor="middle" fill="#E08040" font-size="9" font-weight="600">VOIS</text>
+<circle cx="340" cy="120" r="22" fill="rgba(181,144,122,0.3)" stroke="#B5907A" stroke-width="2"/>
+<text x="340" y="123" text-anchor="middle" fill="#B5907A" font-size="9" font-weight="600">VOIS</text>
 <!-- Овсянников B2C: mid price, low brand awareness -->
 <circle cx="360" cy="340" r="14" fill="rgba(181,144,122,0.4)" stroke="#B5907A" stroke-width="3"/>
 <text x="360" y="343" text-anchor="middle" fill="#B5907A" font-size="9" font-weight="800">OVS</text>
 <text x="360" y="325" text-anchor="middle" fill="#D4AD8F" font-size="9">Овсянников</text>
 <!-- Z&R: premium price, cult brand -->
-<circle cx="580" cy="80" r="30" fill="rgba(61,184,106,0.3)" stroke="#3DB86A" stroke-width="2"/>
-<text x="580" y="75" text-anchor="middle" fill="#3DB86A" font-size="9" font-weight="600">Zielinski</text>
-<text x="580" y="87" text-anchor="middle" fill="#3DB86A" font-size="8">&amp; Rozen</text>
+<circle cx="580" cy="80" r="30" fill="rgba(139,175,122,0.3)" stroke="#8BAF7A" stroke-width="2"/>
+<text x="580" y="75" text-anchor="middle" fill="#8BAF7A" font-size="9" font-weight="600">Zielinski</text>
+<text x="580" y="87" text-anchor="middle" fill="#8BAF7A" font-size="8">&amp; Rozen</text>
 <!-- 22|11: premium, niche -->
-<circle cx="620" cy="180" r="12" fill="rgba(64,176,160,0.3)" stroke="#40B0A0" stroke-width="2"/>
-<text x="620" y="168" text-anchor="middle" fill="#40B0A0" font-size="9">22|11</text>
+<circle cx="620" cy="180" r="12" fill="rgba(64,176,160,0.3)" stroke="#B5907A" stroke-width="2"/>
+<text x="620" y="168" text-anchor="middle" fill="#B5907A" font-size="9">22|11</text>
 <!-- Giardino Magico: premium, growing -->
 <circle cx="520" cy="140" r="16" fill="rgba(232,196,106,0.3)" stroke="#E8C46A" stroke-width="2"/>
 <text x="520" y="128" text-anchor="middle" fill="#E8C46A" font-size="9">Giardino</text>
 <!-- Zone labels -->
-<rect x="150" y="170" width="120" height="26" rx="6" fill="rgba(144,96,208,0.06)" stroke="rgba(144,96,208,0.15)"/>
-<text x="210" y="187" text-anchor="middle" fill="#9060D0" font-size="9">Масс-маркет</text>
-<rect x="300" y="90" width="120" height="26" rx="6" fill="rgba(224,128,64,0.06)" stroke="rgba(224,128,64,0.15)"/>
-<text x="360" y="107" text-anchor="middle" fill="#E08040" font-size="9">Indie / хайп</text>
-<rect x="520" y="50" width="130" height="26" rx="6" fill="rgba(61,184,106,0.06)" stroke="rgba(61,184,106,0.15)"/>
-<text x="585" y="67" text-anchor="middle" fill="#3DB86A" font-size="9">Культовый премиум</text>
+<rect x="150" y="170" width="120" height="26" rx="6" fill="rgba(181,144,122,0.06)" stroke="rgba(181,144,122,0.15)"/>
+<text x="210" y="187" text-anchor="middle" fill="#B5907A" font-size="9">Масс-маркет</text>
+<rect x="300" y="90" width="120" height="26" rx="6" fill="rgba(181,144,122,0.06)" stroke="rgba(181,144,122,0.15)"/>
+<text x="360" y="107" text-anchor="middle" fill="#B5907A" font-size="9">Indie / хайп</text>
+<rect x="520" y="50" width="130" height="26" rx="6" fill="rgba(139,175,122,0.06)" stroke="rgba(139,175,122,0.15)"/>
+<text x="585" y="67" text-anchor="middle" fill="#8BAF7A" font-size="9">Культовый премиум</text>
 <!-- Arrow for Ovsyannikov growth potential -->
 <line x1="360" y1="320" x2="360" y2="200" stroke="rgba(181,144,122,0.4)" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrowGold)"/>
 <defs><marker id="arrowGold" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="rgba(181,144,122,0.5)"/></marker></defs>
@@ -845,9 +839,9 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 </svg>
 <div class="chart-legend">
 <div class="leg-item"><div class="leg-swatch" style="background:#B5907A;"></div>Овсянников (низкая узнаваемость — главная проблема B2C)</div>
-<div class="leg-item"><div class="leg-swatch" style="background:#3DB86A;"></div>Z&amp;R (6.8 млрд, культовый)</div>
-<div class="leg-item"><div class="leg-swatch" style="background:#9060D0;"></div>Mixit (6.35 млрд, масс)</div>
-<div class="leg-item"><div class="leg-swatch" style="background:#E08040;"></div>VOIS (2.5 млрд, вирусный)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#8BAF7A;"></div>Z&amp;R (6.8 млрд, культовый)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#B5907A;"></div>Mixit (6.35 млрд, масс)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#B5907A;"></div>VOIS (2.5 млрд, вирусный)</div>
 </div>
 </div>
 </div>
@@ -859,13 +853,13 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="grid-2">
 
-<div class="comp-card" style="border-color:rgba(212,64,64,0.3);">
-<div class="name" style="color:var(--red);">GRASS (масс HoReCa)</div>
+<div class="comp-card" style="border-color:rgba(184,92,92,0.3);">
+<div class="name" style="color:var(--negative);">GRASS (масс HoReCa)</div>
 <div class="meta">Волгоград · ~35 млрд · 170 000+ объектов · 1 056 сотр. · 5 линеек: Sargan, Room, Apartment, Resto Pro (с Д. Левицким), Laundry Pro · 65+ стран</div>
 <div class="stats">
-<div class="stat"><div class="v val-red">~35 млрд</div><div class="l">Выручка</div></div>
-<div class="stat"><div class="v val-green">170K+</div><div class="l">Объектов</div></div>
-<div class="stat"><div class="v val-blue">1 056</div><div class="l">Сотр.</div></div>
+<div class="stat"><div class="v val-negative">~35 млрд</div><div class="l">Выручка</div></div>
+<div class="stat"><div class="v val-positive">170K+</div><div class="l">Объектов</div></div>
+<div class="stat"><div class="v val-neutral">1 056</div><div class="l">Сотр.</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>170K объектов, 1 млн номеров, 20% рынка РФ, 5% СНГ</li><li>5 HoReCa-линеек: Sargan (мид), Room (бюджет), Apartment, Resto Pro, Laundry Pro</li><li>Бесплатная аренда диспенсеров, обучение горничных, 24-step инструкции</li></ul></div>
@@ -878,8 +872,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="meta">Москва · 290 SKU · 120+ HoReCa · 159.5М выр. · +127%</div>
 <div class="stats">
 <div class="stat"><div class="v val-gold">159.5М</div><div class="l">Выручка</div></div>
-<div class="stat"><div class="v val-green">+127%</div><div class="l">Рост YoY</div></div>
-<div class="stat"><div class="v val-blue">18</div><div class="l">Сотр.</div></div>
+<div class="stat"><div class="v val-positive">+127%</div><div class="l">Рост YoY</div></div>
+<div class="stat"><div class="v val-neutral">18</div><div class="l">Сотр.</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>+127% рост, маржа 16.4% — лучшая рентабельность в нише</li><li>290 SKU, 120+ HoReCa-партнёров, бутики Москва + СПб</li><li>Выручка 159.5М — на 12% больше Овсянникова</li></ul></div>
@@ -892,8 +886,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="meta">Москва · 70+ отелей · Four Seasons, Park Hyatt · от 1800₽</div>
 <div class="stats">
 <div class="stat"><div class="v val-gold">308М</div><div class="l">Выручка</div></div>
-<div class="stat"><div class="v val-green">70+</div><div class="l">Отелей</div></div>
-<div class="stat"><div class="v val-blue">35</div><div class="l">Сотр.</div></div>
+<div class="stat"><div class="v val-positive">70+</div><div class="l">Отелей</div></div>
+<div class="stat"><div class="v val-neutral">35</div><div class="l">Сотр.</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>Люкс-позиционирование, школа Грасса</li><li>70+ отелей 5*, Four Seasons</li><li>Аромадизайн: полная ольфакторная идентичность</li></ul></div>
@@ -905,9 +899,9 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="name">The Act</div>
 <div class="meta">Ростов-на-Дону · 200+ SKU · завод 1М ед./мес · от 609₽</div>
 <div class="stats">
-<div class="stat"><div class="v val-red">4.0 млрд</div><div class="l">Выручка</div></div>
-<div class="stat"><div class="v val-green">+111%</div><div class="l">Рост YoY</div></div>
-<div class="stat"><div class="v val-blue">399</div><div class="l">Сотр.</div></div>
+<div class="stat"><div class="v val-negative">4.0 млрд</div><div class="l">Выручка</div></div>
+<div class="stat"><div class="v val-positive">+111%</div><div class="l">Рост YoY</div></div>
+<div class="stat"><div class="v val-neutral">399</div><div class="l">Сотр.</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>9М+ клиентов, 1.5М+ отзывов, 30М медиа-охват/мес</li><li>Свой завод: 1М ед./мес, 200+ SKU, Cosmoscow 2025</li><li>B2C → B2B: алюминиевые антивандальные диспенсеры, doy-pak, METRO, скидка -50% на первый заказ</li></ul></div>
@@ -920,8 +914,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="meta">Москва · 98 HoReCa SKU · АФК Система · от 32₽ (опт)</div>
 <div class="stats">
 <div class="stat"><div class="v val-gold">5.4 млрд</div><div class="l">Выручка</div></div>
-<div class="stat"><div class="v val-green">684</div><div class="l">Сотр.</div></div>
-<div class="stat"><div class="v val-blue">98</div><div class="l">HoReCa SKU</div></div>
+<div class="stat"><div class="v val-positive">684</div><div class="l">Сотр.</div></div>
+<div class="stat"><div class="v val-neutral">98</div><div class="l">HoReCa SKU</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>Масштаб: 684 сотрудника, 5.4 млрд</li><li>Бренд знают все: 20+ лет на рынке</li><li>HoReCa линейки: Mystic Sardaana, Shades of Siberia, Interior Collection — 98 SKU, от 32₽/шт оптом</li></ul></div>
@@ -934,8 +928,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="meta">СПб · 120+ ароматов · 15 бутиков · СТМ-сервис · от 290₽</div>
 <div class="stats">
 <div class="stat"><div class="v val-gold">120+</div><div class="l">Ароматов</div></div>
-<div class="stat"><div class="v val-green">СТМ</div><div class="l">Сервис</div></div>
-<div class="stat"><div class="v val-blue">ИП</div><div class="l">Формат</div></div>
+<div class="stat"><div class="v val-positive">СТМ</div><div class="l">Сервис</div></div>
+<div class="stat"><div class="v val-neutral">ИП</div><div class="l">Формат</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>15 бутиков, 120+ ароматов — широчайший выбор</li><li>СТМ-сервис для ресторанов/отелей, антивандальные держатели</li><li>Доступные цены: 290-2400₽, мин. заказ 20К₽</li></ul></div>
@@ -948,8 +942,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="meta">Красная Поляна · 52 SKU · рефилл · 86.3М выр. · маржа 17.7%</div>
 <div class="stats">
 <div class="stat"><div class="v val-gold">86.3М</div><div class="l">Выручка</div></div>
-<div class="stat"><div class="v val-green">+24%</div><div class="l">Рост YoY</div></div>
-<div class="stat"><div class="v val-blue">19</div><div class="l">Сотр.</div></div>
+<div class="stat"><div class="v val-positive">+24%</div><div class="l">Рост YoY</div></div>
+<div class="stat"><div class="v val-neutral">19</div><div class="l">Сотр.</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>Маржа 17.7% — самая высокая из всех конкурентов!</li><li>Eco-позиционирование: рефилл-система, B2B линейка</li><li>Рост ×16 за 4 года (5.4М → 86.3М), курортная локация</li></ul></div>
@@ -962,7 +956,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="meta">Москва · 126 SKU · аромадизайн · от 650₽</div>
 <div class="stats">
 <div class="stat"><div class="v val-gold">126</div><div class="l">SKU</div></div>
-<div class="stat"><div class="v val-green">Аромадизайн</div><div class="l">Фокус</div></div>
+<div class="stat"><div class="v val-positive">Аромадизайн</div><div class="l">Фокус</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>Специализация на аромадизайне пространств</li><li>126 SKU — разнообразный каталог</li><li>Цены 650-4000₽ — средний сегмент</li></ul></div>
@@ -975,7 +969,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="meta">Москва · 100 SKU · международный бренд · от 1000₽</div>
 <div class="stats">
 <div class="stat"><div class="v val-gold">100</div><div class="l">SKU</div></div>
-<div class="stat"><div class="v val-green">Междунар.</div><div class="l">Присутствие</div></div>
+<div class="stat"><div class="v val-positive">Междунар.</div><div class="l">Присутствие</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>Международное присутствие</li><li>Премиум-позиционирование: до 7777₽</li><li>Сильный digital и PR</li></ul></div>
@@ -988,8 +982,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="meta">Москва (итал.) · 345М выр. · Metropol, Savoy · кастом аромат · с 2006</div>
 <div class="stats">
 <div class="stat"><div class="v val-gold">345М</div><div class="l">Выручка</div></div>
-<div class="stat"><div class="v val-green">18+</div><div class="l">Лет на рынке</div></div>
-<div class="stat"><div class="v val-blue">10</div><div class="l">Сотр.</div></div>
+<div class="stat"><div class="v val-positive">18+</div><div class="l">Лет на рынке</div></div>
+<div class="stat"><div class="v val-neutral">10</div><div class="l">Сотр.</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>18+ лет на рынке, 100% Made in Italy, парфюмеры Грасса</li><li>Топ-клиенты: Metropol, Savoy, Rodina Hotels</li><li>Кастомизация аромата (до 1 года разработки), коллаб Yudashkin</li></ul></div>
@@ -1011,12 +1005,12 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="meta">Израиль/Москва · 300+ SKU · 6.8 млрд · культовый бренд</div>
 <div class="stats">
 <div class="stat"><div class="v val-gold">6.8 млрд</div><div class="l">Выручка</div></div>
-<div class="stat"><div class="v val-green">+27%</div><div class="l">Рост</div></div>
-<div class="stat"><div class="v val-blue">340</div><div class="l">Сотр.</div></div>
+<div class="stat"><div class="v val-positive">+27%</div><div class="l">Рост</div></div>
+<div class="stat"><div class="v val-neutral">340</div><div class="l">Сотр.</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>Культовый статус: «российский Jo Malone»</li><li>300+ SKU, сеть бутиков (Москва, СПб, Ташкент)</li><li>Самая высокая выручка в нише: 6.8 млрд, чистая прибыль 1.9 млрд</li></ul></div>
-<div class="swot-box swot-w" style="padding:12px;"><h4>W</h4><ul><li>Нет HoReCa-направления</li><li>Замедление: чистая прибыль -5.5%, коммерческие расходы ×1.6</li><li>300+ исков по контрафакту в 2024</li><li style="color:var(--red);">Скандал июль 2025: депутат Госдумы Луговой обвинил в финансировании ВСУ → прокурорская проверка. ЦУМ Киев разорвал франшизу (фев 2026)</li></ul></div>
+<div class="swot-box swot-w" style="padding:12px;"><h4>W</h4><ul><li>Нет HoReCa-направления</li><li>Замедление: чистая прибыль -5.5%, коммерческие расходы ×1.6</li><li>300+ исков по контрафакту в 2024</li><li style="color:var(--negative);">Скандал июль 2025: депутат Госдумы Луговой обвинил в финансировании ВСУ → прокурорская проверка. ЦУМ Киев разорвал франшизу (фев 2026)</li></ul></div>
 </div>
 </div>
 
@@ -1025,8 +1019,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="meta">Кисловодск · 2.5 млрд · 200 блогеров · Forbes «30 до 30»</div>
 <div class="stats">
 <div class="stat"><div class="v val-gold">2.5 млрд</div><div class="l">Выручка</div></div>
-<div class="stat"><div class="v val-green">+544%</div><div class="l">Рост</div></div>
-<div class="stat"><div class="v val-blue">287К</div><div class="l">TG подп.</div></div>
+<div class="stat"><div class="v val-positive">+544%</div><div class="l">Рост</div></div>
+<div class="stat"><div class="v val-neutral">287К</div><div class="l">TG подп.</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>Data-driven: «голос покупателя», 60 новинок за 2024</li><li>200 блогеров в штате = контент-машина</li><li>+544% рост — второй после Овсянникова</li></ul></div>
@@ -1039,8 +1033,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="meta">Москва · 6.35 млрд · 2 завода 18 000 м² · 33М ед./год</div>
 <div class="stats">
 <div class="stat"><div class="v val-gold">6.35 млрд</div><div class="l">Выручка</div></div>
-<div class="stat"><div class="v val-red">-420М</div><div class="l">Убыток</div></div>
-<div class="stat"><div class="v val-blue">650+</div><div class="l">Сотр.</div></div>
+<div class="stat"><div class="v val-negative">-420М</div><div class="l">Убыток</div></div>
+<div class="stat"><div class="v val-neutral">650+</div><div class="l">Сотр.</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>2 завода (18 000 м², 33М ед./год), 160+ магазинов, 32K точек</li><li>+67% рост, 653K TG + ~3M IG</li><li>Доступные цены: от 250₽, 650+ сотрудников</li></ul></div>
@@ -1053,8 +1047,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="meta">Ростов-на-Дону · 4.0 млрд · 200+ SKU · 1М ед./мес · гендерно-нейтральный</div>
 <div class="stats">
 <div class="stat"><div class="v val-gold">4.0 млрд</div><div class="l">Выручка</div></div>
-<div class="stat"><div class="v val-green">+690М</div><div class="l">Прибыль</div></div>
-<div class="stat"><div class="v val-blue">9М+</div><div class="l">Клиентов</div></div>
+<div class="stat"><div class="v val-positive">+690М</div><div class="l">Прибыль</div></div>
+<div class="stat"><div class="v val-neutral">9М+</div><div class="l">Клиентов</div></div>
 </div>
 <div class="swot-grid" style="margin:0;">
 <div class="swot-box swot-s" style="padding:12px;"><h4>S</h4><ul><li>Свой завод: 1М ед./мес, 200+ SKU, прибыль 690М (+111%)</li><li>9М+ клиентов, 1.5М+ отзывов, коллаб Cosmoscow 2025</li><li>Гендерно-нейтральный, веганский, открывает офлайн-магазины</li></ul></div>
@@ -1075,16 +1069,16 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <table>
 <thead><tr><th>Компания</th><th>Мин. цена</th><th>Макс. цена</th><th>SKU</th><th>Сегмент</th><th>Ключевые категории</th></tr></thead>
 <tbody>
-<tr><td style="color:var(--red);">GRASS</td><td class="r" style="color:var(--red);">3₽ (саше)</td><td class="r">802₽ (5л)</td><td class="r">5 линеек</td><td><span class="b-red">Масс</span></td><td>Sargan, Room, Apartment, Resto Pro</td></tr>
-<tr><td>Natura Siberica</td><td class="r">32₽ (опт)</td><td class="r">890₽</td><td class="r">98 HoReCa</td><td><span class="b-blue">Масс</span></td><td>Шампуни, гели, мыло</td></tr>
-<tr><td>Banka Home</td><td class="r">290₽</td><td class="r">2 400₽</td><td class="r">120+</td><td><span class="b-blue">Масс-мид</span></td><td>Свечи, диффузоры, мыло</td></tr>
+<tr><td style="color:var(--negative);">GRASS</td><td class="r" style="color:var(--negative);">3₽ (саше)</td><td class="r">802₽ (5л)</td><td class="r">5 линеек</td><td><span class="b-negative">Масс</span></td><td>Sargan, Room, Apartment, Resto Pro</td></tr>
+<tr><td>Natura Siberica</td><td class="r">32₽ (опт)</td><td class="r">890₽</td><td class="r">98 HoReCa</td><td><span class="b-neutral">Масс</span></td><td>Шампуни, гели, мыло</td></tr>
+<tr><td>Banka Home</td><td class="r">290₽</td><td class="r">2 400₽</td><td class="r">120+</td><td><span class="b-neutral">Масс-мид</span></td><td>Свечи, диффузоры, мыло</td></tr>
 <tr style="background:rgba(181,144,122,0.06);"><td><strong style="color:var(--gold);">Овсянников</strong></td><td class="r" style="color:var(--gold);">490₽</td><td class="r" style="color:var(--gold);">2 390₽</td><td class="r">30</td><td><span class="b-gold">Мид-премиум</span></td><td>Мыло, крем, шампунь, свечи, диффузоры</td></tr>
-<tr><td>The Act</td><td class="r">609₽</td><td class="r">1 669₽</td><td class="r">200+</td><td><span class="b-green">Мид</span></td><td>Парфюм, уход, тело</td></tr>
-<tr><td>Great Trotter</td><td class="r">650₽</td><td class="r">4 000₽</td><td class="r">126</td><td><span class="b-green">Мид-премиум</span></td><td>Аромадизайн, свечи</td></tr>
-<tr><td>Giardino Magico</td><td class="r">760₽</td><td class="r">7 600₽</td><td class="r">290</td><td><span class="b-purple">Премиум</span></td><td>Парфюм, уход, свечи, подарки</td></tr>
-<tr><td>Z&amp;R</td><td class="r">780₽</td><td class="r">5 500₽</td><td class="r">300+</td><td><span class="b-purple">Премиум</span></td><td>Парфюм, ароматы для дома</td></tr>
-<tr><td>22|11</td><td class="r">1 000₽</td><td class="r">7 777₽</td><td class="r">100</td><td><span class="b-purple">Премиум</span></td><td>Парфюм, уход</td></tr>
-<tr><td>Tonka</td><td class="r">1 800₽</td><td class="r">44 400₽</td><td class="r">70+</td><td><span class="b-red">Люкс</span></td><td>Парфюм, свечи, аромадизайн</td></tr>
+<tr><td>The Act</td><td class="r">609₽</td><td class="r">1 669₽</td><td class="r">200+</td><td><span class="b-positive">Мид</span></td><td>Парфюм, уход, тело</td></tr>
+<tr><td>Great Trotter</td><td class="r">650₽</td><td class="r">4 000₽</td><td class="r">126</td><td><span class="b-positive">Мид-премиум</span></td><td>Аромадизайн, свечи</td></tr>
+<tr><td>Giardino Magico</td><td class="r">760₽</td><td class="r">7 600₽</td><td class="r">290</td><td><span class="b-gold">Премиум</span></td><td>Парфюм, уход, свечи, подарки</td></tr>
+<tr><td>Z&amp;R</td><td class="r">780₽</td><td class="r">5 500₽</td><td class="r">300+</td><td><span class="b-gold">Премиум</span></td><td>Парфюм, ароматы для дома</td></tr>
+<tr><td>22|11</td><td class="r">1 000₽</td><td class="r">7 777₽</td><td class="r">100</td><td><span class="b-gold">Премиум</span></td><td>Парфюм, уход</td></tr>
+<tr><td>Tonka</td><td class="r">1 800₽</td><td class="r">44 400₽</td><td class="r">70+</td><td><span class="b-negative">Люкс</span></td><td>Парфюм, свечи, аромадизайн</td></tr>
 </tbody>
 </table>
 </div>
@@ -1138,28 +1132,28 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <defs><linearGradient id="gB" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#B5907A" stop-opacity="0.9"/><stop offset="100%" stop-color="#D4AD8F" stop-opacity="0.7"/></linearGradient></defs>
 <!-- Bars -->
 <text x="145" y="38" text-anchor="end" fill="#A8A098" font-size="11">Z&amp;R</text>
-<rect x="150" y="24" width="544" height="22" rx="3" fill="#4A8FE0" opacity="0.8" class="bar-animated"/>
+<rect x="150" y="24" width="544" height="22" rx="3" fill="#8A9AAA" opacity="0.8" class="bar-animated"/>
 <text x="700" y="39" fill="#E8E4DC" font-size="11" font-weight="700">6.8 млрд</text>
 
 <text x="145" y="68" text-anchor="end" fill="#A8A098" font-size="11">Mixit</text>
-<rect x="150" y="54" width="508" height="22" rx="3" fill="#9060D0" opacity="0.8" class="bar-animated" style="animation-delay:.1s"/>
+<rect x="150" y="54" width="508" height="22" rx="3" fill="#B5907A" opacity="0.8" class="bar-animated" style="animation-delay:.1s"/>
 <text x="664" y="69" fill="#E8E4DC" font-size="11" font-weight="700">6.35 млрд</text>
 <text x="665" y="69" fill="transparent" font-size="1">.</text>
 
 <text x="145" y="98" text-anchor="end" fill="#A8A098" font-size="11">Natura Sib.</text>
-<rect x="150" y="84" width="432" height="22" rx="3" fill="#3DB86A" opacity="0.8" class="bar-animated" style="animation-delay:.2s"/>
+<rect x="150" y="84" width="432" height="22" rx="3" fill="#8BAF7A" opacity="0.8" class="bar-animated" style="animation-delay:.2s"/>
 <text x="588" y="99" fill="#E8E4DC" font-size="11" font-weight="700">5.4 млрд</text>
 
 <text x="145" y="128" text-anchor="end" fill="#A8A098" font-size="11">The Act</text>
-<rect x="150" y="114" width="320" height="22" rx="3" fill="#D44040" opacity="0.8" class="bar-animated" style="animation-delay:.3s"/>
+<rect x="150" y="114" width="320" height="22" rx="3" fill="#B85C5C" opacity="0.8" class="bar-animated" style="animation-delay:.3s"/>
 <text x="476" y="129" fill="#E8E4DC" font-size="11" font-weight="700">4.0 млрд</text>
 
 <text x="145" y="158" text-anchor="end" fill="#A8A098" font-size="11">VOIS</text>
-<rect x="150" y="144" width="200" height="22" rx="3" fill="#E08040" opacity="0.8" class="bar-animated" style="animation-delay:.4s"/>
+<rect x="150" y="144" width="200" height="22" rx="3" fill="#B5907A" opacity="0.8" class="bar-animated" style="animation-delay:.4s"/>
 <text x="356" y="159" fill="#E8E4DC" font-size="11" font-weight="700">2.5 млрд</text>
 
 <text x="145" y="188" text-anchor="end" fill="#A8A098" font-size="11">Tonka</text>
-<rect x="150" y="174" width="25" height="22" rx="3" fill="#40B0A0" opacity="0.8" class="bar-animated" style="animation-delay:.5s"/>
+<rect x="150" y="174" width="25" height="22" rx="3" fill="#B5907A" opacity="0.8" class="bar-animated" style="animation-delay:.5s"/>
 <text x="181" y="189" fill="#A8A098" font-size="11">308 млн</text>
 
 <text x="145" y="218" text-anchor="end" fill="#D4AD8F" font-size="11" font-weight="700">Овсянников</text>
@@ -1173,20 +1167,20 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <text x="556" y="287" fill="#D4AD8F" font-size="11" font-weight="700">+816%</text>
 
 <text x="145" y="308" text-anchor="end" fill="#A8A098" font-size="11">VOIS</text>
-<rect x="150" y="294" width="266" height="18" rx="3" fill="#E08040" opacity="0.6" class="bar-animated" style="animation-delay:.8s"/>
-<text x="422" y="307" fill="#E08040" font-size="11" font-weight="700">+544%</text>
+<rect x="150" y="294" width="266" height="18" rx="3" fill="#B5907A" opacity="0.6" class="bar-animated" style="animation-delay:.8s"/>
+<text x="422" y="307" fill="#B5907A" font-size="11" font-weight="700">+544%</text>
 
 <text x="145" y="328" text-anchor="end" fill="#A8A098" font-size="11">The Act</text>
-<rect x="150" y="314" width="54" height="18" rx="3" fill="#D44040" opacity="0.6" class="bar-animated" style="animation-delay:.9s"/>
-<text x="210" y="327" fill="#D44040" font-size="11">+111%</text>
+<rect x="150" y="314" width="54" height="18" rx="3" fill="#B85C5C" opacity="0.6" class="bar-animated" style="animation-delay:.9s"/>
+<text x="210" y="327" fill="#B85C5C" font-size="11">+111%</text>
 
 <text x="145" y="348" text-anchor="end" fill="#A8A098" font-size="11">Mixit</text>
-<rect x="150" y="334" width="33" height="18" rx="3" fill="#9060D0" opacity="0.6" class="bar-animated" style="animation-delay:1s"/>
-<text x="189" y="347" fill="#9060D0" font-size="11">+67%</text>
+<rect x="150" y="334" width="33" height="18" rx="3" fill="#B5907A" opacity="0.6" class="bar-animated" style="animation-delay:1s"/>
+<text x="189" y="347" fill="#B5907A" font-size="11">+67%</text>
 
 <text x="145" y="368" text-anchor="end" fill="#A8A098" font-size="11">Z&amp;R</text>
-<rect x="150" y="354" width="13" height="18" rx="3" fill="#4A8FE0" opacity="0.6" class="bar-animated" style="animation-delay:1.1s"/>
-<text x="169" y="367" fill="#4A8FE0" font-size="11">+27%</text>
+<rect x="150" y="354" width="13" height="18" rx="3" fill="#8A9AAA" opacity="0.6" class="bar-animated" style="animation-delay:1.1s"/>
+<text x="169" y="367" fill="#8A9AAA" font-size="11">+27%</text>
 </svg>
 </div>
 
@@ -1197,19 +1191,19 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <table>
 <thead><tr><th>Компания</th><th>ИНН</th><th>Выручка 2024</th><th>Прибыль 2024</th><th>Сотр.</th><th>Рост YoY</th><th>Статус</th></tr></thead>
 <tbody>
-<tr style="background:rgba(212,64,64,0.04);"><td><strong>GRASS (HoReCa)</strong></td><td>3445117986</td><td class="r"><strong>~35 млрд</strong></td><td class="r pos">н/д</td><td class="r">1 056</td><td class="pos">×2 за 3 года</td><td><span class="b-green">Гигант</span></td></tr>
-<tr><td><strong>Zielinski & Rozen</strong></td><td>7716885942</td><td class="r"><strong>6.8 млрд</strong></td><td class="r pos">+1.9 млрд</td><td class="r">340</td><td class="pos">+27%</td><td><span class="b-green">Растёт</span></td></tr>
-<tr><td><strong>Mixit</strong></td><td>7733333130</td><td class="r"><strong>6.36 млрд</strong></td><td class="r neg">-420.5 млн</td><td class="r">650+</td><td class="pos">+67%</td><td><span class="b-red">Убыток</span></td></tr>
-<tr><td><strong>Natura Siberica</strong></td><td>7727615970</td><td class="r"><strong>5.4 млрд</strong></td><td class="r neg">-1.3 млрд</td><td class="r">684</td><td class="pos">+11%</td><td><span class="b-red">Убыток</span></td></tr>
-<tr><td><strong>The Act</strong></td><td>9704009302</td><td class="r"><strong>4.0 млрд</strong></td><td class="r pos">+690.2 млн</td><td class="r">399</td><td class="pos">+111%</td><td><span class="b-green">Ракета</span></td></tr>
-<tr><td><strong>VOIS</strong> (Рокет Лаунч)</td><td>9723124572</td><td class="r"><strong>2.5 млрд</strong></td><td class="r pos">+592 млн (23.7%)</td><td class="r">~400</td><td class="pos">+544%</td><td><span class="b-green">Ракета</span></td></tr>
-<tr style="background:rgba(224,128,64,0.04);"><td><strong>PUSY</strong> (Дрожь Бьюти)</td><td>7743401990</td><td class="r"><strong>3.2 млрд</strong></td><td class="r pos">+802 млн</td><td class="r">н/д</td><td class="pos">+113%</td><td><span class="b-green">Ракета</span></td></tr>
-<tr><td><strong>Tonka</strong></td><td>7735154391</td><td class="r">308 млн</td><td class="r pos">+28.8 млн</td><td class="r">35</td><td>н/д</td><td><span class="b-green">Стабильно</span></td></tr>
+<tr style="background:rgba(184,92,92,0.04);"><td><strong>GRASS (HoReCa)</strong></td><td>3445117986</td><td class="r"><strong>~35 млрд</strong></td><td class="r pos">н/д</td><td class="r">1 056</td><td class="pos">×2 за 3 года</td><td><span class="b-positive">Гигант</span></td></tr>
+<tr><td><strong>Zielinski & Rozen</strong></td><td>7716885942</td><td class="r"><strong>6.8 млрд</strong></td><td class="r pos">+1.9 млрд</td><td class="r">340</td><td class="pos">+27%</td><td><span class="b-positive">Растёт</span></td></tr>
+<tr><td><strong>Mixit</strong></td><td>7733333130</td><td class="r"><strong>6.36 млрд</strong></td><td class="r neg">-420.5 млн</td><td class="r">650+</td><td class="pos">+67%</td><td><span class="b-negative">Убыток</span></td></tr>
+<tr><td><strong>Natura Siberica</strong></td><td>7727615970</td><td class="r"><strong>5.4 млрд</strong></td><td class="r neg">-1.3 млрд</td><td class="r">684</td><td class="pos">+11%</td><td><span class="b-negative">Убыток</span></td></tr>
+<tr><td><strong>The Act</strong></td><td>9704009302</td><td class="r"><strong>4.0 млрд</strong></td><td class="r pos">+690.2 млн</td><td class="r">399</td><td class="pos">+111%</td><td><span class="b-positive">Ракета</span></td></tr>
+<tr><td><strong>VOIS</strong> (Рокет Лаунч)</td><td>9723124572</td><td class="r"><strong>2.5 млрд</strong></td><td class="r pos">+592 млн (23.7%)</td><td class="r">~400</td><td class="pos">+544%</td><td><span class="b-positive">Ракета</span></td></tr>
+<tr style="background:rgba(181,144,122,0.04);"><td><strong>PUSY</strong> (Дрожь Бьюти)</td><td>7743401990</td><td class="r"><strong>3.2 млрд</strong></td><td class="r pos">+802 млн</td><td class="r">н/д</td><td class="pos">+113%</td><td><span class="b-positive">Ракета</span></td></tr>
+<tr><td><strong>Tonka</strong></td><td>7735154391</td><td class="r">308 млн</td><td class="r pos">+28.8 млн</td><td class="r">35</td><td>н/д</td><td><span class="b-positive">Стабильно</span></td></tr>
 <tr style="background:rgba(181,144,122,0.06);"><td><strong style="color:var(--gold);">Овсянников</strong></td><td>9705202154</td><td class="r" style="color:var(--gold);"><strong>142.7 млн</strong></td><td class="r pos">+15.2 млн</td><td class="r">52</td><td class="pos"><strong>+816%</strong></td><td><span class="b-gold">Ракета</span></td></tr>
-<tr><td><strong>Giardino Magico</strong></td><td>7730277657</td><td class="r"><strong>159.5 млн</strong></td><td class="r pos">+26.2 млн</td><td class="r">18</td><td class="pos">+127%</td><td><span class="b-green">Ракета</span></td></tr>
-<tr><td><strong>Lia Lab</strong></td><td>2367013167</td><td class="r"><strong>86.3 млн</strong></td><td class="r pos">+15.3 млн</td><td class="r">19</td><td class="pos">+24%</td><td><span class="b-green">Растёт</span></td></tr>
-<tr><td><strong>Allegrini Russia</strong></td><td>7705736900</td><td class="r"><strong>345.1 млн</strong></td><td class="r pos">+21 млн</td><td class="r">10</td><td class="pos">+7%</td><td><span class="b-green">Стабильно</span></td></tr>
-<tr><td>Banka Home</td><td>ИП 782512548354</td><td class="r" style="color:var(--text3);">н/д (ИП)</td><td class="r">н/д</td><td class="r">15 бутиков</td><td>н/д</td><td><span class="b-blue">ИП</span></td></tr>
+<tr><td><strong>Giardino Magico</strong></td><td>7730277657</td><td class="r"><strong>159.5 млн</strong></td><td class="r pos">+26.2 млн</td><td class="r">18</td><td class="pos">+127%</td><td><span class="b-positive">Ракета</span></td></tr>
+<tr><td><strong>Lia Lab</strong></td><td>2367013167</td><td class="r"><strong>86.3 млн</strong></td><td class="r pos">+15.3 млн</td><td class="r">19</td><td class="pos">+24%</td><td><span class="b-positive">Растёт</span></td></tr>
+<tr><td><strong>Allegrini Russia</strong></td><td>7705736900</td><td class="r"><strong>345.1 млн</strong></td><td class="r pos">+21 млн</td><td class="r">10</td><td class="pos">+7%</td><td><span class="b-positive">Стабильно</span></td></tr>
+<tr><td>Banka Home</td><td>ИП 782512548354</td><td class="r" style="color:var(--text3);">н/д (ИП)</td><td class="r">н/д</td><td class="r">15 бутиков</td><td>н/д</td><td><span class="b-neutral">ИП</span></td></tr>
 </tbody>
 </table>
 </div>
@@ -1222,28 +1216,28 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="subtitle">Тыс. ₽ на 1 сотрудника. Овсянников — среди лидеров по эффективности.</div>
 <svg class="chart-svg" viewBox="0 0 400 280">
 <text x="140" y="28" text-anchor="end" fill="#D4AD8F" font-size="10" font-weight="700">Giardino M.</text>
-<rect x="145" y="16" width="200" height="18" rx="3" fill="#3DB86A" opacity="0.8" class="bar-animated"/>
+<rect x="145" y="16" width="200" height="18" rx="3" fill="#8BAF7A" opacity="0.8" class="bar-animated"/>
 <text x="350" y="29" fill="#E8E4DC" font-size="10" font-weight="700">8.9М</text>
 <text x="140" y="53" text-anchor="end" fill="#A8A098" font-size="10">Tonka</text>
-<rect x="145" y="41" width="176" height="18" rx="3" fill="#40B0A0" opacity="0.8" class="bar-animated" style="animation-delay:.1s"/>
+<rect x="145" y="41" width="176" height="18" rx="3" fill="#B5907A" opacity="0.8" class="bar-animated" style="animation-delay:.1s"/>
 <text x="326" y="54" fill="#E8E4DC" font-size="10">8.8М</text>
 <text x="140" y="78" text-anchor="end" fill="#A8A098" font-size="10">VOIS</text>
-<rect x="145" y="66" width="140" height="18" rx="3" fill="#E08040" opacity="0.8" class="bar-animated" style="animation-delay:.2s"/>
+<rect x="145" y="66" width="140" height="18" rx="3" fill="#B5907A" opacity="0.8" class="bar-animated" style="animation-delay:.2s"/>
 <text x="290" y="79" fill="#E8E4DC" font-size="10">6.3М</text>
 <text x="140" y="103" text-anchor="end" fill="#A8A098" font-size="10">Z&amp;R</text>
-<rect x="145" y="91" width="90" height="18" rx="3" fill="#3DB86A" opacity="0.7" class="bar-animated" style="animation-delay:.3s"/>
+<rect x="145" y="91" width="90" height="18" rx="3" fill="#8BAF7A" opacity="0.7" class="bar-animated" style="animation-delay:.3s"/>
 <text x="240" y="104" fill="#A8A098" font-size="10">4.5М*</text>
 <text x="140" y="128" text-anchor="end" fill="#A8A098" font-size="10">Lia Lab</text>
-<rect x="145" y="116" width="102" height="18" rx="3" fill="#4A8FE0" opacity="0.8" class="bar-animated" style="animation-delay:.4s"/>
+<rect x="145" y="116" width="102" height="18" rx="3" fill="#8A9AAA" opacity="0.8" class="bar-animated" style="animation-delay:.4s"/>
 <text x="252" y="129" fill="#A8A098" font-size="10">4.5М</text>
 <text x="140" y="153" text-anchor="end" fill="#D4AD8F" font-size="10" font-weight="700">Овсянников</text>
 <rect x="145" y="141" width="62" height="18" rx="3" fill="url(#gSoc)" class="bar-animated" style="animation-delay:.5s"/>
 <text x="212" y="154" fill="#D4AD8F" font-size="10" font-weight="700">2.7М</text>
 <text x="140" y="178" text-anchor="end" fill="#A8A098" font-size="10">The Act</text>
-<rect x="145" y="166" width="46" height="18" rx="3" fill="#D44040" opacity="0.7" class="bar-animated" style="animation-delay:.6s"/>
+<rect x="145" y="166" width="46" height="18" rx="3" fill="#B85C5C" opacity="0.7" class="bar-animated" style="animation-delay:.6s"/>
 <text x="196" y="179" fill="#A8A098" font-size="10">2.5М*</text>
 <text x="140" y="203" text-anchor="end" fill="#A8A098" font-size="10">Mixit</text>
-<rect x="145" y="191" width="44" height="18" rx="3" fill="#9060D0" opacity="0.7" class="bar-animated" style="animation-delay:.7s"/>
+<rect x="145" y="191" width="44" height="18" rx="3" fill="#B5907A" opacity="0.7" class="bar-animated" style="animation-delay:.7s"/>
 <text x="194" y="204" fill="#A8A098" font-size="10">2.4М*</text>
 <text x="200" y="240" text-anchor="middle" fill="#706858" font-size="9">* приблизительно по штатной численности</text>
 </svg>
@@ -1253,29 +1247,29 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="subtitle">% от выручки. Кто зарабатывает, а кто сжигает деньги?</div>
 <svg class="chart-svg" viewBox="0 0 400 280">
 <text x="140" y="28" text-anchor="end" fill="#A8A098" font-size="10">VOIS</text>
-<rect x="145" y="16" width="190" height="18" rx="3" fill="#E08040" opacity="0.8" class="bar-animated"/>
+<rect x="145" y="16" width="190" height="18" rx="3" fill="#B5907A" opacity="0.8" class="bar-animated"/>
 <text x="340" y="29" fill="#E8E4DC" font-size="10" font-weight="700">23.7%</text>
 <text x="140" y="53" text-anchor="end" fill="#A8A098" font-size="10">Lia Lab</text>
-<rect x="145" y="41" width="142" height="18" rx="3" fill="#4A8FE0" opacity="0.8" class="bar-animated" style="animation-delay:.1s"/>
+<rect x="145" y="41" width="142" height="18" rx="3" fill="#8A9AAA" opacity="0.8" class="bar-animated" style="animation-delay:.1s"/>
 <text x="292" y="54" fill="#E8E4DC" font-size="10" font-weight="700">17.7%</text>
 <text x="140" y="78" text-anchor="end" fill="#A8A098" font-size="10">The Act</text>
-<rect x="145" y="66" width="138" height="18" rx="3" fill="#D44040" opacity="0.8" class="bar-animated" style="animation-delay:.2s"/>
+<rect x="145" y="66" width="138" height="18" rx="3" fill="#B85C5C" opacity="0.8" class="bar-animated" style="animation-delay:.2s"/>
 <text x="288" y="79" fill="#E8E4DC" font-size="10">17.3%</text>
 <text x="140" y="103" text-anchor="end" fill="#A8A098" font-size="10">Giardino M.</text>
-<rect x="145" y="91" width="131" height="18" rx="3" fill="#3DB86A" opacity="0.8" class="bar-animated" style="animation-delay:.3s"/>
+<rect x="145" y="91" width="131" height="18" rx="3" fill="#8BAF7A" opacity="0.8" class="bar-animated" style="animation-delay:.3s"/>
 <text x="281" y="104" fill="#E8E4DC" font-size="10">16.4%</text>
 <text x="140" y="128" text-anchor="end" fill="#D4AD8F" font-size="10" font-weight="700">Овсянников</text>
 <rect x="145" y="116" width="85" height="18" rx="3" fill="url(#gSoc)" class="bar-animated" style="animation-delay:.4s"/>
 <text x="235" y="129" fill="#D4AD8F" font-size="10" font-weight="700">10.6%</text>
 <text x="140" y="153" text-anchor="end" fill="#A8A098" font-size="10">Tonka</text>
-<rect x="145" y="141" width="75" height="18" rx="3" fill="#40B0A0" opacity="0.8" class="bar-animated" style="animation-delay:.5s"/>
+<rect x="145" y="141" width="75" height="18" rx="3" fill="#B5907A" opacity="0.8" class="bar-animated" style="animation-delay:.5s"/>
 <text x="225" y="154" fill="#A8A098" font-size="10">9.4%</text>
 <text x="140" y="178" text-anchor="end" fill="#A8A098" font-size="10">Z&amp;R</text>
-<rect x="145" y="166" width="36" height="18" rx="3" fill="#3DB86A" opacity="0.6" class="bar-animated" style="animation-delay:.6s"/>
+<rect x="145" y="166" width="36" height="18" rx="3" fill="#8BAF7A" opacity="0.6" class="bar-animated" style="animation-delay:.6s"/>
 <text x="186" y="179" fill="#A8A098" font-size="10">~28%*</text>
-<text x="140" y="203" text-anchor="end" fill="#D44040" font-size="10" font-weight="700">Mixit</text>
-<rect x="145" y="191" width="53" height="18" rx="3" fill="#D44040" opacity="0.4" class="bar-animated" style="animation-delay:.7s"/>
-<text x="203" y="204" fill="#D44040" font-size="10" font-weight="700">-6.6%</text>
+<text x="140" y="203" text-anchor="end" fill="#B85C5C" font-size="10" font-weight="700">Mixit</text>
+<rect x="145" y="191" width="53" height="18" rx="3" fill="#B85C5C" opacity="0.4" class="bar-animated" style="animation-delay:.7s"/>
+<text x="203" y="204" fill="#B85C5C" font-size="10" font-weight="700">-6.6%</text>
 <text x="140" y="240" text-anchor="start" fill="#706858" font-size="9">* Z&R: 1.9 млрд приб. / 6.8 млрд выр.</text>
 </svg>
 </div>
@@ -1291,7 +1285,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="alert alert-red">
 <div class="alert-icon">!</div>
 <div class="alert-content">
-<h4 style="color:var(--red);">Критический пробел: минимальное digital-присутствие</h4>
+<h4 style="color:var(--negative);">Критический пробел: минимальное digital-присутствие</h4>
 <p>У Овсянникова @ovsyannikov_store: 4 287 IG + 987 TG + VK. Основатель @paulovsyannikov: 3 506 IG. Есть эфир на Москва 24, YouTube «Блог Овсянникова», сайт менторства paulovsyannikov.ru. Но разрыв гигантский: Mixit 3M IG + 653K TG, VOIS ~80K IG + 287K TG + 200 блогеров, The Act ~180K IG + 52K TG. SEO провален: по запросам «косметика для HoReCa» и «парфюмированное мыло для отелей» Овсянников не входит в топ-10.</p>
 </div>
 </div>
@@ -1312,7 +1306,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <tr><td>22|11</td><td class="hm-y2">32K</td><td class="hm-r1">Нет</td><td class="hm-r1">Нет</td><td class="hm-r1">Нет</td><td class="hm-y1">~32K</td></tr>
 <tr><td>Banka Home</td><td class="hm-y2">~62K</td><td class="hm-y1">4.5K</td><td class="hm-r1">Нет</td><td class="hm-r1">Нет</td><td class="hm-y2">~67K</td></tr>
 <tr><td>GRASS</td><td class="hm-y2">69K (@grass__official)</td><td class="hm-r1">Нет</td><td class="hm-y2">Есть</td><td class="hm-y1">Есть</td><td class="hm-y2">~70K</td></tr>
-<tr style="background:rgba(212,64,64,0.06);"><td style="color:var(--red); font-weight:700;">Овсянников</td><td class="hm-r1">4.3K</td><td class="hm-r1">987</td><td class="hm-y1">Есть</td><td class="hm-r1">М24 эфир</td><td class="hm-r2">~5.3K</td></tr>
+<tr style="background:rgba(184,92,92,0.06);"><td style="color:var(--negative); font-weight:700;">Овсянников</td><td class="hm-r1">4.3K</td><td class="hm-r1">987</td><td class="hm-y1">Есть</td><td class="hm-r1">М24 эфир</td><td class="hm-r2">~5.3K</td></tr>
 </tbody>
 </table>
 </div>
@@ -1325,38 +1319,38 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <svg class="chart-svg" viewBox="0 0 800 320">
 <defs><linearGradient id="gSoc" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#B5907A" stop-opacity="0.9"/><stop offset="100%" stop-color="#D4AD8F" stop-opacity="0.7"/></linearGradient></defs>
 <text x="145" y="38" text-anchor="end" fill="#A8A098" font-size="11">Mixit</text>
-<rect x="150" y="24" width="540" height="22" rx="3" fill="#9060D0" opacity="0.8" class="bar-animated"/>
+<rect x="150" y="24" width="540" height="22" rx="3" fill="#B5907A" opacity="0.8" class="bar-animated"/>
 <text x="696" y="39" fill="#E8E4DC" font-size="11" font-weight="700">5.4M</text>
 <text x="145" y="68" text-anchor="end" fill="#A8A098" font-size="11">Z&amp;R</text>
-<rect x="150" y="54" width="340" height="22" rx="3" fill="#3DB86A" opacity="0.8" class="bar-animated" style="animation-delay:.1s"/>
+<rect x="150" y="54" width="340" height="22" rx="3" fill="#8BAF7A" opacity="0.8" class="bar-animated" style="animation-delay:.1s"/>
 <text x="496" y="69" fill="#E8E4DC" font-size="11" font-weight="700">~1M*</text>
 <text x="145" y="98" text-anchor="end" fill="#A8A098" font-size="11">VOIS</text>
-<rect x="150" y="84" width="170" height="22" rx="3" fill="#E08040" opacity="0.8" class="bar-animated" style="animation-delay:.2s"/>
+<rect x="150" y="84" width="170" height="22" rx="3" fill="#B5907A" opacity="0.8" class="bar-animated" style="animation-delay:.2s"/>
 <text x="326" y="99" fill="#E8E4DC" font-size="11" font-weight="700">~370K</text>
 <text x="145" y="128" text-anchor="end" fill="#A8A098" font-size="11">The Act</text>
-<rect x="150" y="114" width="130" height="22" rx="3" fill="#D44040" opacity="0.8" class="bar-animated" style="animation-delay:.3s"/>
+<rect x="150" y="114" width="130" height="22" rx="3" fill="#B85C5C" opacity="0.8" class="bar-animated" style="animation-delay:.3s"/>
 <text x="286" y="129" fill="#E8E4DC" font-size="11" font-weight="700">~280K</text>
 <text x="145" y="158" text-anchor="end" fill="#A8A098" font-size="11">Natura Sib.</text>
-<rect x="150" y="144" width="90" height="22" rx="3" fill="#4A8FE0" opacity="0.8" class="bar-animated" style="animation-delay:.4s"/>
+<rect x="150" y="144" width="90" height="22" rx="3" fill="#8A9AAA" opacity="0.8" class="bar-animated" style="animation-delay:.4s"/>
 <text x="246" y="159" fill="#E8E4DC" font-size="11" font-weight="700">~170K</text>
 <text x="145" y="188" text-anchor="end" fill="#A8A098" font-size="11">Tonka</text>
-<rect x="150" y="174" width="40" height="22" rx="3" fill="#40B0A0" opacity="0.8" class="bar-animated" style="animation-delay:.5s"/>
+<rect x="150" y="174" width="40" height="22" rx="3" fill="#B5907A" opacity="0.8" class="bar-animated" style="animation-delay:.5s"/>
 <text x="196" y="189" fill="#A8A098" font-size="11">~80K</text>
 <text x="145" y="218" text-anchor="end" fill="#A8A098" font-size="11">Banka Home</text>
 <rect x="150" y="204" width="36" height="22" rx="3" fill="#706858" opacity="0.7" class="bar-animated" style="animation-delay:.6s"/>
 <text x="192" y="219" fill="#A8A098" font-size="11">~67K</text>
 <text x="145" y="248" text-anchor="end" fill="#A8A098" font-size="11">GRASS</text>
-<rect x="150" y="234" width="36" height="22" rx="3" fill="#D44040" opacity="0.5" class="bar-animated" style="animation-delay:.7s"/>
+<rect x="150" y="234" width="36" height="22" rx="3" fill="#B85C5C" opacity="0.5" class="bar-animated" style="animation-delay:.7s"/>
 <text x="192" y="249" fill="#A8A098" font-size="11">~70K</text>
 <text x="145" y="278" text-anchor="end" fill="#A8A098" font-size="11">Giardino</text>
-<rect x="150" y="264" width="26" height="22" rx="3" fill="#3DB86A" opacity="0.6" class="bar-animated" style="animation-delay:.8s"/>
+<rect x="150" y="264" width="26" height="22" rx="3" fill="#8BAF7A" opacity="0.6" class="bar-animated" style="animation-delay:.8s"/>
 <text x="182" y="279" fill="#A8A098" font-size="11">~50K</text>
 <text x="145" y="308" text-anchor="end" fill="#D4AD8F" font-size="11" font-weight="700">Овсянников</text>
 <rect x="150" y="294" width="3" height="22" rx="1" fill="url(#gSoc)" class="bar-animated" style="animation-delay:.9s"/>
-<text x="160" y="309" fill="#D44040" font-size="11" font-weight="700">~4K</text>
+<text x="160" y="309" fill="#B85C5C" font-size="11" font-weight="700">~4K</text>
 <!-- Gap annotation -->
-<line x1="158" y1="305" x2="158" y2="35" stroke="rgba(212,64,64,0.3)" stroke-width="1" stroke-dasharray="3,3"/>
-<text x="170" y="328" fill="#D44040" font-size="10" font-weight="600">разрыв ×1080</text>
+<line x1="158" y1="305" x2="158" y2="35" stroke="rgba(184,92,92,0.3)" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="170" y="328" fill="#B85C5C" font-size="10" font-weight="600">разрыв ×1080</text>
 </svg>
 </div>
 
@@ -1374,9 +1368,9 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="info-tip"><div class="ii">i</div><span><strong>Источники:</strong> Ozon, Wildberries, MPStats, аналитика маркетплейсов. Данные на февраль 2026.</span></div>
 
 <div class="grid-3">
-<div class="metric"><div class="val val-green">ТОП-1%</div><div class="lbl">Овсянников на Ozon<br>категория «Косметика»</div></div>
+<div class="metric"><div class="val val-positive">ТОП-1%</div><div class="lbl">Овсянников на Ozon<br>категория «Косметика»</div></div>
 <div class="metric"><div class="val val-gold">4.7-4.9</div><div class="lbl">Средний рейтинг<br>товаров Овсянникова</div></div>
-<div class="metric"><div class="val val-blue">61%</div><div class="lbl">Доля маркетплейсов<br>в онлайн-косметике</div></div>
+<div class="metric"><div class="val val-neutral">61%</div><div class="lbl">Доля маркетплейсов<br>в онлайн-косметике</div></div>
 </div>
 
 <div class="card">
@@ -1426,40 +1420,40 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <text x="420" y="430" text-anchor="middle" fill="#706858" font-size="12">СРЕДНЯЯ ЦЕНА →</text>
 <text x="30" y="210" text-anchor="middle" fill="#706858" font-size="12" transform="rotate(-90,30,210)">РЕЙТИНГ →</text>
 <!-- Natura Siberica: low price, 4.5-4.8 rating, huge reviews -->
-<circle cx="140" cy="190" r="32" fill="rgba(74,143,224,0.25)" stroke="#4A8FE0" stroke-width="2"/>
-<text x="140" y="186" text-anchor="middle" fill="#4A8FE0" font-size="8" font-weight="600">Natura</text>
-<text x="140" y="197" text-anchor="middle" fill="#4A8FE0" font-size="7">Siberica</text>
+<circle cx="140" cy="190" r="32" fill="rgba(138,154,170,0.25)" stroke="#8A9AAA" stroke-width="2"/>
+<text x="140" y="186" text-anchor="middle" fill="#8A9AAA" font-size="8" font-weight="600">Natura</text>
+<text x="140" y="197" text-anchor="middle" fill="#8A9AAA" font-size="7">Siberica</text>
 <!-- Mixit: low-mid price, 4.7-4.9, huge -->
-<circle cx="230" cy="114" r="36" fill="rgba(144,96,208,0.25)" stroke="#9060D0" stroke-width="2"/>
-<text x="230" y="117" text-anchor="middle" fill="#9060D0" font-size="9" font-weight="600">Mixit</text>
+<circle cx="230" cy="114" r="36" fill="rgba(181,144,122,0.25)" stroke="#B5907A" stroke-width="2"/>
+<text x="230" y="117" text-anchor="middle" fill="#B5907A" font-size="9" font-weight="600">Mixit</text>
 <!-- Овсянников: mid price, 4.7-4.9, small reviews -->
 <circle cx="310" cy="100" r="14" fill="rgba(181,144,122,0.4)" stroke="#B5907A" stroke-width="3"/>
 <text x="310" y="103" text-anchor="middle" fill="#B5907A" font-size="8" font-weight="800">OVS</text>
 <text x="310" y="84" text-anchor="middle" fill="#D4AD8F" font-size="9" font-weight="600">Овсянников</text>
 <!-- The Act: mid price, 4.7-4.9, big -->
-<circle cx="380" cy="114" r="26" fill="rgba(212,64,64,0.25)" stroke="#D44040" stroke-width="2"/>
-<text x="380" y="117" text-anchor="middle" fill="#D44040" font-size="9" font-weight="600">The Act</text>
+<circle cx="380" cy="114" r="26" fill="rgba(184,92,92,0.25)" stroke="#B85C5C" stroke-width="2"/>
+<text x="380" y="117" text-anchor="middle" fill="#B85C5C" font-size="9" font-weight="600">The Act</text>
 <!-- VOIS: mid-high price, 4.6-4.8, medium -->
-<circle cx="440" cy="170" r="20" fill="rgba(224,128,64,0.25)" stroke="#E08040" stroke-width="2"/>
-<text x="440" y="173" text-anchor="middle" fill="#E08040" font-size="9" font-weight="600">VOIS</text>
+<circle cx="440" cy="170" r="20" fill="rgba(181,144,122,0.25)" stroke="#B5907A" stroke-width="2"/>
+<text x="440" y="173" text-anchor="middle" fill="#B5907A" font-size="9" font-weight="600">VOIS</text>
 <!-- Giardino: high price, 4.6-4.9, small -->
-<circle cx="540" cy="138" r="11" fill="rgba(61,184,106,0.25)" stroke="#3DB86A" stroke-width="2"/>
-<text x="540" y="126" text-anchor="middle" fill="#3DB86A" font-size="8">Giardino</text>
+<circle cx="540" cy="138" r="11" fill="rgba(139,175,122,0.25)" stroke="#8BAF7A" stroke-width="2"/>
+<text x="540" y="126" text-anchor="middle" fill="#8BAF7A" font-size="8">Giardino</text>
 <!-- Z&R: premium, 4.8-5.0, medium-big -->
-<circle cx="600" cy="76" r="22" fill="rgba(61,184,106,0.25)" stroke="#3DB86A" stroke-width="2"/>
-<text x="600" y="72" text-anchor="middle" fill="#3DB86A" font-size="8" font-weight="600">Z&amp;R</text>
-<text x="600" y="83" text-anchor="middle" fill="#3DB86A" font-size="7">4.8-5.0</text>
+<circle cx="600" cy="76" r="22" fill="rgba(139,175,122,0.25)" stroke="#8BAF7A" stroke-width="2"/>
+<text x="600" y="72" text-anchor="middle" fill="#8BAF7A" font-size="8" font-weight="600">Z&amp;R</text>
+<text x="600" y="83" text-anchor="middle" fill="#8BAF7A" font-size="7">4.8-5.0</text>
 <!-- Tonka: luxury, 4.8, tiny reviews -->
-<circle cx="700" cy="95" r="8" fill="rgba(64,176,160,0.25)" stroke="#40B0A0" stroke-width="2"/>
-<text x="700" y="84" text-anchor="middle" fill="#40B0A0" font-size="8">Tonka</text>
+<circle cx="700" cy="95" r="8" fill="rgba(64,176,160,0.25)" stroke="#B5907A" stroke-width="2"/>
+<text x="700" y="84" text-anchor="middle" fill="#B5907A" font-size="8">Tonka</text>
 <!-- Sweet spot zone -->
 <rect x="260" y="80" width="140" height="90" rx="8" fill="rgba(181,144,122,0.04)" stroke="rgba(181,144,122,0.15)" stroke-dasharray="4,3"/>
 <text x="330" y="180" text-anchor="middle" fill="#B5907A" font-size="9" font-style="italic">sweet spot: цена/качество</text>
 </svg>
 <div class="chart-legend">
 <div class="leg-item"><div class="leg-swatch" style="background:#B5907A;"></div>Овсянников (высокий рейтинг, мало отзывов — нужен объём)</div>
-<div class="leg-item"><div class="leg-swatch" style="background:#9060D0;"></div>Mixit (лидер по отзывам)</div>
-<div class="leg-item"><div class="leg-swatch" style="background:#3DB86A;"></div>Z&amp;R (премиум, топ рейтинг)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#B5907A;"></div>Mixit (лидер по отзывам)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#8BAF7A;"></div>Z&amp;R (премиум, топ рейтинг)</div>
 </div>
 </div>
 
@@ -1485,8 +1479,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="section-desc">Что хвалят и на что жалуются покупатели парфюмированной косметики на маркетплейсах.</div>
 
 <div class="grid-2">
-<div class="card" style="border-left: 4px solid var(--green);">
-<h3 style="color:var(--green);">Что хвалят (позитив)</h3>
+<div class="card" style="border-left: 4px solid var(--positive);">
+<h3 style="color:var(--positive);">Что хвалят (позитив)</h3>
 <table>
 <thead><tr><th>Тема</th><th>Частота</th><th>Примеры</th></tr></thead>
 <tbody>
@@ -1498,8 +1492,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 </tbody>
 </table>
 </div>
-<div class="card" style="border-left: 4px solid var(--red);">
-<h3 style="color:var(--red);">На что жалуются (негатив)</h3>
+<div class="card" style="border-left: 4px solid var(--negative);">
+<h3 style="color:var(--negative);">На что жалуются (негатив)</h3>
 <table>
 <thead><tr><th>Тема</th><th>Частота</th><th>Примеры</th></tr></thead>
 <tbody>
@@ -1537,8 +1531,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <line x1="60" y1="200" x2="760" y2="200" stroke="rgba(181,144,122,0.3)" stroke-width="1"/>
 <!-- Month labels -->
 <text x="90" y="280" text-anchor="middle" fill="#A8A098" font-size="9">Янв</text>
-<text x="150" y="280" text-anchor="middle" fill="#D44040" font-size="9" font-weight="700">Фев</text>
-<text x="210" y="280" text-anchor="middle" fill="#D44040" font-size="9" font-weight="700">Мар</text>
+<text x="150" y="280" text-anchor="middle" fill="#B85C5C" font-size="9" font-weight="700">Фев</text>
+<text x="210" y="280" text-anchor="middle" fill="#B85C5C" font-size="9" font-weight="700">Мар</text>
 <text x="270" y="280" text-anchor="middle" fill="#A8A098" font-size="9">Апр</text>
 <text x="330" y="280" text-anchor="middle" fill="#A8A098" font-size="9">Май</text>
 <text x="390" y="280" text-anchor="middle" fill="#A8A098" font-size="9">Июн</text>
@@ -1547,20 +1541,20 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <text x="570" y="280" text-anchor="middle" fill="#A8A098" font-size="9">Сен</text>
 <text x="630" y="280" text-anchor="middle" fill="#A8A098" font-size="9">Окт</text>
 <text x="690" y="280" text-anchor="middle" fill="#A8A098" font-size="9">Ноя</text>
-<text x="750" y="280" text-anchor="middle" fill="#D44040" font-size="9" font-weight="700">Дек</text>
+<text x="750" y="280" text-anchor="middle" fill="#B85C5C" font-size="9" font-weight="700">Дек</text>
 <!-- Area path: seasonality curve -->
 <path d="M90,200 L150,100 L210,60 L270,220 L330,230 L390,240 L450,250 L510,220 L570,210 L630,200 L690,170 L750,70" fill="none" stroke="#B5907A" stroke-width="2.5"/>
 <path d="M90,200 L150,100 L210,60 L270,220 L330,230 L390,240 L450,250 L510,220 L570,210 L630,200 L690,170 L750,70 L750,260 L90,260 Z" fill="rgba(181,144,122,0.08)"/>
 <!-- Peak dots -->
-<circle cx="150" cy="100" r="5" fill="#D44040"/>
-<text x="150" y="90" text-anchor="middle" fill="#D44040" font-size="9" font-weight="700">23 фев</text>
-<text x="150" y="78" text-anchor="middle" fill="#D44040" font-size="8">×1.7</text>
-<circle cx="210" cy="60" r="6" fill="#D44040"/>
-<text x="210" y="48" text-anchor="middle" fill="#D44040" font-size="9" font-weight="700">8 марта</text>
-<text x="210" y="36" text-anchor="middle" fill="#D44040" font-size="8">×2.3</text>
-<circle cx="750" cy="70" r="6" fill="#D44040"/>
-<text x="750" y="58" text-anchor="middle" fill="#D44040" font-size="9" font-weight="700">НГ</text>
-<text x="750" y="46" text-anchor="middle" fill="#D44040" font-size="8">×2.2</text>
+<circle cx="150" cy="100" r="5" fill="#B85C5C"/>
+<text x="150" y="90" text-anchor="middle" fill="#B85C5C" font-size="9" font-weight="700">23 фев</text>
+<text x="150" y="78" text-anchor="middle" fill="#B85C5C" font-size="8">×1.7</text>
+<circle cx="210" cy="60" r="6" fill="#B85C5C"/>
+<text x="210" y="48" text-anchor="middle" fill="#B85C5C" font-size="9" font-weight="700">8 марта</text>
+<text x="210" y="36" text-anchor="middle" fill="#B85C5C" font-size="8">×2.3</text>
+<circle cx="750" cy="70" r="6" fill="#B85C5C"/>
+<text x="750" y="58" text-anchor="middle" fill="#B85C5C" font-size="9" font-weight="700">НГ</text>
+<text x="750" y="46" text-anchor="middle" fill="#B85C5C" font-size="8">×2.2</text>
 <!-- Regular dots -->
 <circle cx="90" cy="200" r="3" fill="#B5907A"/>
 <circle cx="270" cy="220" r="3" fill="#B5907A"/>
@@ -1573,7 +1567,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <circle cx="690" cy="170" r="3" fill="#B5907A"/>
 </svg>
 <div class="chart-legend">
-<div class="leg-item"><div class="leg-swatch" style="background:#D44040;"></div>Пиковые месяцы (×1.7-2.3 от среднего)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#B85C5C;"></div>Пиковые месяцы (×1.7-2.3 от среднего)</div>
 <div class="leg-item"><div class="leg-swatch" style="background:#B5907A;"></div>Обычные месяцы</div>
 </div>
 </div>
@@ -1590,15 +1584,15 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="grid-4">
 <div class="metric"><div class="val val-gold">142.7М₽</div><div class="lbl">Выручка 2024<br><span class="delta delta-up">+816% YoY</span></div></div>
-<div class="metric"><div class="val val-green">15.2М₽</div><div class="lbl">Чистая прибыль<br>рент. 10.6%</div></div>
-<div class="metric"><div class="val val-blue">52</div><div class="lbl">Сотрудников<br><span class="delta delta-up">с 6 за год</span></div></div>
-<div class="metric"><div class="val val-purple">30</div><div class="lbl">SKU<br>3 авторских аромата</div></div>
+<div class="metric"><div class="val val-positive">15.2М₽</div><div class="lbl">Чистая прибыль<br>рент. 10.6%</div></div>
+<div class="metric"><div class="val val-neutral">52</div><div class="lbl">Сотрудников<br><span class="delta delta-up">с 6 за год</span></div></div>
+<div class="metric"><div class="val val-gold">30</div><div class="lbl">SKU<br>3 авторских аромата</div></div>
 </div>
 <div class="grid-4" style="margin-top:16px;">
-<div class="metric"><div class="val val-green">700+</div><div class="lbl">Ресторанов-партнёров<br>WRF, Novikov, SHE, Lintu</div></div>
+<div class="metric"><div class="val val-positive">700+</div><div class="lbl">Ресторанов-партнёров<br>WRF, Novikov, SHE, Lintu</div></div>
 <div class="metric"><div class="val val-gold">600 м²</div><div class="lbl">Производство<br><span class="delta delta-up">с 40 м²</span></div></div>
-<div class="metric"><div class="val val-blue">ТОП-1%</div><div class="lbl">Селлер Ozon<br>косметика</div></div>
-<div class="metric"><div class="val val-orange">5 / 10</div><div class="lbl">Товарных знаков / лицензий<br>зарегистрировано</div></div>
+<div class="metric"><div class="val val-neutral">ТОП-1%</div><div class="lbl">Селлер Ozon<br>косметика</div></div>
+<div class="metric"><div class="val val-gold">5 / 10</div><div class="lbl">Товарных знаков / лицензий<br>зарегистрировано</div></div>
 </div>
 
 <div class="card" style="margin-top:20px;">
@@ -1736,21 +1730,21 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="section-desc">Масштабирование команды, производства и мощностей Овсянникова за 2023-2024.</div>
 
 <div class="grid-3">
-<div class="card" style="border-left:4px solid var(--green);">
-<h3 style="color:var(--green);">Команда</h3>
+<div class="card" style="border-left:4px solid var(--positive);">
+<h3 style="color:var(--positive);">Команда</h3>
 <div style="text-align:center; padding:10px 0;">
 <span style="font-size:2.2em; font-weight:700; color:var(--text3);">6</span>
 <span style="font-size:1.5em; color:var(--gold); margin:0 12px;">→</span>
-<span style="font-size:2.2em; font-weight:700; color:var(--green);">52</span>
+<span style="font-size:2.2em; font-weight:700; color:var(--positive);">52</span>
 </div>
 <p style="font-size:0.88em; color:var(--text2); text-align:center;">+767% за год. Производство, логистика, продажи, контроль качества.</p>
 </div>
-<div class="card" style="border-left:4px solid var(--blue);">
-<h3 style="color:var(--blue);">Производство</h3>
+<div class="card" style="border-left:4px solid var(--neutral);">
+<h3 style="color:var(--neutral);">Производство</h3>
 <div style="text-align:center; padding:10px 0;">
 <span style="font-size:2.2em; font-weight:700; color:var(--text3);">40 м²</span>
 <span style="font-size:1.5em; color:var(--gold); margin:0 12px;">→</span>
-<span style="font-size:2.2em; font-weight:700; color:var(--blue);">600 м²</span>
+<span style="font-size:2.2em; font-weight:700; color:var(--neutral);">600 м²</span>
 </div>
 <p style="font-size:0.88em; color:var(--text2); text-align:center;">×15 площадь. Полный контроль качества, сертификация.</p>
 </div>
@@ -1770,12 +1764,12 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <table>
 <thead><tr><th>Компания</th><th>Выручка</th><th>Сотр.</th><th>Выручка/сотр.</th><th>Оценка</th></tr></thead>
 <tbody>
-<tr><td>The Act</td><td class="r">4.0 млрд</td><td class="r">399</td><td class="r pos"><strong>10.0М₽</strong></td><td><span class="b-green">Отлично</span></td></tr>
-<tr><td>Z&amp;R</td><td class="r">6.8 млрд</td><td class="r">340</td><td class="r pos"><strong>20.0М₽</strong></td><td><span class="b-green">Топ</span></td></tr>
-<tr><td>Natura Siberica</td><td class="r">5.4 млрд</td><td class="r">684</td><td class="r">7.9М₽</td><td><span class="b-green">Хорошо</span></td></tr>
-<tr><td>VOIS</td><td class="r">2.5 млрд</td><td class="r">~400</td><td class="r">6.3М₽</td><td><span class="b-blue">Норма</span></td></tr>
-<tr style="background:rgba(181,144,122,0.06);"><td style="color:var(--gold); font-weight:700;">Овсянников</td><td class="r" style="color:var(--gold);">142.7М</td><td class="r">52</td><td class="r" style="color:var(--gold);"><strong>2.74М₽</strong></td><td><span class="b-orange">Рост</span></td></tr>
-<tr><td>Mixit</td><td class="r">6.35 млрд</td><td class="r">263</td><td class="r pos">24.1М₽</td><td><span class="b-green">Топ (но убыток)</span></td></tr>
+<tr><td>The Act</td><td class="r">4.0 млрд</td><td class="r">399</td><td class="r pos"><strong>10.0М₽</strong></td><td><span class="b-positive">Отлично</span></td></tr>
+<tr><td>Z&amp;R</td><td class="r">6.8 млрд</td><td class="r">340</td><td class="r pos"><strong>20.0М₽</strong></td><td><span class="b-positive">Топ</span></td></tr>
+<tr><td>Natura Siberica</td><td class="r">5.4 млрд</td><td class="r">684</td><td class="r">7.9М₽</td><td><span class="b-positive">Хорошо</span></td></tr>
+<tr><td>VOIS</td><td class="r">2.5 млрд</td><td class="r">~400</td><td class="r">6.3М₽</td><td><span class="b-neutral">Норма</span></td></tr>
+<tr style="background:rgba(181,144,122,0.06);"><td style="color:var(--gold); font-weight:700;">Овсянников</td><td class="r" style="color:var(--gold);">142.7М</td><td class="r">52</td><td class="r" style="color:var(--gold);"><strong>2.74М₽</strong></td><td><span class="b-gold">Рост</span></td></tr>
+<tr><td>Mixit</td><td class="r">6.35 млрд</td><td class="r">263</td><td class="r pos">24.1М₽</td><td><span class="b-positive">Топ (но убыток)</span></td></tr>
 </tbody>
 </table>
 <p style="font-size:0.85em; color:var(--text2); margin-top:12px;">Выручка/сотрудник у Овсянникова (2.74М₽) ниже рынка — естественно для стадии масштабирования. По мере роста выручки при стабильной команде показатель вырастет. Целевой ориентир: 5-7М₽/сотр. к 2027.</p>
@@ -1787,8 +1781,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="section-desc">Стратегический план роста на 18-24 месяца, основанный на паттернах успешных конкурентов.</div>
 
 <div class="grid-3">
-<div class="card" style="border-left:4px solid var(--green);">
-<h3 style="color:var(--green);">Фаза 1: 142М → 250М (6 мес)</h3>
+<div class="card" style="border-left:4px solid var(--positive);">
+<h3 style="color:var(--positive);">Фаза 1: 142М → 250М (6 мес)</h3>
 <ul style="list-style:none; padding:0;">
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Запуск TG-канала и Instagram (цель: 10K)</li>
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Расширение ассортимента: +20 SKU (свечи, гель для душа подарочный, мини-наборы)</li>
@@ -1796,8 +1790,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Участие в Gastreet, InterCHARM</li>
 </ul>
 </div>
-<div class="card" style="border-left:4px solid var(--blue);">
-<h3 style="color:var(--blue);">Фаза 2: 250М → 400М (12 мес)</h3>
+<div class="card" style="border-left:4px solid var(--neutral);">
+<h3 style="color:var(--neutral);">Фаза 2: 250М → 400М (12 мес)</h3>
 <ul style="list-style:none; padding:0;">
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; B2B: выход в регионы (СПб, Сочи, Казань)</li>
 <li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Контент-армия: 5-10 креаторов (паттерн VOIS)</li>
@@ -1853,13 +1847,13 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <text x="610" y="104" text-anchor="middle" fill="#D4AD8F" font-size="10">~400М</text>
 <text x="710" y="72" text-anchor="middle" fill="#D4AD8F" font-size="10" font-weight="700">500М</text>
 <!-- VOIS reference line -->
-<polyline points="160,246 310,148 460,30" fill="none" stroke="#E08040" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.5"/>
-<text x="470" y="28" fill="#E08040" font-size="9" opacity="0.7">VOIS: 388М→2.5 млрд (×6.4)</text>
+<polyline points="160,246 310,148 460,30" fill="none" stroke="#B5907A" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.5"/>
+<text x="470" y="28" fill="#B5907A" font-size="9" opacity="0.7">VOIS: 388М→2.5 млрд (×6.4)</text>
 <!-- Phase labels -->
-<rect x="270" y="170" width="80" height="18" rx="4" fill="rgba(61,184,106,0.15)"/>
-<text x="310" y="183" text-anchor="middle" fill="#3DB86A" font-size="8" font-weight="600">Фаза 1</text>
-<rect x="420" y="130" width="80" height="18" rx="4" fill="rgba(74,143,224,0.15)"/>
-<text x="460" y="143" text-anchor="middle" fill="#4A8FE0" font-size="8" font-weight="600">Фаза 2</text>
+<rect x="270" y="170" width="80" height="18" rx="4" fill="rgba(139,175,122,0.15)"/>
+<text x="310" y="183" text-anchor="middle" fill="#8BAF7A" font-size="8" font-weight="600">Фаза 1</text>
+<rect x="420" y="130" width="80" height="18" rx="4" fill="rgba(138,154,170,0.15)"/>
+<text x="460" y="143" text-anchor="middle" fill="#8A9AAA" font-size="8" font-weight="600">Фаза 2</text>
 <rect x="560" y="84" width="80" height="18" rx="4" fill="rgba(181,144,122,0.15)"/>
 <text x="600" y="97" text-anchor="middle" fill="#B5907A" font-size="8" font-weight="600">Фаза 3</text>
 </svg>
@@ -1905,13 +1899,13 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
     fill="rgba(181,144,122,0.2)" stroke="#B5907A" stroke-width="2.5"/>
 <!-- Z&R (green) -->
 <polygon points="0,-49 140,-81 94,54 0,162 -16,9 -16,-9"
-    fill="rgba(61,184,106,0.1)" stroke="#3DB86A" stroke-width="1.5" stroke-dasharray="4,2"/>
+    fill="rgba(139,175,122,0.1)" stroke="#8BAF7A" stroke-width="1.5" stroke-dasharray="4,2"/>
 <!-- The Act (red) -->
 <polygon points="0,-108 125,-72 125,72 0,130 -47,27 -109,-63"
-    fill="rgba(212,64,64,0.1)" stroke="#D44040" stroke-width="1.5" stroke-dasharray="4,2"/>
+    fill="rgba(184,92,92,0.1)" stroke="#B85C5C" stroke-width="1.5" stroke-dasharray="4,2"/>
 <!-- VOIS (orange) -->
 <polygon points="0,-162 140,-81 125,72 0,54 -8,5 -78,-45"
-    fill="rgba(224,128,64,0.1)" stroke="#E08040" stroke-width="1.5" stroke-dasharray="4,2"/>
+    fill="rgba(181,144,122,0.1)" stroke="#B5907A" stroke-width="1.5" stroke-dasharray="4,2"/>
 <!-- Dot labels for Овсянников -->
 <circle cx="0" cy="-180" r="4" fill="#B5907A"/>
 <circle cx="8" cy="-5" r="4" fill="#B5907A"/>
@@ -1923,9 +1917,9 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 </svg>
 <div class="chart-legend">
 <div class="leg-item"><div class="leg-swatch" style="background:#B5907A;"></div>Овсянников (рост + B2B + прибыль, но 0 digital)</div>
-<div class="leg-item"><div class="leg-swatch" style="background:#D44040;"></div>The Act (сбалансированный)</div>
-<div class="leg-item"><div class="leg-swatch" style="background:#E08040;"></div>VOIS (digital + рост, но нет B2B)</div>
-<div class="leg-item"><div class="leg-swatch" style="background:#3DB86A;"></div>Z&amp;R (бренд + ассортимент, замедление)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#B85C5C;"></div>The Act (сбалансированный)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#B5907A;"></div>VOIS (digital + рост, но нет B2B)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#8BAF7A;"></div>Z&amp;R (бренд + ассортимент, замедление)</div>
 </div>
 </div>
 
@@ -1984,35 +1978,35 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <text x="68" y="280" text-anchor="middle" fill="#706858" font-size="8">15.6М</text>
 <!-- VOIS 2023/2024 -->
 <rect x="175" y="275" width="22" height="15" rx="2" fill="#706858" class="vbar-animated" style="animation-delay:.2s"/>
-<rect x="202" y="170" width="22" height="120" rx="2" fill="#E08040" class="vbar-animated" style="animation-delay:.3s"/>
-<text x="215" y="165" text-anchor="middle" fill="#E08040" font-size="9" font-weight="700">2.5 млрд</text>
+<rect x="202" y="170" width="22" height="120" rx="2" fill="#B5907A" class="vbar-animated" style="animation-delay:.3s"/>
+<text x="215" y="165" text-anchor="middle" fill="#B5907A" font-size="9" font-weight="700">2.5 млрд</text>
 <text x="188" y="270" text-anchor="middle" fill="#706858" font-size="8">388М</text>
 <!-- The Act 2023/2024 -->
 <rect x="295" y="230" width="22" height="60" rx="2" fill="#706858" class="vbar-animated" style="animation-delay:.4s"/>
-<rect x="322" y="130" width="22" height="160" rx="2" fill="#D44040" class="vbar-animated" style="animation-delay:.5s"/>
-<text x="335" y="125" text-anchor="middle" fill="#D44040" font-size="9" font-weight="700">4.0 млрд</text>
+<rect x="322" y="130" width="22" height="160" rx="2" fill="#B85C5C" class="vbar-animated" style="animation-delay:.5s"/>
+<text x="335" y="125" text-anchor="middle" fill="#B85C5C" font-size="9" font-weight="700">4.0 млрд</text>
 <text x="308" y="225" text-anchor="middle" fill="#706858" font-size="8">1.9 млрд</text>
 <!-- Mixit 2023/2024 -->
 <rect x="415" y="190" width="22" height="100" rx="2" fill="#706858" class="vbar-animated" style="animation-delay:.6s"/>
-<rect x="442" y="100" width="22" height="190" rx="2" fill="#9060D0" class="vbar-animated" style="animation-delay:.7s"/>
-<text x="455" y="95" text-anchor="middle" fill="#9060D0" font-size="9" font-weight="700">6.35 млрд</text>
+<rect x="442" y="100" width="22" height="190" rx="2" fill="#B5907A" class="vbar-animated" style="animation-delay:.7s"/>
+<text x="455" y="95" text-anchor="middle" fill="#B5907A" font-size="9" font-weight="700">6.35 млрд</text>
 <text x="428" y="185" text-anchor="middle" fill="#706858" font-size="8">3.8 млрд</text>
 <!-- Z&R 2023/2024 -->
 <rect x="535" y="170" width="22" height="120" rx="2" fill="#706858" class="vbar-animated" style="animation-delay:.8s"/>
-<rect x="562" y="70" width="22" height="220" rx="2" fill="#3DB86A" class="vbar-animated" style="animation-delay:.9s"/>
-<text x="575" y="65" text-anchor="middle" fill="#3DB86A" font-size="9" font-weight="700">6.8 млрд</text>
+<rect x="562" y="70" width="22" height="220" rx="2" fill="#8BAF7A" class="vbar-animated" style="animation-delay:.9s"/>
+<text x="575" y="65" text-anchor="middle" fill="#8BAF7A" font-size="9" font-weight="700">6.8 млрд</text>
 <text x="548" y="165" text-anchor="middle" fill="#706858" font-size="8">5.35 млрд</text>
 <!-- Natura Siberica 2023/2024 -->
 <rect x="655" y="140" width="22" height="150" rx="2" fill="#706858" class="vbar-animated" style="animation-delay:1s"/>
-<rect x="682" y="90" width="22" height="200" rx="2" fill="#4A8FE0" class="vbar-animated" style="animation-delay:1.1s"/>
-<text x="695" y="85" text-anchor="middle" fill="#4A8FE0" font-size="9" font-weight="700">5.4 млрд</text>
+<rect x="682" y="90" width="22" height="200" rx="2" fill="#8A9AAA" class="vbar-animated" style="animation-delay:1.1s"/>
+<text x="695" y="85" text-anchor="middle" fill="#8A9AAA" font-size="9" font-weight="700">5.4 млрд</text>
 <text x="668" y="135" text-anchor="middle" fill="#706858" font-size="8">4.9 млрд</text>
 </svg>
 <div class="chart-legend">
 <div class="leg-item"><div class="leg-swatch" style="background:#706858;"></div>2023</div>
 <div class="leg-item"><div class="leg-swatch" style="background:#B5907A;"></div>Овсянников 2024</div>
-<div class="leg-item"><div class="leg-swatch" style="background:#D44040;"></div>The Act 2024</div>
-<div class="leg-item"><div class="leg-swatch" style="background:#E08040;"></div>VOIS 2024</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#B85C5C;"></div>The Act 2024</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#B5907A;"></div>VOIS 2024</div>
 </div>
 </div>
 
@@ -2049,12 +2043,12 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <thead><tr><th>Метрика</th><th style="color:var(--gold);">Овсянников</th><th>The Act</th><th>VOIS</th><th>Z&amp;R</th><th>Вывод</th></tr></thead>
 <tbody>
 <tr><td>Выручка</td><td class="r" style="color:var(--gold);">142.7М</td><td class="r">4.0 млрд</td><td class="r">2.5 млрд</td><td class="r">6.8 млрд</td><td>Разрыв в 28-48×, но рост быстрее всех</td></tr>
-<tr><td>Рост YoY</td><td class="r pos"><strong>+816%</strong></td><td class="r pos">+111%</td><td class="r pos">+544%</td><td class="r pos">+27%</td><td><span class="b-green">Лидер по темпу</span></td></tr>
+<tr><td>Рост YoY</td><td class="r pos"><strong>+816%</strong></td><td class="r pos">+111%</td><td class="r pos">+544%</td><td class="r pos">+27%</td><td><span class="b-positive">Лидер по темпу</span></td></tr>
 <tr><td>Рентабельность</td><td class="r pos">10.6%</td><td class="r pos">17.3%</td><td class="r pos">23.7%</td><td class="r">н/д</td><td>Здоровый рост, но можно выше</td></tr>
 <tr><td>Сотрудники</td><td class="r">52</td><td class="r">399</td><td class="r">~400</td><td class="r">340</td><td>Компактная команда</td></tr>
-<tr><td>SKU</td><td class="r neg">27</td><td class="r">230+</td><td class="r">150+</td><td class="r">300+</td><td><span class="b-red">Критический разрыв</span></td></tr>
-<tr><td>Соцсети (все)</td><td class="r neg">~5K</td><td class="r">380K+</td><td class="r">~1M</td><td class="r">207K</td><td><span class="b-red">Разрыв ×76</span></td></tr>
-<tr><td>B2B партнёры</td><td class="r pos"><strong>1500+</strong></td><td class="r">Начинает</td><td class="r">0</td><td class="r">0</td><td><span class="b-green">Абсолютный лидер</span></td></tr>
+<tr><td>SKU</td><td class="r neg">27</td><td class="r">230+</td><td class="r">150+</td><td class="r">300+</td><td><span class="b-negative">Критический разрыв</span></td></tr>
+<tr><td>Соцсети (все)</td><td class="r neg">~5K</td><td class="r">380K+</td><td class="r">~1M</td><td class="r">207K</td><td><span class="b-negative">Разрыв ×76</span></td></tr>
+<tr><td>B2B партнёры</td><td class="r pos"><strong>1500+</strong></td><td class="r">Начинает</td><td class="r">0</td><td class="r">0</td><td><span class="b-positive">Абсолютный лидер</span></td></tr>
 </tbody>
 </table>
 </div>
@@ -2108,7 +2102,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <li style="padding:8px 0; font-size:0.88em; color:var(--text2);">Планы по привлечению инвестиций или кредитам</li>
 </ul>
 </div>
-<div class="card" style="border-left:4px solid var(--blue);">
+<div class="card" style="border-left:4px solid var(--neutral);">
 <h3>Рынок и стратегия</h3>
 <ul style="list-style:none; padding:0;">
 <li style="padding:8px 0; font-size:0.88em; color:var(--text2); border-bottom:1px solid var(--border);">Доля повторных заказов (retention) B2B-клиентов</li>
@@ -2388,17 +2382,17 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <table>
 <thead><tr><th>Компания</th><th>Instagram</th><th>Telegram</th><th>VK</th><th>Статус</th></tr></thead>
 <tbody>
-<tr style="background:rgba(212,64,64,0.06);"><td style="color:var(--gold);"><strong>Овсянников</strong></td><td>@ovsyannikov_store 4 287</td><td>@ovsyannikov_store 987</td><td>vk.com/ovsyannikov_store (активна, слоган 2026: «Вместо слов — ощущения»)</td><td><span class="b-red">Критично</span></td></tr>
-<tr><td>Mixit</td><td class="pos">@mixit_ru ~3M + осн. 1M</td><td class="pos">@mixit_mood 653K</td><td class="pos">~~180K</td><td><span class="b-green">Лидер</span></td></tr>
-<tr><td>Z&amp;R</td><td>@zielinskiandrozen_official 181K</td><td class="neg">Нет</td><td>5-10K</td><td><span class="b-blue">IG-only</span></td></tr>
-<tr><td>Natura Siberica</td><td>@naturasiberica_ru ~108K</td><td>@natura_siberica_ru 14 292</td><td class="pos">47K</td><td><span class="b-green">Мульти</span></td></tr>
-<tr><td>VOIS</td><td>@vois_cosmetics_ ~80K</td><td class="pos">@vois_cosmetics 287K</td><td>Мало</td><td><span class="b-green">TG-фокус</span></td></tr>
-<tr><td>The Act</td><td>@theactlabs ~180K</td><td class="pos">@theactlabs 51.6K</td><td>30-50K</td><td><span class="b-green">Активный</span></td></tr>
-<tr><td>Giardino Magico</td><td>@giardinomagico_profumeria 32K</td><td class="neg">Нет</td><td>Есть</td><td><span class="b-blue">Средний</span></td></tr>
-<tr><td>Tonka</td><td>@tonkaperfumes 37K</td><td class="neg">Нет</td><td>Мало</td><td><span class="b-blue">Нишевый</span></td></tr>
-<tr><td>Banka Home</td><td>@bankahome ~62K</td><td>@banka_home 4 460</td><td class="neg">Нет</td><td><span class="b-blue">IG-фокус</span></td></tr>
-<tr><td>22|11</td><td>@2211cosmetics ~32K</td><td class="neg">Нет</td><td class="neg">Нет</td><td><span class="b-blue">Нишевый</span></td></tr>
-<tr><td>GRASS</td><td>@grass__official 69.4K</td><td class="neg">Нет</td><td class="pos">Есть</td><td><span class="b-blue">Корп.</span></td></tr>
+<tr style="background:rgba(184,92,92,0.06);"><td style="color:var(--gold);"><strong>Овсянников</strong></td><td>@ovsyannikov_store 4 287</td><td>@ovsyannikov_store 987</td><td>vk.com/ovsyannikov_store (активна, слоган 2026: «Вместо слов — ощущения»)</td><td><span class="b-negative">Критично</span></td></tr>
+<tr><td>Mixit</td><td class="pos">@mixit_ru ~3M + осн. 1M</td><td class="pos">@mixit_mood 653K</td><td class="pos">~~180K</td><td><span class="b-positive">Лидер</span></td></tr>
+<tr><td>Z&amp;R</td><td>@zielinskiandrozen_official 181K</td><td class="neg">Нет</td><td>5-10K</td><td><span class="b-neutral">IG-only</span></td></tr>
+<tr><td>Natura Siberica</td><td>@naturasiberica_ru ~108K</td><td>@natura_siberica_ru 14 292</td><td class="pos">47K</td><td><span class="b-positive">Мульти</span></td></tr>
+<tr><td>VOIS</td><td>@vois_cosmetics_ ~80K</td><td class="pos">@vois_cosmetics 287K</td><td>Мало</td><td><span class="b-positive">TG-фокус</span></td></tr>
+<tr><td>The Act</td><td>@theactlabs ~180K</td><td class="pos">@theactlabs 51.6K</td><td>30-50K</td><td><span class="b-positive">Активный</span></td></tr>
+<tr><td>Giardino Magico</td><td>@giardinomagico_profumeria 32K</td><td class="neg">Нет</td><td>Есть</td><td><span class="b-neutral">Средний</span></td></tr>
+<tr><td>Tonka</td><td>@tonkaperfumes 37K</td><td class="neg">Нет</td><td>Мало</td><td><span class="b-neutral">Нишевый</span></td></tr>
+<tr><td>Banka Home</td><td>@bankahome ~62K</td><td>@banka_home 4 460</td><td class="neg">Нет</td><td><span class="b-neutral">IG-фокус</span></td></tr>
+<tr><td>22|11</td><td>@2211cosmetics ~32K</td><td class="neg">Нет</td><td class="neg">Нет</td><td><span class="b-neutral">Нишевый</span></td></tr>
+<tr><td>GRASS</td><td>@grass__official 69.4K</td><td class="neg">Нет</td><td class="pos">Есть</td><td><span class="b-neutral">Корп.</span></td></tr>
 </tbody>
 </table>
 </div>
@@ -2564,25 +2558,25 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 </table></div>
 </div>
 
-<div class="founder-card" style="border-color:rgba(212,64,64,0.3);">
+<div class="founder-card" style="border-color:rgba(184,92,92,0.3);">
 <div class="founder-head"><h4>Михаил Николаевич Грачёв</h4><div class="role">Основатель и CEO, GRASS (ТД ГраСС, с 2003)</div></div>
 <div class="founder-body"><table>
 <tr><td>ИНН</td><td>3445117986 (р.п. Средняя Ахтуба, Волгоград)</td></tr>
 <tr><td>Масштаб</td><td>~35 млрд выр. (2024), 1 056 сотр., 65+ стран</td></tr>
 <tr><td>HoReCa</td><td>170K объектов, ~1 млн номеров, 20% рынка РФ, 5% СНГ</td></tr>
 <tr><td>Линейки</td><td>Sargan (мид), Room (бюджет), Apartment, Resto Pro, Laundry Pro</td></tr>
-<tr><td>Статус</td><td style="color:var(--orange);">Масс-маркет: саше от 3₽ — не прямой конкурент, но может двигаться в премиум</td></tr>
+<tr><td>Статус</td><td style="color:var(--gold);">Масс-маркет: саше от 3₽ — не прямой конкурент, но может двигаться в премиум</td></tr>
 </table></div>
 </div>
 
-<div class="founder-card" style="border-color:rgba(212,64,64,0.3);">
+<div class="founder-card" style="border-color:rgba(184,92,92,0.3);">
 <div class="founder-head"><h4>Асланян Светлана Александровна</h4><div class="role">Основатель (100%), Asense / ООО «АС-КОСМЕТИКС» (авг 2024)</div></div>
 <div class="founder-body"><table>
 <tr><td>ИНН</td><td>9729383189, ОГРН 1247700553913</td></tr>
-<tr><td>Статус</td><td style="color:var(--red);">0₽ выручки, 1 сотр., убыток -491К₽</td></tr>
+<tr><td>Статус</td><td style="color:var(--negative);">0₽ выручки, 1 сотр., убыток -491К₽</td></tr>
 <tr><td>Позиция</td><td>«Премиум косметика для HoReCa» — клон модели Овсянникова</td></tr>
 <tr><td>Каналы</td><td>Лэтуаль, Gold Apple (уже!), сайты asense.store + asense-hotels.ru</td></tr>
-<tr><td>Угроза</td><td style="color:var(--orange);">Пока нулевая, но следить: если привлечёт инвестиции — прямой конкурент</td></tr>
+<tr><td>Угроза</td><td style="color:var(--gold);">Пока нулевая, но следить: если привлечёт инвестиции — прямой конкурент</td></tr>
 </table></div>
 </div>
 
@@ -2618,7 +2612,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--blue-bg); color:var(--blue);">ТП</div>
+<div class="quote-avatar" style="background:var(--neutral-bg); color:var(--neutral);">ТП</div>
 <div><div class="quote-name">Татьяна Пучкова</div><div class="quote-role">Председатель правления РПКА</div></div>
 </div>
 <div class="quote-body">
@@ -2629,7 +2623,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--green-bg); color:var(--green);">АМ</div>
+<div class="quote-avatar" style="background:var(--positive-bg); color:var(--positive);">АМ</div>
 <div><div class="quote-name">Анна Молчанова</div><div class="quote-role">CEO, Natura Siberica</div></div>
 </div>
 <div class="quote-body">
@@ -2640,7 +2634,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--purple-bg); color:var(--purple);">ДА</div>
+<div class="quote-avatar" style="background:var(--gold-bg); color:var(--gold);">ДА</div>
 <div><div class="quote-name">Дарья Александрова</div><div class="quote-role">Директор по продукту, VOIS</div></div>
 </div>
 <div class="quote-body">
@@ -2651,7 +2645,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--orange-bg); color:var(--orange);">ЮГ</div>
+<div class="quote-avatar" style="background:var(--gold-bg); color:var(--gold);">ЮГ</div>
 <div><div class="quote-name">Юлия Григорьева</div><div class="quote-role">Ритейл-эксперт, «Ритейл Дока»</div></div>
 </div>
 <div class="quote-body">
@@ -2673,7 +2667,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--green-bg); color:var(--green);">ДМ</div>
+<div class="quote-avatar" style="background:var(--positive-bg); color:var(--positive);">ДМ</div>
 <div><div class="quote-name">Дарья Медведева</div><div class="quote-role">Руководитель «Косметика», Wildberries</div></div>
 </div>
 <div class="quote-body">
@@ -2684,7 +2678,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:rgba(64,176,160,0.1); color:var(--teal);">ИЗ</div>
+<div class="quote-avatar" style="background:rgba(64,176,160,0.1); color:var(--gold);">ИЗ</div>
 <div><div class="quote-name">Инна Зубрицкая</div><div class="quote-role">Парфюмерный стилист</div></div>
 </div>
 <div class="quote-body">
@@ -2695,7 +2689,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--red-bg); color:var(--red);">АЧ</div>
+<div class="quote-avatar" style="background:var(--negative-bg); color:var(--negative);">АЧ</div>
 <div><div class="quote-name">Алексей Чеботок</div><div class="quote-role">Управляющий директор, Arnest Group</div></div>
 </div>
 <div class="quote-body">
@@ -2706,7 +2700,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--green-bg); color:var(--green);">ОК</div>
+<div class="quote-avatar" style="background:var(--positive-bg); color:var(--positive);">ОК</div>
 <div><div class="quote-name">Олег Капитонов</div><div class="quote-role">CEO, Золотое Яблоко</div></div>
 </div>
 <div class="quote-body">
@@ -2717,7 +2711,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--purple-bg); color:var(--purple);">ЕС</div>
+<div class="quote-avatar" style="background:var(--gold-bg); color:var(--gold);">ЕС</div>
 <div><div class="quote-name">Евгений Сидоров</div><div class="quote-role">Директор, GRASS (HoReCa)</div></div>
 </div>
 <div class="quote-body">
@@ -2728,7 +2722,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--blue-bg); color:var(--blue);">ИГ</div>
+<div class="quote-avatar" style="background:var(--neutral-bg); color:var(--neutral);">ИГ</div>
 <div><div class="quote-name">Ислам Гедиев</div><div class="quote-role">Сооснователь, VOIS (Forbes «30 до 30»)</div></div>
 </div>
 <div class="quote-body">
@@ -2739,7 +2733,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--orange-bg); color:var(--orange);">МР</div>
+<div class="quote-avatar" style="background:var(--gold-bg); color:var(--gold);">МР</div>
 <div><div class="quote-name">Михаил Рязанов</div><div class="quote-role">CEO, The Act</div></div>
 </div>
 <div class="quote-body">
@@ -2762,7 +2756,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:rgba(64,176,160,0.1); color:var(--teal);">АШ</div>
+<div class="quote-avatar" style="background:rgba(64,176,160,0.1); color:var(--gold);">АШ</div>
 <div><div class="quote-name">Антон Шалаев</div><div class="quote-role">Заместитель министра промышленности и торговли РФ</div></div>
 </div>
 <div class="quote-body">
@@ -2773,7 +2767,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--red-bg); color:var(--red);">ЕН</div>
+<div class="quote-avatar" style="background:var(--negative-bg); color:var(--negative);">ЕН</div>
 <div><div class="quote-name">Елена Назарова</div><div class="quote-role">Сооснователь, Mixit</div></div>
 </div>
 <div class="quote-body">
@@ -2784,7 +2778,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--green-bg); color:var(--green);">НК</div>
+<div class="quote-avatar" style="background:var(--positive-bg); color:var(--positive);">НК</div>
 <div><div class="quote-name">Наталья Козлова</div><div class="quote-role">Руководитель InterCHARM</div></div>
 </div>
 <div class="quote-body">
@@ -2795,7 +2789,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--purple-bg); color:var(--purple);">АК</div>
+<div class="quote-avatar" style="background:var(--gold-bg); color:var(--gold);">АК</div>
 <div><div class="quote-name">Андрей Козлов</div><div class="quote-role">Аналитик, Data Insight</div></div>
 </div>
 <div class="quote-body">
@@ -2806,7 +2800,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--orange-bg); color:var(--orange);">ВЗ</div>
+<div class="quote-avatar" style="background:var(--gold-bg); color:var(--gold);">ВЗ</div>
 <div><div class="quote-name">Владимир Загорский</div><div class="quote-role">Сооснователь, VOIS</div></div>
 </div>
 <div class="quote-body">
@@ -2817,7 +2811,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--blue-bg); color:var(--blue);">ДН</div>
+<div class="quote-avatar" style="background:var(--neutral-bg); color:var(--neutral);">ДН</div>
 <div><div class="quote-name">Дмитрий Никулин</div><div class="quote-role">CEO, Zielinski & Rozen (Россия)</div></div>
 </div>
 <div class="quote-body">
@@ -2828,7 +2822,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--green-bg); color:var(--green);">АФ</div>
+<div class="quote-avatar" style="background:var(--positive-bg); color:var(--positive);">АФ</div>
 <div><div class="quote-name">Анна Флеминг</div><div class="quote-role">Партнёр Gold Bridge Point, экс-бренд-директор Sephora и L'Oreal Luxe в России</div></div>
 </div>
 <div class="quote-body">
@@ -2839,7 +2833,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--purple-bg); color:var(--purple);">КС</div>
+<div class="quote-avatar" style="background:var(--gold-bg); color:var(--gold);">КС</div>
 <div><div class="quote-name">Кристина Судеревская</div><div class="quote-role">Сооснователь «Краснополянской косметики», «РБК Визионеры»</div></div>
 </div>
 <div class="quote-body">
@@ -2850,7 +2844,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--orange-bg); color:var(--orange);">ДГ</div>
+<div class="quote-avatar" style="background:var(--gold-bg); color:var(--gold);">ДГ</div>
 <div><div class="quote-name">Дарья Гринчак</div><div class="quote-role">Руководитель группы по работе с клиентами, NielsenIQ</div></div>
 </div>
 <div class="quote-body">
@@ -2861,7 +2855,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:rgba(64,176,160,0.1); color:var(--teal);">ИГл</div>
+<div class="quote-avatar" style="background:rgba(64,176,160,0.1); color:var(--gold);">ИГл</div>
 <div><div class="quote-name">Иван Гладун</div><div class="quote-role">Генеральный директор «Крымская Роза»</div></div>
 </div>
 <div class="quote-body">
@@ -2872,7 +2866,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--red-bg); color:var(--red);">ТЛ</div>
+<div class="quote-avatar" style="background:var(--negative-bg); color:var(--negative);">ТЛ</div>
 <div><div class="quote-name">Татьяна Лебедева</div><div class="quote-role">Директор Союза производителей органической и натуральной косметики ONE</div></div>
 </div>
 <div class="quote-body">
@@ -2896,7 +2890,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--blue-bg); color:var(--blue);">НШ</div>
+<div class="quote-avatar" style="background:var(--neutral-bg); color:var(--neutral);">НШ</div>
 <div><div class="quote-name">Наталья Шик</div><div class="quote-role">Основатель SHIK Cosmetics</div></div>
 </div>
 <div class="quote-body">
@@ -2907,7 +2901,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--green-bg); color:var(--green);">ЕК</div>
+<div class="quote-avatar" style="background:var(--positive-bg); color:var(--positive);">ЕК</div>
 <div><div class="quote-name">Елена Корякова</div><div class="quote-role">PARFUM-M, 20+ лет в индустрии</div></div>
 </div>
 <div class="quote-body">
@@ -2918,7 +2912,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--purple-bg); color:var(--purple);">АДС</div>
+<div class="quote-avatar" style="background:var(--gold-bg); color:var(--gold);">АДС</div>
 <div><div class="quote-name">Анна Дычева-Смирнова</div><div class="quote-role">ExpoVisionRus, организатор InterCHARM</div></div>
 </div>
 <div class="quote-body">
@@ -2930,7 +2924,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--orange-bg); color:var(--orange);">ЗЯ</div>
+<div class="quote-avatar" style="background:var(--gold-bg); color:var(--gold);">ЗЯ</div>
 <div><div class="quote-name">Золотое Яблоко</div><div class="quote-role">Данные опроса покупателей, 2025</div></div>
 </div>
 <div class="quote-body">
@@ -2942,7 +2936,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--blue-bg); color:var(--blue);">ЕП</div>
+<div class="quote-avatar" style="background:var(--neutral-bg); color:var(--neutral);">ЕП</div>
 <div><div class="quote-name">Евгений Пресняков</div><div class="quote-role">Инвестор (10%), Carely Group (ART&FACT, Verifique)</div></div>
 </div>
 <div class="quote-body">
@@ -2954,7 +2948,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:rgba(64,176,160,0.1); color:var(--teal);">ИВ</div>
+<div class="quote-avatar" style="background:rgba(64,176,160,0.1); color:var(--gold);">ИВ</div>
 <div><div class="quote-name">Илья Волков</div><div class="quote-role">Сооснователь, Библиотека Ароматов (экс-Газпром)</div></div>
 </div>
 <div class="quote-body">
@@ -2966,7 +2960,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--green-bg); color:var(--green);">ИК</div>
+<div class="quote-avatar" style="background:var(--positive-bg); color:var(--positive);">ИК</div>
 <div><div class="quote-name">Илья Калинин</div><div class="quote-role">CEO, Carely Group</div></div>
 </div>
 <div class="quote-body">
@@ -2978,7 +2972,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--red-bg); color:var(--red);">ЕП</div>
+<div class="quote-avatar" style="background:var(--negative-bg); color:var(--negative);">ЕП</div>
 <div><div class="quote-name">Елнара Подберезская</div><div class="quote-role">Парфюмер, основатель PDBR Perfume (Нижний Новгород)</div></div>
 </div>
 <div class="quote-body">
@@ -2990,7 +2984,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <div class="quote-card">
 <div class="quote-header">
-<div class="quote-avatar" style="background:var(--purple-bg); color:var(--purple);">КК</div>
+<div class="quote-avatar" style="background:var(--gold-bg); color:var(--gold);">КК</div>
 <div><div class="quote-name">Катерина Карпова</div><div class="quote-role">Основатель PURE LOVE, химик-косметолог, RSCCP</div></div>
 </div>
 <div class="quote-body">
@@ -3024,7 +3018,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="timeline-item"><div class="timeline-date">Февраль 2025</div><div class="timeline-text">Giardino Magico открывает третий бутик в Москве (Б. Никитская, 17). Выручка +127%, маржа 16.4%.</div></div>
 <div class="timeline-item"><div class="timeline-date">Май 2025</div><div class="timeline-text">Обязательная маркировка мыла в «Честном знаке». Июль: шампуни. Октябрь: декоративная косметика. Барьер для серого импорта.</div></div>
 <div class="timeline-item"><div class="timeline-date">Май 2025</div><div class="timeline-text">Giardino Magico закрывает флагманский бутик в СПб (Б. Проспект П.С.) — аренда до 10 тыс. ₽/м², бренд не выдержал. (РБК Петербург, 25.05.2025)</div></div>
-<div class="timeline-item"><div class="timeline-date">Июль 2025</div><div class="timeline-text" style="color:var(--red);">Скандал Z&R: депутат Госдумы Луговой обвинил в финансировании ВСУ → прокурорская проверка. Z&R отрицает. (Фонтанка, РИА, ПРАЙМ)</div></div>
+<div class="timeline-item"><div class="timeline-date">Июль 2025</div><div class="timeline-text" style="color:var(--negative);">Скандал Z&R: депутат Госдумы Луговой обвинил в финансировании ВСУ → прокурорская проверка. Z&R отрицает. (Фонтанка, РИА, ПРАЙМ)</div></div>
 <div class="timeline-item"><div class="timeline-date">Август 2025</div><div class="timeline-text">VOIS проводит ребрендинг 2.0: «осознанная забота о себе», слоган «Твой выход. Наш уход.» (Buro 24/7)</div></div>
 <div class="timeline-item"><div class="timeline-date">Сентябрь 2025</div><div class="timeline-text">Золотое Яблоко: инвестиция 4 млрд ₽ в завод (Подмосковье/Урал, мощность к 2027-30). Бренд FOR ME + контрактное пр-во. Также — выход в Шанхай и Саудовскую Аравию (2026).</div></div>
 <div class="timeline-item"><div class="timeline-date">Сентябрь 2025</div><div class="timeline-text">Carely Group (ART&FACT, Verifique) выходит на 370K ед./мес на своём заводе. Оценка — 1 млрд ₽. Вход в Магнит Косметик.</div></div>
@@ -3038,7 +3032,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="timeline-item"><div class="timeline-date">Декабрь 2025</div><div class="timeline-text">Wildberries-Russ (РВБ) покупает «Рив Гош» за 5-6 млрд ₽: 252 магазина, бренд «Аромалюкс». Омниканальная стратегия: МП + физическая розница beauty.</div></div>
 <div class="timeline-item"><div class="timeline-date">2025</div><div class="timeline-text">Продажи парфюмерии ×2 за 2025 (доля рынка 24% vs 12.5% в 2024). Производителей парфюмерии: 626 (×1.8 за год). Ozon beauty +66%. Россия — №3 в мире по происхождению косметики (после Франции и Ю. Кореи).</div></div>
 <div class="timeline-item"><div class="timeline-date">2025</div><div class="timeline-text">Новые игроки: Abrau Club Cosmetics (от «Абрау-Дюрсо»), Touche Soleil (от «Фанагории»), Co-lab No Stress (от S7 Group). Тренд: непрофильные компании запускают косметику.</div></div>
-<div class="timeline-item"><div class="timeline-date">2026</div><div class="timeline-text" style="color:var(--green);">«Честный знак» — разрешительный режим: без DataMatrix товар физически не пройдёт через кассы и МП-склады. Штрафы: ИП 10-30K₽, ЮЛ 100-300K₽. «Серая зона» закрыта. Для Овсянникова (собственный завод) — конкурентный ров.</div></div>
+<div class="timeline-item"><div class="timeline-date">2026</div><div class="timeline-text" style="color:var(--positive);">«Честный знак» — разрешительный режим: без DataMatrix товар физически не пройдёт через кассы и МП-склады. Штрафы: ИП 10-30K₽, ЮЛ 100-300K₽. «Серая зона» закрыта. Для Овсянникова (собственный завод) — конкурентный ров.</div></div>
 <div class="timeline-item"><div class="timeline-date">Январь 2026</div><div class="timeline-text">Ozon регистрирует «Kix beauty» (Роспатент): баттеры, кремы для ног, уход за телом. Контрактное пр-во, эксклюзив на Ozon. Первый российский МП со своим beauty-брендом.</div></div>
 <div class="timeline-item"><div class="timeline-date">2025-2026</div><div class="timeline-text">Бум строительства: Биофармлаб — 1.5 млрд (МО), GRASS — склад бывший Coca-Cola 16K м² (Волжский), эмульгаторы — 2.6 млрд, полиизобутилен для косметики — 2.5 млрд (Омск). Первое в РФ производство белых масел для косметики.</div></div>
 <div class="timeline-item"><div class="timeline-date">Февраль 2026</div><div class="timeline-text">Arnest UniRus покупает российский бизнес Avon за 4.72 млрд ₽ (завод Наро-Фоминск, 19 линий, 700+ SKU, R&D от Natura). Консолидация рынка.</div></div>
