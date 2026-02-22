@@ -48,13 +48,6 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .hero .date { margin-top: 14px; font-size: 0.85em; color: var(--text3); position: relative; }
 .hero .badges { display: flex; gap: 10px; justify-content: center; margin-top: 20px; flex-wrap: wrap; position: relative; }
 .hero .hbadge { background: rgba(181,144,122,0.1); border: 1px solid var(--gold-border); border-radius: 20px; padding: 6px 16px; font-size: 0.82em; color: var(--gold2); }
-.tab-bar { display:flex; justify-content:center; gap:0; background:var(--bg2); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; }
-.tab-btn { background:none; border:none; color:var(--text3); font-size:1em; padding:16px 40px; cursor:pointer; letter-spacing:0.06em; font-family:inherit; position:relative; transition:color .2s; text-transform:uppercase; font-weight:500; }
-.tab-btn:hover { color:var(--text); }
-.tab-btn.active { color:var(--gold); }
-.tab-btn.active::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--gold); }
-.tab-content { display:none; }
-.tab-content.active { display:block; }
 .nav { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 14px 0; position: sticky; top: 0; z-index: 100; }
 .nav .container { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; padding: 0 24px; }
 .nav a { color: var(--gold); text-decoration: none; font-size: 0.72em; padding: 5px 10px; border: 1px solid var(--border); border-radius: 4px; transition: all .2s; letter-spacing: 0.5px; text-transform: uppercase; }
@@ -227,7 +220,7 @@ tr:hover { background: rgba(181,144,122,0.03); }
 .corr-neg { background: rgba(184,92,92,0.2); color: var(--negative); font-weight: 700; text-align: center; }
 footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.82em; border-top: 1px solid var(--border); margin-top: 60px; }
 @media (max-width:1024px) { .ov-grid-5 { grid-template-columns:repeat(3,1fr); } }
-@media (max-width:768px) { .hero h1 { font-size: 1.8em; } .swot-grid { grid-template-columns: 1fr; } .ov-grid-5, .ov-grid-3 { grid-template-columns:1fr 1fr; } .ov-grid-2 { grid-template-columns:1fr; } .tab-btn { padding:14px 20px; font-size:0.88em; } .bar-label { width: 100px; font-size: 0.75em; } }
+@media (max-width:768px) { .hero h1 { font-size: 1.8em; } .swot-grid { grid-template-columns: 1fr; } .ov-grid-5, .ov-grid-3 { grid-template-columns:1fr 1fr; } .ov-grid-2 { grid-template-columns:1fr; } .bar-label { width: 100px; font-size: 0.75em; } }
 </style>
 </head>
 <body>
@@ -248,140 +241,6 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
     </div>
 </div>
 
-<!-- TAB BAR -->
-<div class="tab-bar">
-    <button class="tab-btn active" onclick="switchTab('overview')">Обзор</button>
-    <button class="tab-btn" onclick="switchTab('full')">Полный анализ</button>
-</div>
-
-<!-- ═══════ TAB 1: ОБЗОР ═══════ -->
-<div id="tab-overview" class="tab-content active">
-<div class="container">
-
-<!-- ВЕРДИКТ -->
-<div style="text-align:center; padding:30px 0 10px;">
-    <p style="color:var(--text3); font-size:0.88em; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px;">Ключевой вывод</p>
-    <p style="font-size:1.4em; color:var(--text); font-weight:300; max-width:900px; margin:0 auto; line-height:1.5;">
-        Овсянников — <span style="color:var(--positive); font-weight:600;">самый быстрорастущий бренд</span> сегмента (+816% за год) с
-        <span style="color:var(--positive); font-weight:600;">прибыльной моделью</span> (15.2М чистой прибыли) и
-        <span style="color:var(--gold); font-weight:600;">1 500+ B2B партнёрами</span>, но с
-        <span style="color:var(--negative); font-weight:600;">критическим digital-разрывом</span> (~5K vs 4.9M у Mixit) и
-        <span style="color:var(--gold); font-weight:600;">растущей угрозой от The Act</span> в HoReCa-нише
-    </p>
-</div>
-
-<!-- 5 КЛЮЧЕВЫХ МЕТРИК -->
-<div class="ov-grid ov-grid-5" style="margin-top:24px;">
-    <div class="ov-stat">
-        <div class="num val-gold">142.7М</div>
-        <div class="lbl">Выручка 2024<br><span class="delta delta-up">+816%</span></div>
-    </div>
-    <div class="ov-stat">
-        <div class="num val-positive">15.2М</div>
-        <div class="lbl">Чистая прибыль<br>рентабельность 10.6%</div>
-    </div>
-    <div class="ov-stat">
-        <div class="num val-gold">1 500+</div>
-        <div class="lbl">B2B партнёров<br>WRF, Novikov, S7, РЖД</div>
-    </div>
-    <div class="ov-stat">
-        <div class="num val-positive">52</div>
-        <div class="lbl">Сотрудников<br><span class="delta delta-up">с 6 за год</span></div>
-    </div>
-    <div class="ov-stat">
-        <div class="num val-neutral">ТОП-1%</div>
-        <div class="lbl">Селлеров Ozon<br>косметика и ароматы</div>
-    </div>
-</div>
-
-<!-- СВЕТОФОР -->
-<div class="ov-grid ov-grid-2" style="margin-top:24px;">
-<div class="ov-block" style="border-color:rgba(139,175,122,0.3);">
-<h3 style="color:var(--positive);">Что работает</h3>
-<div class="ov-verdict ov-verdict-green"><div class="icon">+</div><div><strong>Рост +816%</strong> — быстрее всех в сегменте (VOIS +544%, The Act +111%)</div></div>
-<div class="ov-verdict ov-verdict-green"><div class="icon">+</div><div><strong>Прибыльность с первого года</strong> — 15.2М прибыли (Mixit с 6.35 млрд в убытке!)</div></div>
-<div class="ov-verdict ov-verdict-green"><div class="icon">+</div><div><strong>Двойная модель B2B + B2C</strong> — диверсификация: HoReCa 1500+ + ТОП-1% Ozon</div></div>
-<div class="ov-verdict ov-verdict-green"><div class="icon">+</div><div><strong>Собственное производство</strong> — от 40 м² до 600 м², контроль качества и маржи</div></div>
-<div class="ov-verdict ov-verdict-green"><div class="icon">+</div><div><strong>«Честный знак» = барьер</strong> — маркировка мыла с мая 2025, шампуней с июля. Своё производство = преимущество</div></div>
-</div>
-<div class="ov-block" style="border-color:rgba(184,92,92,0.3);">
-<h3 style="color:var(--negative);">Что не работает</h3>
-<div class="ov-verdict ov-verdict-red"><div class="icon">!</div><div><strong>Минимальный digital</strong> — ~4K Instagram vs Mixit ~3M IG + 655K TG, VOIS ~80K IG + 287K TG, The Act ~180K IG + 52K TG</div></div>
-<div class="ov-verdict ov-verdict-red"><div class="icon">!</div><div><strong>SEO отсутствует</strong> — не входит в топ по «парфюмированное мыло для отелей»</div></div>
-<div class="ov-verdict ov-verdict-red"><div class="icon">!</div><div><strong>Узкий ассортимент</strong> — 30 SKU (уже есть свечи и диффузоры) vs 290 у Giardino Magico, 200+ у The Act (1М ед./мес)</div></div>
-<div class="ov-verdict ov-verdict-red"><div class="icon">!</div><div><strong>Комиссии МП +58-63%</strong> — WB: 31.5% совокупная нагрузка (было 19.6%), Ozon: 22.9% (было 14%)</div></div>
-<div class="ov-verdict ov-verdict-red"><div class="icon">!</div><div><strong>The Act входит в HoReCa</strong> — с 9М+ клиентов, заводом 1М ед./мес, диспенсерами и ценой на 40% ниже</div></div>
-</div>
-</div>
-
-<!-- 4 НЕОТЛОЖНЫХ ДЕЙСТВИЯ -->
-<div class="ov-block" style="border-color:var(--gold-border); margin-top:24px;">
-<h3>4 неотложных действия</h3>
-<div class="ov-action" style="border-left-color:var(--negative);">
-    <div class="title" style="color:var(--negative);">1. Запустить Telegram-канал + Instagram</div>
-    <div class="why">Критический разрыв: ~3-5K Instagram — это ничего. Mixit имеет ~3M Instagram + 655K TG, VOIS 287K TG + 200 блогеров в штате. Контент: backstage производства, коллаборации, новинки. Цель: 50K TG за 6 месяцев.</div>
-</div>
-<div class="ov-action" style="border-left-color:var(--gold);">
-    <div class="title" style="color:var(--gold);">2. Расширить ассортимент до 50+ SKU</div>
-    <div class="why">30 SKU (свечи и диффузоры уже запущены!) vs 290 у Giardino Magico. Следующие шаги: автоароматизаторы (тестируются), бальзамы, мини-форматы для отелей. Цель 50+ SKU. Кросс-селл повышает средний чек B2B на 30-40%.</div>
-</div>
-<div class="ov-action" style="border-left-color:var(--gold);">
-    <div class="title">3. Защититься от The Act в HoReCa</div>
-    <div class="why">The Act (4 млрд, завод 1М ед./мес) уже продаёт диспенсеры для отелей через Gastreet и METRO. Их козырь: «бренд, который 9М+ гостей уже знают» + Cosmoscow 2025. Ответ: эксклюзивность + кастомизация + премиальное качество.</div>
-</div>
-<div class="ov-action" style="border-left-color:var(--neutral);">
-    <div class="title" style="color:var(--neutral);">4. Выйти в СНГ (Казахстан)</div>
-    <div class="why">Экспорт российской косметики в Казахстан +19% в 2025. Спрос удвоился. Минпромторг планирует транспортные субсидии для экспортёров косметики. Окно возможностей 2026-2027.</div>
-</div>
-</div>
-
-<!-- ТОП-5 КОНКУРЕНТОВ -->
-<div class="ov-block" style="margin-top:24px;">
-<h3>Топ-7 угроз</h3>
-<table>
-<thead><tr><th>Конкурент</th><th>Выручка</th><th>Рост YoY</th><th>Угроза</th><th>Почему опасен</th></tr></thead>
-<tbody>
-<tr><td><strong>The Act</strong></td><td class="r">4.0 млрд</td><td class="pos">+111%</td><td class="neg">Критичная</td><td>Входит в HoReCa с диспенсерами, 9М+ клиентов знают бренд, завод 1М ед./мес, цена на 40% ниже</td></tr>
-<tr><td><strong>Giardino Magico</strong></td><td class="r">159.5 млн</td><td class="pos">+127%</td><td class="neg">Высокая</td><td>Выручка на 12% выше Овсянникова! 290 SKU, маржа 16.4%, 120+ HoReCa</td></tr>
-<tr><td><strong>Allegrini Russia</strong></td><td class="r">345 млн</td><td class="pos">+7%</td><td class="neg">Высокая</td><td>18 лет на рынке, итальянское качество, Metropol/Savoy, кастомизация аромата с парфюмерами Грасса</td></tr>
-<tr><td><strong>VOIS</strong></td><td class="r">2.5 млрд</td><td class="pos">+544%</td><td style="color:var(--gold);">Средняя</td><td>200 блогеров, 60 новинок/год, но производство в Китае и нет HoReCa</td></tr>
-<tr><td><strong>Zielinski & Rozen</strong></td><td class="r">6.8 млрд</td><td class="pos">+27%</td><td style="color:var(--gold);">Средняя ↓</td><td>Скандал Госдумы (07.2025): обвинение в финансировании ВСУ. 300+ исков. ЦУМ Киев разорвал франшизу</td></tr>
-<tr><td><strong>Tonka</strong></td><td class="r">308 млн</td><td>н/д</td><td style="color:var(--gold);">Средняя</td><td>70+ отелей, Four Seasons, но luxury-сегмент — не прямой конкурент</td></tr>
-<tr><td><strong>GRASS</strong></td><td class="r">~35 млрд</td><td class="pos">×2 за 3г</td><td style="color:var(--gold);">Фоновая</td><td>170K объектов, масс-маркет (от 3₽). Не премиум, но если двинется вверх — подавит масштабом</td></tr>
-</tbody>
-</table>
-</div>
-
-<!-- 3 СТРАТЕГИЧЕСКИХ ХОДА -->
-<div class="ov-block" style="margin-top:24px;">
-<h3>3 стратегических хода</h3>
-<div class="ov-grid ov-grid-3">
-<div style="text-align:center; padding:16px;">
-    <div style="width:48px; height:48px; border-radius:50%; background:var(--gold); color:var(--bg); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.3em; margin:0 auto 12px;">1</div>
-    <p style="font-weight:700; color:var(--text); margin-bottom:8px;">Контент-машина</p>
-    <p style="font-size:0.85em; color:var(--text2);">VOIS доказал: 200 блогеров = 2.5 млрд выручки. Овсянникову достаточно 10 креаторов для TG + Instagram + Shorts. Backstage производства, коллаборации с отелями, рецепты ароматов.</p>
-</div>
-<div style="text-align:center; padding:16px;">
-    <div style="width:48px; height:48px; border-radius:50%; background:var(--gold); color:var(--bg); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.3em; margin:0 auto 12px;">2</div>
-    <p style="font-weight:700; color:var(--text); margin-bottom:8px;">Экосистема HoReCa</p>
-    <p style="font-size:0.85em; color:var(--text2);">Диспенсеры + мыло + крем + диффузор + свечи = полная ольфакторная идентичность отеля. Tonka делает это за 8000₽/свеча. Овсянников может за 2000₽ — в 4× доступнее.</p>
-</div>
-<div style="text-align:center; padding:16px;">
-    <div style="width:48px; height:48px; border-radius:50%; background:var(--gold); color:var(--bg); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.3em; margin:0 auto 12px;">3</div>
-    <p style="font-weight:700; color:var(--text); margin-bottom:8px;">Дорожная карта → 500М</p>
-    <p style="font-size:0.85em; color:var(--text2);">142М → 300М (B2B масштабирование + новые SKU) → 500М (B2C маркетплейсы + СНГ экспорт). Горизонт: 18-24 месяца. Паттерн The Act: B2C бренд → B2B продажи.</p>
-</div>
-</div>
-</div>
-
-<!-- CTA -->
-<a class="ov-cta" onclick="switchTab('full')">Читать полный анализ — 31 секция · 7 частей · 12 графиков · 36 цитат · 16 фаундеров →</a>
-
-</div>
-</div>
-
-<!-- ═══════ TAB 2: ПОЛНЫЙ АНАЛИЗ ═══════ -->
-<div id="tab-full" class="tab-content">
 
 <!-- NAV -->
 <div class="nav" id="full-nav">
@@ -412,6 +271,16 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
     <a href="#s24" style="color:var(--text3);">V. Прил.</a>
     <a href="#s26" style="background:rgba(184,92,92,0.1); border-color:rgba(184,92,92,0.3);">VI. Фактчек</a>
     <a href="#s29" style="background:rgba(181,144,122,0.1); border-color:rgba(181,144,122,0.3);">VII. Фаундеры</a>
+    <a href="#s32" style="background:rgba(181,144,122,0.15); border-color:rgba(181,144,122,0.4);">VIII. Павлу</a>
+    <a href="#s33">Каналы</a>
+    <a href="#s34">Рейтинг</a>
+    <a href="#s35">Модели</a>
+    <a href="#s36">Юнит-эк.</a>
+    <a href="#s37">Преимущества</a>
+    <a href="#s38">Масштаб</a>
+    <a href="#s39">1 млрд</a>
+    <a href="#s40">SKU</a>
+    <a href="#s41">Методология</a>
 </div>
 </div>
 
@@ -424,7 +293,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="section-head"><div class="section-num">1</div><h2>Рынок косметики и парфюмерии РФ 2021–2026</h2></div>
 <div class="section-desc">Российский рынок красоты — 1.16 трлн ₽ с долей отечественных брендов 68-80%. После ухода западных компаний — структурная трансформация.</div>
 
-<div class="info-tip"><div class="ii">i</div><span><strong>Источники:</strong> Минпромторг/ТАСС (дек 2025), INFOLine, BusinesStat, rb.ru, Zdrav.Expert, Mordor Intelligence</span></div>
+<div class="info-tip"><div class="ii">i</div><span><strong>Источники:</strong> <a href="https://tass.ru/ekonomika/22745891" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">Минпромторг/ТАСС</a> (дек 2025), INFOLine, BusinesStat, <a href="https://rb.ru/story/russian-cosmetics-brands/" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">rb.ru</a>, Zdrav.Expert, <a href="https://www.mordorintelligence.com/industry-reports/russia-cosmetics-products-market" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">Mordor Intelligence</a></span></div>
 
 <div class="grid-3">
 <div class="metric"><div class="val val-gold">1.16 трлн ₽</div><div class="lbl">Рынок красоты РФ 2025<br><span class="delta delta-up">+16.8% к 2023</span></div></div>
@@ -635,7 +504,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="section-head"><div class="section-num">4</div><h2>Каналы продаж: D2C vs E-Commerce vs B2B</h2></div>
 <div class="section-desc">Экономика каждого канала для парфюмированной косметики. Маркетплейсы = 61% онлайна, но маржа сжимается. B2B HoReCa = стабильный якорь с высокой LTV.</div>
 
-<div class="info-tip"><div class="ii">i</div><span><strong>Источники:</strong> INFOLine, Data Insight, Ozon/WB отчёты, GRASS, horeca.estate, rb.ru</span></div>
+<div class="info-tip"><div class="ii">i</div><span><strong>Источники:</strong> INFOLine, <a href="https://datainsight.ru/ecommerce2024" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">Data Insight</a>, Ozon/WB отчёты, GRASS, <a href="https://horeca.estate/" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">horeca.estate</a>, <a href="https://rb.ru/story/russian-cosmetics-brands/" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">rb.ru</a></span></div>
 
 <div class="grid-4">
 <div class="metric"><div class="val val-gold">61%</div><div class="lbl">Маркетплейсы<br>доля онлайн-продаж</div></div>
@@ -1134,7 +1003,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <!-- СЕКЦИЯ 10: Финансы конкурентов -->
 <div class="section" id="s10">
 <div class="section-head"><div class="section-num">10</div><h2>Финансы конкурентов — ФНС</h2></div>
-<div class="info-tip"><div class="ii">i</div><span><strong>Источники:</strong> Rusprofile, Saby.ru (СБИС), Reputation.ru, Companium.ru, Checko.ru, Audit-it.ru, TAdviser, Forbes/СПАРК, Интерфакс. Все данные верифицированы.</span></div>
+<div class="info-tip"><div class="ii">i</div><span><strong>Источники:</strong> <a href="https://www.rusprofile.ru/" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">Rusprofile</a>, <a href="https://saby.ru/" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">Saby.ru (СБИС)</a>, Reputation.ru, Companium.ru, <a href="https://checko.ru/" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">Checko.ru</a>, <a href="https://www.audit-it.ru/" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">Audit-it.ru</a>, <a href="https://www.tadviser.ru/" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">TAdviser</a>, Forbes/СПАРК, Интерфакс. Все данные верифицированы.</span></div>
 
 <!-- SVG: Horizontal bars — revenue -->
 <div class="chart-container">
@@ -1385,6 +1254,8 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <div class="metric"><div class="val val-neutral">61%</div><div class="lbl">Доля маркетплейсов<br>в онлайн-косметике</div></div>
 </div>
 
+<div class="info-tip"><div class="ii">i</div><span><strong>ТОП-1% Ozon</strong> — товар входит в 1% самых продаваемых в своей категории. Расчёт: перцентильный рейтинг за 28 дней среди всех товаров с продажами. Ozon Beauty: 31М клиентов, 111М заказов, 87К продавцов, рост +42% (H1 2025 к 2024). Средняя частота: 6+ заказов/год. <a href="https://seller.ozon.ru/media/boost/samye-populyarnye-tovary-na-ozon/" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">Ozon Seller</a>, <a href="https://e-pepper.ru/blogs/news/analitika-i-trendy-beauty-rynka-vmeste-s-ozon" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">e-pepper/Ozon Beauty</a></span></div>
+
 <div class="card">
 <h3>Присутствие на маркетплейсах</h3>
 <div style="overflow-x:auto;">
@@ -1593,49 +1464,248 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <!-- СЕКЦИЯ 16: Ключевые метрики -->
 <div class="section" id="s16">
 <div class="section-head"><div class="section-num">16</div><h2>Ключевые метрики Овсянникова</h2></div>
+<div class="info-tip"><div class="ii">i</div><span><strong>Источник:</strong> Данные компании (управленческий учёт 2025, предоставлены основателем). Выручка 2024: 142.7М (ФНС) / 155М (управленка). Расхождение ~8.6% — типично для УСН vs управленка.</span></div>
 
 <div class="grid-4">
-<div class="metric"><div class="val val-gold">142.7М₽</div><div class="lbl">Выручка 2024<br><span class="delta delta-up">+816% YoY</span></div></div>
-<div class="metric"><div class="val val-positive">15.2М₽</div><div class="lbl">Чистая прибыль<br>рент. 10.6%</div></div>
-<div class="metric"><div class="val val-neutral">52</div><div class="lbl">Сотрудников<br><span class="delta delta-up">с 6 за год</span></div></div>
-<div class="metric"><div class="val val-gold">30</div><div class="lbl">SKU<br>3 авторских аромата</div></div>
+<div class="metric"><div class="val val-gold">260М₽</div><div class="lbl">Выручка 2025<br><span class="delta delta-up">+68% YoY</span></div></div>
+<div class="metric"><div class="val val-positive">108М₽</div><div class="lbl">B2B канал<br>42% выручки</div></div>
+<div class="metric"><div class="val val-positive">152М₽</div><div class="lbl">Маркетплейсы<br>58% выручки</div></div>
+<div class="metric"><div class="val val-gold">+13.2М</div><div class="lbl">Run rate ЧП/год<br>Q4 после оптимизации</div></div>
 </div>
 <div class="grid-4" style="margin-top:16px;">
-<div class="metric"><div class="val val-positive">700+</div><div class="lbl">Ресторанов-партнёров<br>WRF, Novikov, SHE, Lintu</div></div>
-<div class="metric"><div class="val val-gold">600 м²</div><div class="lbl">Производство<br><span class="delta delta-up">с 40 м²</span></div></div>
-<div class="metric"><div class="val val-neutral">ТОП-1%</div><div class="lbl">Селлер Ozon<br>косметика</div></div>
-<div class="metric"><div class="val val-gold">5 / 10</div><div class="lbl">Товарных знаков / лицензий<br>зарегистрировано</div></div>
+<div class="metric"><div class="val val-positive">1 500+</div><div class="lbl">B2B партнёров<br>Сапсан, WRF, Novikov, S7</div></div>
+<div class="metric"><div class="val val-neutral">50</div><div class="lbl">Сотрудников<br>5 отделов</div></div>
+<div class="metric"><div class="val val-neutral" data-tip="ТОП-1% = товар продаётся лучше 99% позиций в категории. Перцентиль за 28 дней. Ozon Beauty: 87К продавцов.">ТОП-1%</div><div class="lbl">Селлер Ozon<br>косметика и ароматы</div></div>
+<div class="metric"><div class="val val-gold">12</div><div class="lbl">Категорий продукции<br>~30 SKU</div></div>
 </div>
 
+<!-- Динамика выручки -->
 <div class="card" style="margin-top:20px;">
-<h3>Каталог и B2B условия</h3>
-<div class="grid-2">
+<h3>Динамика выручки: 2023 → 2025</h3>
+<table>
+<thead><tr><th>Год</th><th>Выручка</th><th>Источник</th><th>Рост YoY</th><th>B2B</th><th>МП</th></tr></thead>
+<tbody>
+<tr><td>2023</td><td class="r">15.6М₽</td><td>ФНС</td><td>—</td><td class="r">—</td><td class="r">—</td></tr>
+<tr><td>2024</td><td class="r">142.7М₽ <span style="color:var(--text3); font-size:0.85em;">(ФНС)</span> / 155М <span style="color:var(--text3); font-size:0.85em;">(упр.)</span></td><td>ФНС + компания</td><td class="pos"><strong>+816%</strong></td><td class="r">—</td><td class="r">—</td></tr>
+<tr style="background:rgba(181,144,122,0.06);"><td style="color:var(--gold); font-weight:700;">2025</td><td class="r" style="color:var(--gold); font-weight:700;">260М₽</td><td>Компания</td><td class="pos"><strong>+68%</strong></td><td class="r">108М (42%)</td><td class="r">152М (58%)</td></tr>
+</tbody>
+</table>
+<p style="font-size:0.82em; color:var(--text3); margin-top:8px;">Расхождение 2024: ФНС (142.7М) vs управленка (155М) = ~8.6%. Причины: УСН учёт по оплате (не по отгрузке), авансы, переходящие платежи. В отчёте используем ФНС для 2024, данные компании для 2025.</p>
+</div>
+
+<!-- T4: Структура затрат -->
+<div class="card card-gold" style="margin-top:20px;">
+<h3>Структура затрат и прибыльности (2025)</h3>
+<div class="info-tip"><div class="ii">i</div><span><strong>Источник:</strong> Управленческий учёт компании. Данные за янв-дек 2025. Показана помесячная структура расходов.</span></div>
+<div class="grid-2" style="margin-top:16px;">
 <div>
-<p style="color:var(--gold); font-weight:600; margin-bottom:8px;">Продуктовая линейка (10 категорий):</p>
-<p style="font-size:0.85em; color:var(--text2);">Пенное мыло, гель-мыло, крем-эмульсия для рук, антисептик, гель для душа, шампунь, бальзам для волос, диффузоры, мини-форматы, настенные держатели (1/2/3-секционные, антивандальные)</p>
+<table>
+<thead><tr><th>Статья расходов</th><th>₽/мес</th><th>%</th></tr></thead>
+<tbody>
+<tr><td>Операционные расходы</td><td class="r"><strong>7.9М</strong></td><td class="r">40.6%</td></tr>
+<tr><td>Себестоимость продукции</td><td class="r"><strong>4.0М</strong></td><td class="r">20.6%</td></tr>
+<tr><td>Производство</td><td class="r"><strong>3.0М</strong></td><td class="r">15.4%</td></tr>
+<tr><td>Управление</td><td class="r"><strong>2.4М</strong></td><td class="r">12.3%</td></tr>
+<tr><td>Проектная деятельность</td><td class="r"><strong>1.2М</strong></td><td class="r">6.2%</td></tr>
+<tr><td>Коммерческие расходы</td><td class="r"><strong>0.95М</strong></td><td class="r">4.9%</td></tr>
+<tr style="background:rgba(181,144,122,0.06); font-weight:700;"><td style="color:var(--gold);">ИТОГО расходов</td><td class="r" style="color:var(--gold);">19.45М</td><td class="r">100%</td></tr>
+</tbody>
+</table>
 </div>
 <div>
-<p style="color:var(--gold); font-weight:600; margin-bottom:8px;">Условия B2B:</p>
-<p style="font-size:0.85em; color:var(--text2);">Мин. заказ от 5 000₽ · Бесплатная доставка от 15 000₽ · Брендирование с логотипом · Решение «под ключ» · Сертификат №RA.RU.11HB63 · Французские компоненты</p>
+<!-- Waterfall SVG -->
+<svg viewBox="0 0 400 250" style="width:100%; height:auto;">
+<defs><style>.wf-lbl{fill:#A8A098;font-size:9px;}.wf-val{fill:#E8E4DC;font-size:10px;font-weight:700;}</style></defs>
+<!-- Выручка/мес -->
+<rect x="20" y="20" width="50" height="180" rx="3" fill="rgba(181,144,122,0.3)" stroke="#B5907A" stroke-width="1"/>
+<text x="45" y="15" text-anchor="middle" class="wf-val" fill="#B5907A">21.7М</text>
+<text x="45" y="215" text-anchor="middle" class="wf-lbl">Выр./мес</text>
+<!-- Себест. -->
+<rect x="80" y="20" width="40" height="65" rx="3" fill="rgba(184,92,92,0.4)"/>
+<text x="100" y="95" text-anchor="middle" class="wf-lbl" fill="#B85C5C">-4М</text>
+<text x="100" y="215" text-anchor="middle" class="wf-lbl">С/с</text>
+<!-- Опер. -->
+<rect x="130" y="85" width="40" height="55" rx="3" fill="rgba(184,92,92,0.35)"/>
+<text x="150" y="150" text-anchor="middle" class="wf-lbl" fill="#B85C5C">-7.9М</text>
+<text x="150" y="215" text-anchor="middle" class="wf-lbl">Опер.</text>
+<!-- Произв. -->
+<rect x="180" y="140" width="40" height="22" rx="3" fill="rgba(184,92,92,0.3)"/>
+<text x="200" y="172" text-anchor="middle" class="wf-lbl" fill="#B85C5C">-3М</text>
+<text x="200" y="215" text-anchor="middle" class="wf-lbl">Произв.</text>
+<!-- Управл. + проект + комм. -->
+<rect x="230" y="162" width="40" height="35" rx="3" fill="rgba(184,92,92,0.25)"/>
+<text x="250" y="210" text-anchor="middle" class="wf-lbl" fill="#B85C5C">-4.55М</text>
+<text x="250" y="227" text-anchor="middle" class="wf-lbl">Проч.</text>
+<!-- % по займам -->
+<rect x="280" y="197" width="40" height="0" rx="3" fill="rgba(184,92,92,0.2)"/>
+<line x1="280" y1="197" x2="320" y2="197" stroke="#B85C5C" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="300" y="194" text-anchor="middle" class="wf-lbl" fill="#B85C5C">-2.9М %</text>
+<text x="300" y="215" text-anchor="middle" class="wf-lbl">Займы</text>
+<!-- ЧП Q4 -->
+<rect x="340" y="190" width="50" height="10" rx="3" fill="rgba(139,175,122,0.5)" stroke="#8BAF7A" stroke-width="1"/>
+<text x="365" y="186" text-anchor="middle" class="wf-val" fill="#8BAF7A">+1.1М</text>
+<text x="365" y="215" text-anchor="middle" class="wf-lbl">ЧП/мес</text>
+<!-- Линия нуля -->
+<line x1="15" y1="200" x2="395" y2="200" stroke="rgba(181,144,122,0.15)" stroke-dasharray="4,3"/>
+</svg>
 </div>
+</div>
+<div class="grid-3" style="margin-top:16px;">
+<div class="callout callout-red">
+<h4>Янв-Сент 2025: -33М</h4>
+<p>До оптимизации расходов компания сжигала деньги: агрессивное масштабирование, найм, МП-реклама. Убыток -33М за 9 мес = ~-3.7М/мес.</p>
+</div>
+<div class="callout callout-green">
+<h4>Q4 2025: +12М</h4>
+<p>Оптимизация расходов дала перелом: +4М/мес операционно. За квартал +12М прибыли. Точка безубыточности пройдена.</p>
+</div>
+<div class="callout callout-gold">
+<h4>Run rate: +13.2М/год</h4>
+<p>Q4 run rate: +4М/мес - 2.9М (% по займам) = <strong>+1.1М/мес чистыми</strong> = 13.2М/год. Ключевой вопрос: рефинансирование займов (2.9М/мес = 34.8М/год).</p>
+</div>
+</div>
+</div>
+
+<!-- Каталог и B2B -->
+<div class="card" style="margin-top:20px;">
+<h3>Продуктовая линейка (12 категорий)</h3>
+<div class="grid-4">
+<div style="padding:8px; text-align:center;"><div style="font-size:1.4em; margin-bottom:4px;">🧴</div><span style="font-size:0.82em; color:var(--text2);">Пенное мыло</span></div>
+<div style="padding:8px; text-align:center;"><div style="font-size:1.4em; margin-bottom:4px;">🧴</div><span style="font-size:0.82em; color:var(--text2);">Гель-мыло</span></div>
+<div style="padding:8px; text-align:center;"><div style="font-size:1.4em; margin-bottom:4px;">🧴</div><span style="font-size:0.82em; color:var(--text2);">Крем для тела</span></div>
+<div style="padding:8px; text-align:center;"><div style="font-size:1.4em; margin-bottom:4px;">🧴</div><span style="font-size:0.82em; color:var(--text2);">Крем для рук</span></div>
+<div style="padding:8px; text-align:center;"><div style="font-size:1.4em; margin-bottom:4px;">🚿</div><span style="font-size:0.82em; color:var(--text2);">Гель для душа</span></div>
+<div style="padding:8px; text-align:center;"><div style="font-size:1.4em; margin-bottom:4px;">🧴</div><span style="font-size:0.82em; color:var(--text2);">Шампунь</span></div>
+<div style="padding:8px; text-align:center;"><div style="font-size:1.4em; margin-bottom:4px;">🧴</div><span style="font-size:0.82em; color:var(--text2);">Бальзам</span></div>
+<div style="padding:8px; text-align:center;"><div style="font-size:1.4em; margin-bottom:4px;">🌿</div><span style="font-size:0.82em; color:var(--text2);">Аромадиффузор</span></div>
+<div style="padding:8px; text-align:center;"><div style="font-size:1.4em; margin-bottom:4px;">🚗</div><span style="font-size:0.82em; color:var(--text2);">Автопарфюм</span></div>
+<div style="padding:8px; text-align:center;"><div style="font-size:1.4em; margin-bottom:4px;">🌸</div><span style="font-size:0.82em; color:var(--text2);">Интерьерный спрей</span></div>
+<div style="padding:8px; text-align:center;"><div style="font-size:1.4em; margin-bottom:4px;">🧼</div><span style="font-size:0.82em; color:var(--text2);">Антисептик</span></div>
+<div style="padding:8px; text-align:center;"><div style="font-size:1.4em; margin-bottom:4px;">🕯</div><span style="font-size:0.82em; color:var(--text2);">Аромасвечи</span></div>
 </div>
 <p style="font-size:0.82em; color:var(--text3); margin-top:10px;">Ароматы: «Чёрный перец» (нероли, амбра), «Тайный советник» (груша, табак, ваниль), «Сосновый лимонад» (дюшес, сосна, мускус). <em>«Пленительные и многослойные ароматы, которые окутывают теплом и долго остаются на коже, подобно парфюму»</em> — Trend Island, сен 2024</p>
 </div>
 
+<!-- T5: Имиджевые партнёрства -->
 <div class="card card-gold" style="margin-top:20px;">
-<h3>Уникальные преимущества</h3>
-<div class="grid-3">
-<div style="padding:10px;">
-<p style="color:var(--gold); font-weight:700; margin-bottom:6px;">Тройная модель: B2B + B2C + Офлайн</p>
-<p style="font-size:0.85em; color:var(--text2);">ТОП-1% Ozon + 700+ ресторанов + офлайн-ритейл (Trend Island, Telegraph, бутик N68 в Юсуповском дворце, Золотое Яблоко, Лэтуаль).</p>
+<h3>Имиджевые партнёрства</h3>
+<div class="info-tip"><div class="ii">i</div><span><strong>Источник:</strong> Данные компании, подтверждены публичными упоминаниями (SiM-2026, ovsyannikovsoap.ru, СМИ).</span></div>
+<div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; margin-top:16px;">
+<div style="background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center;">
+<div style="font-size:0.75em; color:var(--text3); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Авиация</div>
+<div style="font-size:0.88em; color:var(--text); font-weight:600;">Сапсан</div>
+<div style="font-size:0.78em; color:var(--text2);">1-й и бизнес-класс</div>
 </div>
-<div style="padding:10px;">
-<p style="color:var(--gold); font-weight:700; margin-bottom:6px;">Кастомизация (СТМ)</p>
-<p style="font-size:0.85em; color:var(--text2);">Способность делать уникальные продукты под заказ: аромат шашлыка для Яндекс Лавки, коллекция для ГИМ. Это конкурентный ров.</p>
+<div style="background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center;">
+<div style="font-size:0.75em; color:var(--text3); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Авиация</div>
+<div style="font-size:0.88em; color:var(--text); font-weight:600;">S7, Red Wings</div>
+<div style="font-size:0.78em; color:var(--text2);">Бизнес-класс</div>
 </div>
-<div style="padding:10px;">
-<p style="color:var(--gold); font-weight:700; margin-bottom:6px;">Прибыльность с 1 года</p>
-<p style="font-size:0.85em; color:var(--text2);">15.2М чистой прибыли при первом полном годе. Для сравнения: Mixit с 6.35 млрд выручки в убытке на 420М.</p>
+<div style="background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center;">
+<div style="font-size:0.75em; color:var(--text3); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Авиация</div>
+<div style="font-size:0.88em; color:var(--text); font-weight:600;">AZUR jets</div>
+<div style="font-size:0.78em; color:var(--text2);">Бизнес-авиация</div>
+</div>
+<div style="background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center;">
+<div style="font-size:0.75em; color:var(--text3); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Рестораны</div>
+<div style="font-size:0.88em; color:var(--text); font-weight:600;">WRF</div>
+<div style="font-size:0.78em; color:var(--text2);">Горыныч, She, Tehnikum, Mushrooms, Zodiac</div>
+</div>
+<div style="background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center;">
+<div style="font-size:0.75em; color:var(--text3); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Рестораны</div>
+<div style="font-size:0.88em; color:var(--text); font-weight:600;">Пинский</div>
+<div style="font-size:0.78em; color:var(--text2);">Рестораны группы</div>
+</div>
+<div style="background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center;">
+<div style="font-size:0.75em; color:var(--text3); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Рестораны</div>
+<div style="font-size:0.88em; color:var(--text); font-weight:600;">Новиков</div>
+<div style="font-size:0.78em; color:var(--text2);">Рестораны группы</div>
+</div>
+<div style="background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center;">
+<div style="font-size:0.75em; color:var(--text3); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Отели</div>
+<div style="font-size:0.88em; color:var(--text); font-weight:600;">Mriya Resort</div>
+<div style="font-size:0.78em; color:var(--text2);">5-звёздочный, Крым</div>
+</div>
+<div style="background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center;">
+<div style="font-size:0.75em; color:var(--text3); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">E-com</div>
+<div style="font-size:0.88em; color:var(--text); font-weight:600;">Яндекс Лавка</div>
+<div style="font-size:0.78em; color:var(--text2);">СТМ коллаборация</div>
+</div>
+<div style="background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center;">
+<div style="font-size:0.75em; color:var(--text3); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Медицина</div>
+<div style="font-size:0.88em; color:var(--text); font-weight:600;">Юсуповские</div>
+<div style="font-size:0.78em; color:var(--text2);">Больницы</div>
+</div>
+<div style="background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center;">
+<div style="font-size:0.75em; color:var(--text3); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Банки</div>
+<div style="font-size:0.88em; color:var(--text); font-weight:600;">Газпромбанк</div>
+<div style="font-size:0.78em; color:var(--text2);">Корпоративные подарки</div>
+</div>
+<div style="background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center;">
+<div style="font-size:0.75em; color:var(--text3); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Банки</div>
+<div style="font-size:0.88em; color:var(--text); font-weight:600;">ВТБ</div>
+<div style="font-size:0.78em; color:var(--text2);">Корпоративные подарки</div>
+</div>
+<div style="background:var(--bg3); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center;">
+<div style="font-size:0.75em; color:var(--text3); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Ритейл</div>
+<div style="font-size:0.88em; color:var(--text); font-weight:600;">Trend Island, ГИМ</div>
+<div style="font-size:0.78em; color:var(--text2);">Офлайн-ритейл</div>
+</div>
+</div>
+</div>
+
+<!-- T6: Оргструктура -->
+<div class="card" style="margin-top:20px;">
+<h3>Оргструктура: 50 человек, 5 отделов</h3>
+<div class="info-tip"><div class="ii">i</div><span><strong>Источник:</strong> Данные компании (февраль 2026). Собственное производство — Балашиха, мкр. Саввино.</span></div>
+<svg viewBox="0 0 800 320" style="width:100%; height:auto; margin-top:12px;">
+<defs><style>.org-box{rx:8;fill:rgba(26,22,16,0.9);stroke:#B5907A;stroke-width:1.5;}.org-txt{fill:#E8E4DC;font-size:11px;font-weight:600;text-anchor:middle;}.org-sub{fill:#A8A098;font-size:9px;text-anchor:middle;}.org-line{stroke:#3D3528;stroke-width:1.5;}</style></defs>
+<!-- Основатель -->
+<rect class="org-box" x="300" y="10" width="200" height="50" stroke="#B5907A" stroke-width="2"/>
+<text class="org-txt" x="400" y="32" fill="#B5907A">Павел Овсянников</text>
+<text class="org-sub" x="400" y="48">Основатель · Личный бренд</text>
+<!-- Lines -->
+<line class="org-line" x1="400" y1="60" x2="400" y2="90"/>
+<line class="org-line" x1="100" y1="90" x2="700" y2="90"/>
+<line class="org-line" x1="100" y1="90" x2="100" y2="110"/>
+<line class="org-line" x1="260" y1="90" x2="260" y2="110"/>
+<line class="org-line" x1="420" y1="90" x2="420" y2="110"/>
+<line class="org-line" x1="570" y1="90" x2="570" y2="110"/>
+<line class="org-line" x1="700" y1="90" x2="700" y2="110"/>
+<!-- Производство -->
+<rect class="org-box" x="25" y="110" width="150" height="50"/>
+<text class="org-txt" x="100" y="132">Производство</text>
+<text class="org-sub" x="100" y="148">Балашиха · 600 м²</text>
+<!-- Сопровождение -->
+<rect class="org-box" x="185" y="110" width="150" height="50"/>
+<text class="org-txt" x="260" y="132">Сопровождение</text>
+<text class="org-sub" x="260" y="148">Отдел заботы</text>
+<!-- Первичные продажи -->
+<rect class="org-box" x="345" y="110" width="150" height="50"/>
+<text class="org-txt" x="420" y="132">Первичные продажи</text>
+<text class="org-sub" x="420" y="148">B2B-привлечение</text>
+<!-- Дистрибуция -->
+<rect class="org-box" x="505" y="110" width="130" height="50"/>
+<text class="org-txt" x="570" y="132">Дистрибуция</text>
+<text class="org-sub" x="570" y="148">Спецпроекты</text>
+<!-- МП -->
+<rect class="org-box" x="645" y="110" width="110" height="50"/>
+<text class="org-txt" x="700" y="132">МП-команда</text>
+<text class="org-sub" x="700" y="148">Ozon, WB</text>
+<!-- Подписи каналов -->
+<rect x="185" y="180" width="310" height="30" rx="6" fill="rgba(181,144,122,0.08)" stroke="rgba(181,144,122,0.2)" stroke-width="1"/>
+<text x="340" y="200" text-anchor="middle" fill="#B5907A" font-size="10" font-weight="600">B2B: 108М (42%) — 1 500+ партнёров</text>
+<rect x="645" y="180" width="110" height="30" rx="6" fill="rgba(139,175,122,0.08)" stroke="rgba(139,175,122,0.2)" stroke-width="1"/>
+<text x="700" y="200" text-anchor="middle" fill="#8BAF7A" font-size="10" font-weight="600">МП: 152М (58%)</text>
+</svg>
+<div class="grid-2" style="margin-top:12px;">
+<div class="callout callout-gold">
+<h4>Конкурентное преимущество: личный бренд</h4>
+<p>Павел Овсянников — спикер SiM-2026 (Oborot.ru), лично общается с крупными клиентами. При 50 сотрудниках — плоская структура и быстрые решения. Ср. The Act: 399 человек, Mixit: 263.</p>
+</div>
+<div class="callout callout-green">
+<h4>Производительность: 5.2М₽/сотр.</h4>
+<p>Выручка/сотрудник = 260М / 50 = 5.2М₽ (+89% к 2024). Приближается к отраслевому бенчмарку 7-10М₽. При росте до 500М без найма = 10М₽/сотр.</p>
 </div>
 </div>
 </div>
@@ -1644,32 +1714,36 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <!-- СЕКЦИЯ 17: ФНС -->
 <div class="section" id="s17">
 <div class="section-head"><div class="section-num">17</div><h2>ФНС: выручка, прибыль, активы</h2></div>
-<div class="info-tip"><div class="ii">i</div><span><strong>Источник:</strong> ФНС (Rusprofile), ООО «ИМПЕРИЯ КОСМЕТИКИ», ИНН 9705202154, ОГРН 1237700424829. Производство: Балашиха, мкр. Саввино, ул. Промышленная, 43. УСН, микропредприятие.</span></div>
+<div class="info-tip"><div class="ii">i</div><span><strong>Источник:</strong> ФНС (<a href="https://www.rusprofile.ru/id/14408919" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">Rusprofile</a>), ООО «ИМПЕРИЯ КОСМЕТИКИ», ИНН 9705202154, ОГРН 1237700424829. Производство: Балашиха, мкр. Саввино, ул. Промышленная, 43. УСН, микропредприятие.</span></div>
 
 <div class="card">
 <h3>Финансовая динамика Овсянникова</h3>
 <table>
-<thead><tr><th>Показатель</th><th>2023</th><th>2024</th><th>Изменение</th></tr></thead>
+<thead><tr><th>Показатель</th><th>2023</th><th>2024 (ФНС)</th><th>2025 (упр.)</th><th>Δ 2024→2025</th></tr></thead>
 <tbody>
-<tr><td>Выручка</td><td class="r">15.6М₽</td><td class="r" style="color:var(--gold);"><strong>142.7М₽</strong></td><td class="pos"><strong>+816%</strong></td></tr>
-<tr><td>Чистая прибыль</td><td class="r">н/д (1-й год)</td><td class="r pos"><strong>15.2М₽</strong></td><td class="pos">рент. 10.6%</td></tr>
-<tr><td>Чистая прибыль (2023)</td><td class="r">2.9М₽</td><td class="r pos"><strong>15.2М₽</strong></td><td class="pos">+420%</td></tr>
-<tr><td>Сотрудники</td><td class="r">6</td><td class="r"><strong>52</strong></td><td class="pos">+767%</td></tr>
-<tr><td>Капитал</td><td class="r">2.9М₽</td><td class="r"><strong>18.2М₽</strong></td><td class="pos">+519%</td></tr>
-<tr><td>Ср. зарплата</td><td class="r">19 200₽/мес</td><td class="r"><strong>34 400₽/мес</strong></td><td class="pos">+79%</td></tr>
-<tr><td>Выручка/сотрудник</td><td class="r">2.6М₽</td><td class="r"><strong>2.74М₽</strong></td><td class="pos">+5.4%</td></tr>
+<tr><td>Выручка</td><td class="r">15.6М₽</td><td class="r"><strong>142.7М₽</strong></td><td class="r" style="color:var(--gold);"><strong>260М₽</strong></td><td class="pos"><strong>+68%</strong></td></tr>
+<tr><td>— B2B канал</td><td class="r">—</td><td class="r">—</td><td class="r">108М (42%)</td><td>—</td></tr>
+<tr><td>— Маркетплейсы</td><td class="r">—</td><td class="r">—</td><td class="r">152М (58%)</td><td>—</td></tr>
+<tr><td>Чистая прибыль</td><td class="r">2.9М₽</td><td class="r pos"><strong>15.2М₽</strong></td><td class="r"><span class="neg">-33М</span> (янв-сен) + <span class="pos">+12М</span> (Q4)</td><td>—</td></tr>
+<tr><td>ЧП run rate (Q4)</td><td class="r">—</td><td class="r">—</td><td class="r pos"><strong>+1.1М/мес</strong></td><td style="color:var(--gold);">13.2М/год</td></tr>
+<tr><td>Расходы/мес</td><td class="r">—</td><td class="r">—</td><td class="r">19.45М</td><td>—</td></tr>
+<tr><td>% по займам</td><td class="r">—</td><td class="r">—</td><td class="r neg">2.9М/мес</td><td class="neg">34.8М/год</td></tr>
+<tr><td>Сотрудники</td><td class="r">6</td><td class="r"><strong>52</strong></td><td class="r"><strong>50</strong></td><td>-2 (оптимиз.)</td></tr>
+<tr><td>Капитал</td><td class="r">2.9М₽</td><td class="r"><strong>18.2М₽</strong></td><td class="r">—</td><td>—</td></tr>
+<tr><td>Выручка/сотрудник</td><td class="r">2.6М₽</td><td class="r"><strong>2.74М₽</strong></td><td class="r pos"><strong>5.2М₽</strong></td><td class="pos">+89%</td></tr>
 </tbody>
 </table>
+<p style="font-size:0.82em; color:var(--text3); margin-top:8px;">2023-2024: данные ФНС (Rusprofile). 2025: данные компании (управленческий учёт). ФНС за 2025 будут доступны в 2026 H2.</p>
 </div>
 
 <div class="grid-2">
 <div class="callout callout-green">
-<h4>Сильно: прибыльный рост</h4>
-<p>10.6% чистая рентабельность при +816% роста — редкость. Большинство быстрорастущих брендов убыточны (Mixit: -420М, Золотое Яблоко: -5.38 млрд). Овсянников растёт «здорово».</p>
+<h4>Перелом в Q4 2025</h4>
+<p>После 9 месяцев убытков (-33М) оптимизация расходов дала +12М за Q4. Run rate +1.1М/мес чистыми. Компания вышла на устойчивую прибыльность. Ключевое: это при 2.9М/мес процентных платежей — рефинансирование удвоит ЧП.</p>
 </div>
-<div class="callout callout-red">
-<h4>Риск: масштаб пока мал</h4>
-<p>142.7М vs 6.8 млрд у Z&R = разрыв в 48 раз. На текущих темпах роста Овсянников достигнет 1 млрд через 2-3 года, но для этого нужно сохранять темп +100%+ ежегодно.</p>
+<div class="callout callout-gold">
+<h4>Масштаб растёт: 260М → цель 1 млрд</h4>
+<p>260М vs 6.8 млрд у Z&R = разрыв в 26× (было 48×). При сохранении темпа +68% YoY: 2026 = ~437М, 2027 = ~735М, 2028 = ~1.2 млрд. Горизонт достижения 1 млрд: 3 года.</p>
 </div>
 </div>
 </div>
@@ -1738,18 +1812,20 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 
 <!-- СЕКЦИЯ 19: Рост команды -->
 <div class="section" id="s19">
-<div class="section-head"><div class="section-num">19</div><h2>Рост: от 6 до 52 сотрудников</h2></div>
-<div class="section-desc">Масштабирование команды, производства и мощностей Овсянникова за 2023-2024.</div>
+<div class="section-head"><div class="section-num">19</div><h2>Рост: от 6 до 50 сотрудников, от 15.6М до 260М</h2></div>
+<div class="section-desc">Масштабирование команды, производства и мощностей Овсянникова за 2023-2025. В 2025 — оптимизация: с 52 до 50 сотрудников при +68% выручки.</div>
 
 <div class="grid-3">
 <div class="card" style="border-left:4px solid var(--positive);">
 <h3 style="color:var(--positive);">Команда</h3>
 <div style="text-align:center; padding:10px 0;">
-<span style="font-size:2.2em; font-weight:700; color:var(--text3);">6</span>
-<span style="font-size:1.5em; color:var(--gold); margin:0 12px;">→</span>
-<span style="font-size:2.2em; font-weight:700; color:var(--positive);">52</span>
+<span style="font-size:1.6em; font-weight:700; color:var(--text3);">6</span>
+<span style="font-size:1.2em; color:var(--gold); margin:0 8px;">→</span>
+<span style="font-size:1.6em; font-weight:700; color:var(--text2);">52</span>
+<span style="font-size:1.2em; color:var(--gold); margin:0 8px;">→</span>
+<span style="font-size:1.6em; font-weight:700; color:var(--positive);">50</span>
 </div>
-<p style="font-size:0.88em; color:var(--text2); text-align:center;">+767% за год. Производство, логистика, продажи, контроль качества.</p>
+<p style="font-size:0.88em; color:var(--text2); text-align:center;">2025: оптимизация -2 чел. при +68% выручки = рост производительности</p>
 </div>
 <div class="card" style="border-left:4px solid var(--neutral);">
 <h3 style="color:var(--neutral);">Производство</h3>
@@ -1758,7 +1834,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <span style="font-size:1.5em; color:var(--gold); margin:0 12px;">→</span>
 <span style="font-size:2.2em; font-weight:700; color:var(--neutral);">600 м²</span>
 </div>
-<p style="font-size:0.88em; color:var(--text2); text-align:center;">×15 площадь. Полный контроль качества, сертификация.</p>
+<p style="font-size:0.88em; color:var(--text2); text-align:center;">×15 площадь. Балашиха, мкр. Саввино. Полный контроль качества.</p>
 </div>
 <div class="card" style="border-left:4px solid var(--gold);">
 <h3>B2B партнёры</h3>
@@ -1767,7 +1843,7 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <span style="font-size:1.5em; color:var(--gold); margin:0 12px;">→</span>
 <span style="font-size:2.2em; font-weight:700; color:var(--gold);">1 500+</span>
 </div>
-<p style="font-size:0.88em; color:var(--text2); text-align:center;">WRF, Novikov, Газпром, S7, РЖД, санаторий Мрия.</p>
+<p style="font-size:0.88em; color:var(--text2); text-align:center;">Сапсан, WRF, Novikov, S7, Mriya, Газпромбанк, ВТБ</p>
 </div>
 </div>
 
@@ -1776,98 +1852,105 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 <table>
 <thead><tr><th>Компания</th><th>Выручка</th><th>Сотр.</th><th>Выручка/сотр.</th><th>Оценка</th></tr></thead>
 <tbody>
-<tr><td>The Act</td><td class="r">4.0 млрд</td><td class="r">399</td><td class="r pos"><strong>10.0М₽</strong></td><td><span class="b-positive">Отлично</span></td></tr>
+<tr><td>Mixit</td><td class="r">6.35 млрд</td><td class="r">263</td><td class="r pos">24.1М₽</td><td><span class="b-positive">Топ (но убыток)</span></td></tr>
 <tr><td>Z&amp;R</td><td class="r">6.8 млрд</td><td class="r">340</td><td class="r pos"><strong>20.0М₽</strong></td><td><span class="b-positive">Топ</span></td></tr>
+<tr><td>The Act</td><td class="r">4.0 млрд</td><td class="r">399</td><td class="r pos"><strong>10.0М₽</strong></td><td><span class="b-positive">Отлично</span></td></tr>
 <tr><td>Natura Siberica</td><td class="r">5.4 млрд</td><td class="r">684</td><td class="r">7.9М₽</td><td><span class="b-positive">Хорошо</span></td></tr>
 <tr><td>VOIS</td><td class="r">2.5 млрд</td><td class="r">~400</td><td class="r">6.3М₽</td><td><span class="b-neutral">Норма</span></td></tr>
-<tr style="background:rgba(181,144,122,0.06);"><td style="color:var(--gold); font-weight:700;">Овсянников</td><td class="r" style="color:var(--gold);">142.7М</td><td class="r">52</td><td class="r" style="color:var(--gold);"><strong>2.74М₽</strong></td><td><span class="b-gold">Рост</span></td></tr>
-<tr><td>Mixit</td><td class="r">6.35 млрд</td><td class="r">263</td><td class="r pos">24.1М₽</td><td><span class="b-positive">Топ (но убыток)</span></td></tr>
+<tr style="background:rgba(181,144,122,0.06);"><td style="color:var(--gold); font-weight:700;">Овсянников 2025</td><td class="r" style="color:var(--gold);">260М</td><td class="r">50</td><td class="r" style="color:var(--gold);"><strong>5.2М₽</strong></td><td><span class="b-gold">+89% YoY</span></td></tr>
+<tr style="opacity:0.5;"><td>Овсянников 2024</td><td class="r">142.7М</td><td class="r">52</td><td class="r">2.74М₽</td><td><span class="b-neutral">Стадия роста</span></td></tr>
 </tbody>
 </table>
-<p style="font-size:0.85em; color:var(--text2); margin-top:12px;">Выручка/сотрудник у Овсянникова (2.74М₽) ниже рынка — естественно для стадии масштабирования. По мере роста выручки при стабильной команде показатель вырастет. Целевой ориентир: 5-7М₽/сотр. к 2027.</p>
+<p style="font-size:0.85em; color:var(--text2); margin-top:12px;">5.2М₽/сотр. в 2025 (+89%) — Овсянников приближается к отраслевому бенчмарку 7-10М₽. При достижении 500М при 50 сотрудниках = 10М₽/сотр. = уровень The Act.</p>
 </div>
 </div>
 
 <div class="section" id="s20">
-<div class="section-head"><div class="section-num">20</div><h2>Дорожная карта: от 142М к 500М</h2></div>
-<div class="section-desc">Стратегический план роста на 18-24 месяца, основанный на паттернах успешных конкурентов.</div>
+<div class="section-head"><div class="section-num">20</div><h2>Дорожная карта: от 260М к 1 млрд</h2></div>
+<div class="section-desc">Обновлённый стратегический план. 2025 факт: 260М (выше прогноза 250М). Новые цели на горизонте 24-36 месяцев.</div>
 
 <div class="grid-3">
 <div class="card" style="border-left:4px solid var(--positive);">
-<h3 style="color:var(--positive);">Фаза 1: 142М → 250М (6 мес)</h3>
+<h3 style="color:var(--positive);">Фаза 1: 260М → 450М (2026)</h3>
 <ul style="list-style:none; padding:0;">
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Запуск TG-канала и Instagram (цель: 10K)</li>
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Расширение ассортимента: +20 SKU (свечи, гель для душа подарочный, мини-наборы)</li>
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; SEO: захват «парфюмированное мыло для отелей»</li>
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Участие в Gastreet, InterCHARM</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; B2B масштабирование: 1500 → 3000 партнёров (регионы: СПб, Сочи, Казань)</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; МП: агрессивный вход на WB (сейчас ТОП-1% Ozon)</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; SKU: с 30 до 50+ (мужская линейка, мини-форматы, автоароматизаторы)</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Контент-машина: 5-10 креаторов для TG + Instagram</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Рефинансирование займов (экономия 34.8М/год)</li>
 </ul>
 </div>
 <div class="card" style="border-left:4px solid var(--neutral);">
-<h3 style="color:var(--neutral);">Фаза 2: 250М → 400М (12 мес)</h3>
+<h3 style="color:var(--neutral);">Фаза 2: 450М → 700М (2027)</h3>
 <ul style="list-style:none; padding:0;">
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; B2B: выход в регионы (СПб, Сочи, Казань)</li>
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Контент-армия: 5-10 креаторов (паттерн VOIS)</li>
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Wildberries: агрессивный вход (сейчас только Ozon ТОП-1%)</li>
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Экосистема отеля: диспенсер + мыло + крем + диффузор</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; СТМ для сетей как отдельное направление (маржа 30-50%)</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Экспорт: Казахстан, СНГ (ТР ТС 009/2011 = вход без допсертификации)</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Расширение производства до 2000+ м²</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Экосистема отеля: полная ольфакторная идентичность</li>
 </ul>
 </div>
 <div class="card" style="border-left:4px solid var(--gold);">
-<h3>Фаза 3: 400М → 500М+ (18-24 мес)</h3>
+<h3>Фаза 3: 700М → 1 млрд+ (2028)</h3>
 <ul style="list-style:none; padding:0;">
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Экспорт: Казахстан ($223М, +19%, спрос ×2) — сертификат ТР ТС 009/2011 = вход без допсертификации</li>
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; СТМ-направление как отдельный бизнес</li>
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Расширение производства до 2000+ м²</li>
-<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Аромадизайн отелей (паттерн Tonka, но в 4× доступнее)</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Собственная розница / бутики (паттерн Z&R: 15 бутиков → 6.8 млрд)</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Франшиза B2B-формата для регионов</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Мужская линейка + профессиональная линия (для барбершопов, спа)</li>
+<li style="padding:6px 0; font-size:0.88em; color:var(--text2);">&#x2022; Целевая рентабельность 10%+ = 100М+ ЧП</li>
 </ul>
 </div>
 </div>
 </div>
 
-<!-- SVG: Траектория роста -->
+<!-- SVG: Траектория роста (обновлённая) -->
 <div class="chart-container">
-<h3>Траектория роста: от 15.6М к 500М</h3>
-<div class="subtitle">Исторический рост и прогноз. Паттерн: VOIS прошёл тот же путь за 2 года (388М → 2.5 млрд).</div>
-<svg class="chart-svg" viewBox="0 0 800 300">
+<h3>Траектория роста: от 15.6М к 1 млрд</h3>
+<div class="subtitle">Исторический рост (факт) и обновлённый прогноз. 2025: 260М — выше прежнего прогноза 250М.</div>
+<svg class="chart-svg" viewBox="0 0 800 320">
 <!-- Grid -->
-<line x1="80" y1="260" x2="760" y2="260" stroke="rgba(181,144,122,0.2)"/>
-<line x1="80" y1="200" x2="760" y2="200" stroke="rgba(181,144,122,0.08)"/>
-<line x1="80" y1="140" x2="760" y2="140" stroke="rgba(181,144,122,0.08)"/>
-<line x1="80" y1="80" x2="760" y2="80" stroke="rgba(181,144,122,0.08)"/>
+<line x1="80" y1="270" x2="760" y2="270" stroke="rgba(181,144,122,0.2)"/>
+<line x1="80" y1="216" x2="760" y2="216" stroke="rgba(181,144,122,0.08)"/>
+<line x1="80" y1="162" x2="760" y2="162" stroke="rgba(181,144,122,0.08)"/>
+<line x1="80" y1="108" x2="760" y2="108" stroke="rgba(181,144,122,0.08)"/>
+<line x1="80" y1="54" x2="760" y2="54" stroke="rgba(181,144,122,0.08)"/>
 <!-- Y axis labels -->
-<text x="75" y="264" text-anchor="end" fill="#706858" font-size="10">0</text>
-<text x="75" y="204" text-anchor="end" fill="#706858" font-size="10">150М</text>
-<text x="75" y="144" text-anchor="end" fill="#706858" font-size="10">300М</text>
-<text x="75" y="84" text-anchor="end" fill="#706858" font-size="10">500М</text>
+<text x="75" y="274" text-anchor="end" fill="#706858" font-size="10">0</text>
+<text x="75" y="220" text-anchor="end" fill="#706858" font-size="10">250М</text>
+<text x="75" y="166" text-anchor="end" fill="#706858" font-size="10">500М</text>
+<text x="75" y="112" text-anchor="end" fill="#706858" font-size="10">750М</text>
+<text x="75" y="58" text-anchor="end" fill="#706858" font-size="10">1 млрд</text>
 <!-- X axis labels -->
-<text x="160" y="280" text-anchor="middle" fill="#A8A098" font-size="10">2023</text>
-<text x="310" y="280" text-anchor="middle" fill="#A8A098" font-size="10">2024</text>
-<text x="460" y="280" text-anchor="middle" fill="#A8A098" font-size="10">2025 (прогноз)</text>
-<text x="610" y="280" text-anchor="middle" fill="#A8A098" font-size="10">2026 (цель)</text>
-<text x="710" y="280" text-anchor="middle" fill="#A8A098" font-size="10">2027</text>
-<!-- Historical line (solid) -->
-<polyline points="160,254 310,196" fill="none" stroke="#B5907A" stroke-width="3" class="draw-target"/>
-<circle cx="160" cy="254" r="5" fill="#B5907A" data-tip="2023: выручка 15.6М ₽"/>
-<circle cx="310" cy="196" r="5" fill="#B5907A" data-tip="2024: выручка 142.7М ₽ (+816% YoY)"/>
-<text x="160" y="248" text-anchor="middle" fill="#D4AD8F" font-size="10" font-weight="700">15.6М</text>
-<text x="310" y="188" text-anchor="middle" fill="#D4AD8F" font-size="10" font-weight="700">142.7М</text>
-<!-- Projected line (dashed) -->
-<polyline points="310,196 460,162 610,112 710,80" fill="none" stroke="#B5907A" stroke-width="2" stroke-dasharray="6,4" opacity="0.7" class="draw-target"/>
-<circle cx="460" cy="162" r="4" fill="#B5907A" opacity="0.7" data-tip="2025 (прогноз): ~250М ₽ — Фаза 2, масштабирование"/>
-<circle cx="610" cy="112" r="4" fill="#B5907A" opacity="0.7" data-tip="2026 (цель): ~400М ₽ — Фаза 3, экспорт"/>
-<circle cx="710" cy="80" r="5" fill="#B5907A" data-tip="2027: цель 500М ₽. Паттерн VOIS: 388М→2.5 млрд за 2 года"/>
-<text x="460" y="154" text-anchor="middle" fill="#D4AD8F" font-size="10">~250М</text>
-<text x="610" y="104" text-anchor="middle" fill="#D4AD8F" font-size="10">~400М</text>
-<text x="710" y="72" text-anchor="middle" fill="#D4AD8F" font-size="10" font-weight="700">500М</text>
-<!-- VOIS reference line -->
-<polyline points="160,246 310,148 460,30" fill="none" stroke="#B5907A" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.5" class="draw-target"/>
-<text x="470" y="28" fill="#B5907A" font-size="9" opacity="0.7">VOIS: 388М→2.5 млрд (×6.4)</text>
+<text x="140" y="292" text-anchor="middle" fill="#A8A098" font-size="10">2023</text>
+<text x="280" y="292" text-anchor="middle" fill="#A8A098" font-size="10">2024</text>
+<text x="420" y="292" text-anchor="middle" fill="#B5907A" font-size="10" font-weight="600">2025 (факт)</text>
+<text x="560" y="292" text-anchor="middle" fill="#A8A098" font-size="10">2026</text>
+<text x="660" y="292" text-anchor="middle" fill="#A8A098" font-size="10">2027</text>
+<text x="740" y="292" text-anchor="middle" fill="#A8A098" font-size="10">2028</text>
+<!-- Historical line (solid) — ФАКТ -->
+<polyline points="140,267 280,232 420,214" fill="none" stroke="#B5907A" stroke-width="3" class="draw-target"/>
+<circle cx="140" cy="267" r="5" fill="#B5907A" data-tip="2023: выручка 15.6М ₽"/>
+<circle cx="280" cy="232" r="6" fill="#B5907A" data-tip="2024: выручка 142.7М ₽ (ФНС, +816% YoY)"/>
+<circle cx="420" cy="214" r="7" fill="#B5907A" stroke="#D4AD8F" stroke-width="2" data-tip="2025: выручка 260М ₽ (управленка, +68% YoY). B2B: 108М (42%), МП: 152М (58%)"/>
+<text x="140" y="261" text-anchor="middle" fill="#D4AD8F" font-size="9" font-weight="700">15.6М</text>
+<text x="280" y="224" text-anchor="middle" fill="#D4AD8F" font-size="10" font-weight="700">142.7М</text>
+<text x="420" y="206" text-anchor="middle" fill="#D4AD8F" font-size="11" font-weight="700">260М</text>
+<!-- Прогноз (dashed) -->
+<polyline points="420,214 560,173 660,120 740,54" fill="none" stroke="#B5907A" stroke-width="2" stroke-dasharray="6,4" opacity="0.7" class="draw-target"/>
+<circle cx="560" cy="173" r="4" fill="#B5907A" opacity="0.7" data-tip="2026: цель ~450М ₽ — B2B масштабирование + WB"/>
+<circle cx="660" cy="120" r="4" fill="#B5907A" opacity="0.7" data-tip="2027: цель ~700М ₽ — СТМ + экспорт"/>
+<circle cx="740" cy="54" r="6" fill="#B5907A" data-tip="2028: цель 1 млрд ₽ — розница + франшиза"/>
+<text x="560" y="165" text-anchor="middle" fill="#D4AD8F" font-size="10">~450М</text>
+<text x="660" y="112" text-anchor="middle" fill="#D4AD8F" font-size="10">~700М</text>
+<text x="740" y="46" text-anchor="middle" fill="#D4AD8F" font-size="11" font-weight="700">1 млрд</text>
+<!-- Старый прогноз (для сравнения) -->
+<polyline points="280,232 420,218" fill="none" stroke="#706858" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+<text x="380" y="232" fill="#706858" font-size="8" opacity="0.5">прогноз v5: 250М</text>
 <!-- Phase labels -->
-<rect x="270" y="170" width="80" height="18" rx="4" fill="rgba(139,175,122,0.15)"/>
-<text x="310" y="183" text-anchor="middle" fill="#8BAF7A" font-size="8" font-weight="600">Фаза 1</text>
-<rect x="420" y="130" width="80" height="18" rx="4" fill="rgba(138,154,170,0.15)"/>
-<text x="460" y="143" text-anchor="middle" fill="#8A9AAA" font-size="8" font-weight="600">Фаза 2</text>
-<rect x="560" y="84" width="80" height="18" rx="4" fill="rgba(181,144,122,0.15)"/>
-<text x="600" y="97" text-anchor="middle" fill="#B5907A" font-size="8" font-weight="600">Фаза 3</text>
+<rect x="440" y="180" width="100" height="18" rx="4" fill="rgba(139,175,122,0.15)"/>
+<text x="490" y="193" text-anchor="middle" fill="#8BAF7A" font-size="8" font-weight="600">Фаза 1 (2026)</text>
+<rect x="590" y="130" width="100" height="18" rx="4" fill="rgba(138,154,170,0.15)"/>
+<text x="640" y="143" text-anchor="middle" fill="#8A9AAA" font-size="8" font-weight="600">Фаза 2 (2027)</text>
+<rect x="690" y="62" width="100" height="18" rx="4" fill="rgba(181,144,122,0.15)"/>
+<text x="740" y="75" text-anchor="middle" fill="#B5907A" font-size="8" font-weight="600">Фаза 3 (2028)</text>
 </svg>
 </div>
 
@@ -3052,30 +3135,402 @@ footer { text-align: center; padding: 40px 0; color: var(--text3); font-size: 0.
 </div>
 </div>
 
+<!-- ═══════ ЧАСТЬ VIII: ОТВЕТЫ НА ВОПРОСЫ ПАВЛА ═══════ -->
+
+<!-- В1: Объём рынка -->
+<div class="section" id="s32">
+<div class="section-head"><div class="section-num">32</div><h2>В1. Объём рынка: потенциал в ширину и глубину</h2></div>
+<div class="section-desc">Сколько Овсянников может забрать? TAM → SAM → SOM анализ с учётом двухканальной модели.</div>
+
+<div class="card card-gold">
+<h3>TAM → SAM → SOM</h3>
+<div class="grid-3">
+<div class="metric"><div class="val val-gold" style="font-size:1.5em;">1.16 трлн₽</div><div class="lbl">TAM<br>Рынок красоты РФ</div></div>
+<div class="metric"><div class="val val-positive" style="font-size:1.5em;">~270 млрд₽</div><div class="lbl">SAM<br>HoReCa аменити + парф. косметика на МП</div></div>
+<div class="metric"><div class="val" style="font-size:1.5em; color:var(--gold);">260М₽</div><div class="lbl">SOM (факт 2025)<br>0.1% от SAM</div></div>
+</div>
+<div class="info-tip" style="margin-top:12px;"><div class="ii">i</div><span><strong>SAM:</strong> ~70 млрд (HoReCa аменити, оценка <a href="https://horeca.estate/" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">horeca.estate</a>) + ~200 млрд (парфюмированная косметика на МП, оценка <a href="https://datainsight.ru/" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">Data Insight</a> + <a href="https://e-pepper.ru/blogs/news/analitika-i-trendy-beauty-rynka-vmeste-s-ozon" target="_blank" style="color:var(--gold);text-decoration:underline dotted;">Ozon Beauty</a>). Пересечение каналов ~15-20%.</span></div>
+</div>
+
+<div class="grid-2" style="margin-top:16px;">
+<div class="card">
+<h3>Рост в ширину (новые категории)</h3>
+<table>
+<thead><tr><th>Направление</th><th>Потенциал</th><th>Пример конкурента</th></tr></thead>
+<tbody>
+<tr><td>Мужская линейка</td><td class="r">Ozon: рост ×2 в 2025</td><td>Mixit: мужская серия = 8% выручки</td></tr>
+<tr><td>Детская косметика</td><td class="r">Ozon: рост ×3 в 2025</td><td>Natura Sib.: отдельный бренд Little</td></tr>
+<tr><td>Профессиональная линия</td><td class="r">Барбершопы, спа</td><td>Z&R: поставки в 300+ салонов</td></tr>
+<tr><td>СТМ для сетей</td><td class="r">Маржа 30-50%</td><td>Контрактное пр-во = скрытый рост</td></tr>
+<tr><td>Бальзам для губ, маски, скрабы</td><td class="r">Высокая частота повторных покупок</td><td>The Act: 200+ SKU</td></tr>
+</tbody>
+</table>
+</div>
+<div class="card">
+<h3>Рост в глубину (больше SKU в существующих)</h3>
+<table>
+<thead><tr><th>Бренд</th><th>Категорий</th><th>SKU</th><th>Разрыв</th></tr></thead>
+<tbody>
+<tr><td>Mixit</td><td class="r">20+</td><td class="r pos">1000+</td><td class="neg">×33</td></tr>
+<tr><td>Giardino Magico</td><td class="r">15+</td><td class="r pos">290</td><td class="neg">×10</td></tr>
+<tr><td>The Act</td><td class="r">12+</td><td class="r pos">200+</td><td class="neg">×7</td></tr>
+<tr><td>Z&R</td><td class="r">10+</td><td class="r">150+</td><td class="neg">×5</td></tr>
+<tr style="background:rgba(181,144,122,0.06);"><td style="color:var(--gold); font-weight:700;">Овсянников</td><td class="r">12</td><td class="r" style="color:var(--gold);">~30</td><td>—</td></tr>
+</tbody>
+</table>
+<p style="font-size:0.82em; color:var(--text2); margin-top:8px;">Расширение с 30 до 100 SKU увеличивает средний чек B2B на 30-40% (кросс-селл) и улучшает видимость на МП.</p>
+</div>
+</div>
+</div>
+
+<!-- В2: Конкуренты по каналам -->
+<div class="section" id="s33">
+<div class="section-head"><div class="section-num">33</div><h2>В2. Конкуренты по каналам + факторы успеха</h2></div>
+<div class="section-desc">Кто где продаёт? Какие каналы ключевые? Оргструктура конкурентов.</div>
+
+<div class="card">
+<h3>Матрица: бренд × каналы × ключевой фактор</h3>
+<div style="overflow-x:auto;">
+<table>
+<thead><tr><th>Бренд</th><th>B2B HoReCa</th><th>E-com (МП)</th><th>D2C сайт</th><th>Офлайн розница</th><th>Ключевой фактор</th><th>Сотр.</th></tr></thead>
+<tbody>
+<tr style="background:rgba(181,144,122,0.06);"><td style="color:var(--gold); font-weight:700;">Овсянников</td><td class="pos">1 500+</td><td class="pos">ТОП-1% Ozon</td><td>Tilda</td><td>Trend Island, ГИМ</td><td>Личный бренд + производство</td><td class="r">50</td></tr>
+<tr><td><strong>Mixit</strong></td><td>Минимально</td><td class="pos">Ozon, WB (лидер)</td><td class="pos">mixit.ru</td><td class="pos">32K точек</td><td>Масштаб + инфлюенсеры</td><td class="r">~263</td></tr>
+<tr><td><strong>VOIS</strong></td><td>Нет</td><td class="pos">Ozon, WB (основной)</td><td>vfrances.com</td><td>Минимально</td><td>200 блогеров + D2C</td><td class="r">~400</td></tr>
+<tr><td><strong>The Act</strong></td><td style="color:var(--negative); font-weight:600;">Входит в HoReCa!</td><td class="pos">9М+ клиентов МП</td><td class="pos">theact.ru</td><td>Cosmoscow, pop-up</td><td>Завод 1М ед./мес + бренд</td><td class="r">~399</td></tr>
+<tr><td><strong>Z&R</strong></td><td>Рестораны, отели</td><td>Ozon, WB</td><td class="pos">zrbrand.com</td><td class="pos">15+ бутиков</td><td>Премиум-бренд + розница</td><td class="r">~340</td></tr>
+<tr><td><strong>Natura Sib.</strong></td><td>Аптеки, отели</td><td>Ozon, WB</td><td class="pos">naturasiberica.ru</td><td class="pos">Сети, аптеки</td><td>Масс-производство + органика</td><td class="r">~684</td></tr>
+<tr><td><strong>Tonka</strong></td><td class="pos">70+ отелей, Four Seasons</td><td>Ozon, WB</td><td class="pos">tonkaperfumes.ru</td><td>Бутики</td><td>Люкс-ниша + B2B отели</td><td class="r">~50</td></tr>
+<tr><td><strong>Giardino</strong></td><td class="pos">120+ HoReCa</td><td>Ozon, WB</td><td>giardinomagico.ru</td><td>ЦУМ</td><td>290 SKU + HoReCa фокус</td><td class="r">~30</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="card" style="margin-top:16px;">
+<h3>Gap-анализ: что конкуренты делают лучше</h3>
+<div class="grid-3">
+<div class="callout callout-red">
+<h4>Digital-маркетинг</h4>
+<p>Mixit: 5.4M подписчиков, VOIS: 200 штатных блогеров, The Act: 180K+ IG. У Овсянникова: ~5K. Разрыв: ×1000.</p>
+</div>
+<div class="callout callout-red">
+<h4>SKU-глубина</h4>
+<p>Giardino: 290 SKU, The Act: 200+, Mixit: 1000+. Овсянников: ~30. Каждый дополнительный SKU = +доп. трафик на МП + кросс-селл B2B.</p>
+</div>
+<div class="callout callout-red">
+<h4>Офлайн-розница</h4>
+<p>Z&R: 15 бутиков → 6.8 млрд. Mixit: 32K точек. Овсянников: Trend Island + единичные точки. Собственная розница = бренд-капитал + маржа.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- В3: Рейтинг -->
+<div class="section" id="s34">
+<div class="section-head"><div class="section-num">34</div><h2>В3. Рейтинг: самый растущий / прибыльный / известный</h2></div>
+
+<div class="card">
+<table>
+<thead><tr><th>Номинация</th><th>Лидер</th><th>Показатель</th><th>Овсянников</th><th>Место</th></tr></thead>
+<tbody>
+<tr style="background:rgba(181,144,122,0.06);"><td style="color:var(--gold); font-weight:700;">Самый быстрорастущий (2024)</td><td>Овсянников</td><td class="pos"><strong>+816%</strong></td><td class="pos">+816%</td><td><span class="b-gold">1-е</span></td></tr>
+<tr><td>Самый быстрорастущий (2025)</td><td>Овсянников</td><td class="pos"><strong>+68%</strong></td><td class="pos">+68%</td><td><span class="b-gold">~2-3-е</span></td></tr>
+<tr><td>Самый стабильно растущий</td><td>Z&R</td><td>+27% каждый год</td><td>+68% (2025)</td><td><span class="b-positive">Выше</span></td></tr>
+<tr><td>Самый прибыльный (маржа)</td><td>VOIS</td><td class="pos">23.7%</td><td>~4-5% (run rate)</td><td><span class="b-neutral">Растёт</span></td></tr>
+<tr><td>Самый известный (digital)</td><td>Mixit</td><td>5.4M подписчиков</td><td>~5K</td><td><span class="b-negative">Отстаёт</span></td></tr>
+<tr><td>Лучшая репутация (МП)</td><td>Z&R</td><td>4.8-5.0 рейтинг</td><td>4.7-4.9</td><td><span class="b-positive">Хорошо</span></td></tr>
+<tr><td>Лучшая B2B сеть</td><td>Овсянников</td><td class="pos"><strong>1 500+</strong> партнёров</td><td class="pos">1 500+</td><td><span class="b-gold">1-е</span></td></tr>
+<tr><td>Лучший имидж-якорь</td><td>Овсянников</td><td class="pos">Сапсан, S7, WRF</td><td class="pos">Сапсан, S7, WRF</td><td><span class="b-gold">1-е</span></td></tr>
+</tbody>
+</table>
+<p style="font-size:0.85em; color:var(--text2); margin-top:12px;">Овсянников — абсолютный лидер по скорости роста, B2B-сети и имиджевым партнёрствам. Критические отставания: digital-маркетинг и ассортимент.</p>
+</div>
+</div>
+
+<!-- В4: Бизнес-модели конкурентов -->
+<div class="section" id="s35">
+<div class="section-head"><div class="section-num">35</div><h2>В4. Бизнес-модели конкурентов: почему прибыль или убыток</h2></div>
+
+<div class="grid-2">
+<div class="card" style="border-left:4px solid var(--positive);">
+<h3 style="color:var(--positive);">VOIS: D2C + инфлюенсеры = 23.7% маржа</h3>
+<p style="font-size:0.88em; color:var(--text2);">Модель: 200 блогеров в штате, собственный медиа-контент, D2C-first + МП. Производство в Китае (низкая с/с). Выручка 2.5 млрд, ЧП ~600М. Почему прибыльны: минимальный офлайн, инфлюенсеры вместо рекламы.</p>
+</div>
+<div class="card" style="border-left:4px solid var(--negative);">
+<h3 style="color:var(--negative);">Mixit: масштаб + инвесторы = убыток -420М</h3>
+<p style="font-size:0.88em; color:var(--text2);">Модель: масс-маркет + огромный масштаб (6.35 млрд, 32K точек, 263 чел.). Второй завод за 1.4 млрд. Почему убыток: агрессивное расширение, 2 завода, международные рынки, VIM Investments ждал IPO (отменено 2025).</p>
+</div>
+<div class="card" style="border-left:4px solid var(--positive);">
+<h3 style="color:var(--positive);">The Act: МП-first + B2B вход = 17.3% маржа</h3>
+<p style="font-size:0.88em; color:var(--text2);">Модель: МП как основной канал (9М+ клиентов), собственный завод 1М ед./мес, теперь входит в HoReCa с диспенсерами. Выручка 4 млрд, ЧП ~700М. Почему прибыльны: эффект масштаба + собственное производство.</p>
+</div>
+<div class="card" style="border-left:4px solid var(--positive);">
+<h3>Z&R: премиум + 15 бутиков = стабильный +27%</h3>
+<p style="font-size:0.88em; color:var(--text2);">Модель: люкс-бренд, собственная розница (15+ бутиков в РФ), МП, D2C. Выручка 6.8 млрд. Почему стабильны: бренд-капитал, высокий LTV, премиальная наценка. Риск: скандал Госдумы 07.2025.</p>
+</div>
+<div class="card" style="border-left:4px solid var(--negative);">
+<h3 style="color:var(--negative);">Natura Sib.: корп. конфликты = убыток</h3>
+<p style="font-size:0.88em; color:var(--text2);">Модель: масс-производство, органическая косметика, 684 сотрудника. Выручка 5.4 млрд. Почему убыток: смерть основателя, 3 гендиректора за 1.5 года, корпоративные войны.</p>
+</div>
+<div class="card" style="border-left:4px solid var(--gold);">
+<h3>Tonka: люкс-ниша B2B = маленький но прибыльный</h3>
+<p style="font-size:0.88em; color:var(--text2);">Модель: премиальные свечи и диффузоры для B2B (Four Seasons, 70+ отелей) + D2C. Выручка 308М. Сопоставим по размеру с Овсянниковым. Цена свечи: 5000-8000₽ (Овсянников: ~2000₽).</p>
+</div>
+</div>
+</div>
+
+<!-- В5-В6: Юнит-экономика -->
+<div class="section" id="s36">
+<div class="section-head"><div class="section-num">36</div><h2>В5-В6. Юнит-экономика, средний чек, LTV</h2></div>
+
+<div class="grid-2">
+<div class="card card-gold">
+<h3>Овсянников B2B: экономика партнёра</h3>
+<table>
+<thead><tr><th>Метрика</th><th>Расчёт</th><th>Значение</th></tr></thead>
+<tbody>
+<tr><td>Выручка B2B 2025</td><td>Данные компании</td><td class="r" style="color:var(--gold);"><strong>108М₽</strong></td></tr>
+<tr><td>Кол-во партнёров</td><td>Данные компании</td><td class="r">1 500+</td></tr>
+<tr><td>Ср. чек/партнёр/год</td><td>108М / 1500</td><td class="r"><strong>72 000₽</strong></td></tr>
+<tr><td>Ср. чек/партнёр/мес</td><td>72 000 / 12</td><td class="r">6 000₽</td></tr>
+<tr><td>LTV (3-5 лет)</td><td>72К × 4 года</td><td class="r pos"><strong>288 000₽</strong></td></tr>
+<tr><td>Маржинальность B2B</td><td>Выше МП (нет комиссий)</td><td class="r pos">~30-40%</td></tr>
+</tbody>
+</table>
+<p style="font-size:0.82em; color:var(--text3); margin-top:8px;">LTV B2B-клиента = 288К₽. При CAC ~5-10К₽ (выставки, менеджеры) → LTV/CAC = 29-58×. Отличный показатель.</p>
+</div>
+<div class="card card-gold">
+<h3>Овсянников МП: экономика заказа</h3>
+<table>
+<thead><tr><th>Метрика</th><th>Расчёт</th><th>Значение</th></tr></thead>
+<tbody>
+<tr><td>Выручка МП 2025</td><td>Данные компании</td><td class="r" style="color:var(--gold);"><strong>152М₽</strong></td></tr>
+<tr><td>Ср. чек косметики Ozon</td><td>Ozon Beauty: сегмент 1000-3000₽</td><td class="r">~1 200-1 800₽</td></tr>
+<tr><td>Оценка заказов/год</td><td>152М / ~1 500₽</td><td class="r">~100K заказов</td></tr>
+<tr><td>Комиссия Ozon</td><td>Категория «Красота»</td><td class="r neg">~22-25%</td></tr>
+<tr><td>Логистика</td><td>FBO</td><td class="r neg">~5-8%</td></tr>
+<tr><td>Реклама МП</td><td>Бусты, промо</td><td class="r neg">~5-10%</td></tr>
+<tr><td>Итого нагрузка МП</td><td>Комиссия + логистика + реклама</td><td class="r neg">~35-43%</td></tr>
+<tr><td>Маржа после МП</td><td>При с/с ~20-25%</td><td class="r">~15-25%</td></tr>
+</tbody>
+</table>
+<p style="font-size:0.82em; color:var(--text3); margin-top:8px;">Отраслевые данные Ozon Beauty 2025: 31М активных клиентов, 111М заказов, 87К+ продавцов, 3М товарных позиций. Ср. частота: 6+ заказов/год/клиент.</p>
+</div>
+</div>
+
+<div class="callout callout-gold" style="margin-top:16px;">
+<h4>Вывод: B2B = прибыльнее, МП = масштабируемее</h4>
+<p>B2B: маржа ~35-40%, LTV = 288К₽, LTV/CAC &gt; 29×, но рост ограничен менеджерами. МП: маржа ~15-25%, масштабируется через рекламу и SKU, но комиссии съедают 35-43%. Оптимум: <strong>B2B для прибыли, МП для объёма и бренд-знания</strong>.</p>
+</div>
+</div>
+
+<!-- В7: Почему Овсянников быстро растёт -->
+<div class="section" id="s37">
+<div class="section-head"><div class="section-num">37</div><h2>В7. Чем Овсянников лучше? 5 конкурентных преимуществ</h2></div>
+
+<div class="grid-2">
+<div class="card" style="border-left:4px solid var(--gold);">
+<h3>1. Личный бренд основателя</h3>
+<p style="font-size:0.88em; color:var(--text2);">Павел Овсянников — спикер SiM-2026, лично общается с крупными клиентами. В B2B «покупают у человека, а не у компании». При 50 сотрудниках — плоская структура и скорость решений. Ни один конкурент такого масштаба не имеет такого личного вовлечения основателя.</p>
+</div>
+<div class="card" style="border-left:4px solid var(--gold);">
+<h3>2. Собственное производство</h3>
+<p style="font-size:0.88em; color:var(--text2);">600 м² в Балашихе, полный контроль качества. VOIS производит в Китае (логистические риски), многие D2C-бренды — на контрактных заводах. Своё производство = гибкость кастомизации + маржа + «Честный знак» проще.</p>
+</div>
+<div class="card" style="border-left:4px solid var(--gold);">
+<h3>3. B2B-first модель</h3>
+<p style="font-size:0.88em; color:var(--text2);">1 500+ партнёров = стабильный cash flow + имиджевые якоря. B2B LTV = 288К₽/клиент. Конкуренты (VOIS, Mixit) зависят от МП с растущими комиссиями (+58-63%). Овсянников диверсифицирован: 42% B2B + 58% МП.</p>
+</div>
+<div class="card" style="border-left:4px solid var(--gold);">
+<h3>4. Имиджевые якоря</h3>
+<p style="font-size:0.88em; color:var(--text2);">Сапсан (бизнес-класс), S7, AZUR jets, WRF (Горыныч, She), Novikov, Mriya. Каждый пассажир Сапсана, гость WRF — тактильный контакт с брендом. Это невозможно купить рекламой. Социальное доказательство premium-уровня.</p>
+</div>
+<div class="card" style="border-left:4px solid var(--gold);">
+<h3>5. Кастомизация (СТМ)</h3>
+<p style="font-size:0.88em; color:var(--text2);">Уникальная способность делать продукты под заказ: аромат шашлыка для Яндекс Лавки, коллекция для ГИМ. Конкуренты (Allegrini, Tonka) предлагают кастомизацию, но при ×5-10 цене. Овсянников = кастомизация по доступной цене.</p>
+</div>
+<div class="card" style="border-left:4px solid var(--positive);">
+<h3>Почему быстро растёт?</h3>
+<p style="font-size:0.88em; color:var(--text2);">Ответ = комбинация: <strong>пустая ниша</strong> (уход Le Labo, Aesop, Byredo из РФ) + <strong>правильный фокус на B2B</strong> (высокая LTV, стабильный cash flow) + <strong>личный бренд</strong> (Павел = лицо компании) + <strong>своё производство</strong> (гибкость + маржа) + <strong>правильный тайминг</strong> (маркировка «Честный знак» создаёт барьер для серого импорта).</p>
+</div>
+</div>
+</div>
+
+<!-- В8: Самая эффективная ячейка масштабирования -->
+<div class="section" id="s38">
+<div class="section-head"><div class="section-num">38</div><h2>В8. Самая эффективная ячейка масштабирования</h2></div>
+<div class="section-desc">Куда вложить 1₽, чтобы получить максимальный возврат? Анализ ROI по каналам.</div>
+
+<div class="card">
+<h3>ROI по каналам: 1₽ вложенная → сколько возвращается</h3>
+<table>
+<thead><tr><th>Канал</th><th>CAC</th><th>LTV</th><th>LTV/CAC</th><th>Маржа</th><th>Масштабируемость</th><th>Вердикт</th></tr></thead>
+<tbody>
+<tr style="background:rgba(139,175,122,0.06);"><td style="font-weight:700;">B2B (сопровождение)</td><td class="r">~5-10К</td><td class="r pos">288К</td><td class="r pos"><strong>29-58×</strong></td><td class="r pos">35-40%</td><td>Ограничена менеджерами</td><td><span class="b-positive">Прибыль</span></td></tr>
+<tr><td>B2B (первичные)</td><td class="r">~15-30К</td><td class="r pos">288К</td><td class="r pos"><strong>10-19×</strong></td><td class="r pos">35-40%</td><td>Средняя</td><td><span class="b-positive">Рост</span></td></tr>
+<tr style="background:rgba(181,144,122,0.06);"><td style="font-weight:700;">МП Ozon</td><td class="r">~500-1500₽</td><td class="r">~3-5К</td><td class="r">3-6×</td><td class="r">15-25%</td><td class="pos"><strong>Высокая</strong></td><td><span class="b-gold">Объём</span></td></tr>
+<tr><td>МП Wildberries</td><td class="r">~300-1000₽</td><td class="r">~2-4К</td><td class="r">3-5×</td><td class="r">10-20%</td><td class="pos">Высокая</td><td><span class="b-neutral">Потенциал</span></td></tr>
+<tr><td>СТМ</td><td class="r">~0 (входящий)</td><td class="r">~100-500К</td><td class="r pos"><strong>∞</strong></td><td class="r pos">30-50%</td><td>Средняя</td><td><span class="b-gold">Новая ось</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout callout-gold" style="margin-top:16px;">
+<h4>Рекомендация: трёхосевая стратегия</h4>
+<p><strong>Ось 1 — МП (объём):</strong> масштабируемость, бренд-знание, трафик. Инвестиции в SKU + WB. Цель: 300М/год с МП.<br>
+<strong>Ось 2 — B2B (прибыль):</strong> LTV/CAC = 29-58×. Инвестиции в отдел первичных продаж + регионы. Цель: 200М/год с B2B.<br>
+<strong>Ось 3 — СТМ (новый канал):</strong> практически нулевой CAC, маржа 30-50%. Яндекс Лавка, ГИМ — уже есть. Масштабировать для HoReCa-сетей и ритейла.</p>
+</div>
+</div>
+
+<!-- В9: Гипотезы роста до 1 млрд ЧП/год -->
+<div class="section" id="s39">
+<div class="section-head"><div class="section-num">39</div><h2>В9. Гипотезы роста до 1 млрд ₽ чистой прибыли в год</h2></div>
+<div class="section-desc">Текущий run rate: +13.2М ЧП/год. Цель: 1 млрд ЧП/год = ×76. Как?</div>
+
+<div class="card card-gold">
+<h3>Арифметика: 1 млрд ЧП = ~10 млрд выручки при 10% марже</h3>
+<div class="info-tip"><div class="ii">i</div><span>Текущая маржа Q4: ~4.6% (1.1М ЧП / 21.7М выр./мес). Без % по займам: ~18.5% (4М/21.7М). Целевая маржа: 10% = достижимо при масштабе и рефинансировании.</span></div>
+</div>
+
+<div class="card" style="margin-top:16px;">
+<h3>7 гипотез роста выручки до 10 млрд</h3>
+<table>
+<thead><tr><th>#</th><th>Гипотеза</th><th>Механика</th><th>Потенциал выручки</th><th>Потенциал ЧП</th><th>Горизонт</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Масштабирование МП</strong></td><td>×5 выручку МП: 152М → 760М. Вход на WB, +SKU, реклама</td><td class="r pos">760М</td><td class="r">~50-70М (7-10%)</td><td>2-3 года</td></tr>
+<tr><td>2</td><td><strong>B2B экспансия</strong></td><td>×3 партнёров: 1500 → 4500. Регионы + отделы продаж</td><td class="r pos">324М</td><td class="r">~100-130М (30-40%)</td><td>2-3 года</td></tr>
+<tr><td>3</td><td><strong>СТМ для сетей</strong></td><td>Контрактное пр-во для ритейла, HoReCa-сетей</td><td class="r pos">200-500М</td><td class="r">~60-250М (30-50%)</td><td>2-4 года</td></tr>
+<tr><td>4</td><td><strong>Экспорт Казахстан/СНГ</strong></td><td>ТР ТС = вход без допсертификации. Рынок $223М, +19%</td><td class="r">100-300М</td><td class="r">~20-60М</td><td>2-3 года</td></tr>
+<tr><td>5</td><td><strong>Собственная розница</strong></td><td>5-10 бутиков (паттерн Z&R: 15 бутиков → 6.8 млрд)</td><td class="r">500М-2 млрд</td><td class="r">~50-200М</td><td>3-5 лет</td></tr>
+<tr><td>6</td><td><strong>Франшиза B2B</strong></td><td>Лицензирование B2B-формата для региональных партнёров</td><td class="r">100-300М</td><td class="r">~50-150М (50%)</td><td>3-5 лет</td></tr>
+<tr><td>7</td><td><strong>Рефинансирование</strong></td><td>% по займам: 2.9М/мес = 34.8М/год → снижение ставки</td><td class="r">—</td><td class="r pos">+10-25М/год</td><td>6-12 мес</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card" style="margin-top:16px;">
+<h3>Сценарии достижения 1 млрд ЧП</h3>
+<div class="grid-3">
+<div class="callout callout-green">
+<h4>Консервативный: 7-8 лет</h4>
+<p>МП ×5 + B2B ×3 + СТМ = ~2 млрд выручки, ~250-400М ЧП (2030). Для 1 млрд ЧП нужно 10 млрд выручки → 2032-2033.</p>
+</div>
+<div class="callout callout-gold">
+<h4>Базовый: 5-6 лет</h4>
+<p>Все 7 гипотез + розница + экспорт = ~4-5 млрд выручки (2031). При 15% марже = 600-750М ЧП. 1 млрд ЧП → 2031-2032.</p>
+</div>
+<div class="callout callout-red">
+<h4>Агрессивный: 4-5 лет</h4>
+<p>Паттерн VOIS (388М→2.5 млрд за 2 года). Если Овсянников повторит ×6 = 1.56 млрд (2027), ×6 = 9.4 млрд (2029). При 12% марже = 1.1 млрд ЧП к 2029-2030.</p>
+</div>
+</div>
+</div>
+
+<!-- SVG: Waterfall к 1 млрд ЧП -->
+<div class="chart-container" style="margin-top:16px;">
+<h3>Декомпозиция: от 13.2М к 1 млрд ЧП/год</h3>
+<svg class="chart-svg" viewBox="0 0 800 280">
+<defs><style>.wf2-lbl{fill:#A8A098;font-size:9px;text-anchor:middle;}.wf2-val{fill:#E8E4DC;font-size:10px;font-weight:700;text-anchor:middle;}</style></defs>
+<!-- Текущий -->
+<rect x="30" y="230" width="70" height="20" rx="4" fill="rgba(181,144,122,0.4)" stroke="#B5907A" stroke-width="1"/>
+<text class="wf2-val" x="65" y="225">13.2М</text>
+<text class="wf2-lbl" x="65" y="265">Текущий<tspan x="65" dy="12">run rate</tspan></text>
+<!-- Рефин. -->
+<rect x="120" y="208" width="70" height="22" rx="4" fill="rgba(139,175,122,0.4)" class="draw-target"/>
+<text class="wf2-val" x="155" y="203" fill="#8BAF7A">+25М</text>
+<text class="wf2-lbl" x="155" y="265">Рефин.</text>
+<!-- МП ×5 -->
+<rect x="210" y="148" width="70" height="60" rx="4" fill="rgba(139,175,122,0.35)" class="draw-target"/>
+<text class="wf2-val" x="245" y="143" fill="#8BAF7A">+70М</text>
+<text class="wf2-lbl" x="245" y="265">МП ×5</text>
+<!-- B2B ×3 -->
+<rect x="300" y="38" width="70" height="110" rx="4" fill="rgba(139,175,122,0.3)" class="draw-target"/>
+<text class="wf2-val" x="335" y="33" fill="#8BAF7A">+130М</text>
+<text class="wf2-lbl" x="335" y="265">B2B ×3</text>
+<!-- СТМ -->
+<rect x="390" y="18" width="60" height="20" rx="4" fill="rgba(181,144,122,0.3)" class="draw-target"/>
+<text class="wf2-val" x="420" y="14" fill="#B5907A">+250М</text>
+<text class="wf2-lbl" x="420" y="265">СТМ</text>
+<!-- Экспорт -->
+<rect x="470" y="12" width="60" height="6" rx="3" fill="rgba(138,154,170,0.3)" class="draw-target"/>
+<text class="wf2-val" x="500" y="8" fill="#8A9AAA">+60М</text>
+<text class="wf2-lbl" x="500" y="265">Экспорт</text>
+<!-- Розница -->
+<rect x="550" y="8" width="60" height="4" rx="3" fill="rgba(181,144,122,0.25)" class="draw-target"/>
+<text class="wf2-val" x="580" y="4" fill="#B5907A">+200М</text>
+<text class="wf2-lbl" x="580" y="265">Розница</text>
+<!-- Франшиза -->
+<rect x="630" y="6" width="60" height="2" rx="3" fill="rgba(139,175,122,0.2)" class="draw-target"/>
+<text class="wf2-val" x="660" y="2" fill="#8BAF7A">+150М</text>
+<text class="wf2-lbl" x="660" y="265">Франшиза</text>
+<!-- Итого -->
+<rect x="720" y="10" width="70" height="240" rx="4" fill="rgba(181,144,122,0.15)" stroke="#B5907A" stroke-width="2"/>
+<text class="wf2-val" x="755" y="130" fill="#B5907A" font-size="14">~900М</text>
+<text class="wf2-lbl" x="755" y="265">Потенциал<tspan x="755" dy="12">ЧП/год</tspan></text>
+</svg>
+<p style="font-size:0.82em; color:var(--text3); text-align:center; margin-top:8px;">Суммарный потенциал ЧП при реализации всех 7 гипотез: ~900М₽/год. Достижение 1 млрд требует дополнительных точек роста (M&A, новые рынки) или более высокой маржи.</p>
+</div>
+</div>
+
+<!-- T7: SKU-сравнение -->
+<div class="section" id="s40">
+<div class="section-head"><div class="section-num">40</div><h2>SKU-сравнение: Овсянников vs конкуренты</h2></div>
+<div class="section-desc">Присутствие по 12 категориям продукции. Данные: сайты брендов, Ozon, WB.</div>
+
+<div class="card">
+<div style="overflow-x:auto;">
+<table style="font-size:0.82em;">
+<thead><tr><th>Категория</th><th style="color:var(--gold);">Овсянников</th><th>Mixit</th><th>The Act</th><th>VOIS</th><th>Z&R</th><th>Giardino</th><th>Tonka</th><th>Natura Sib.</th></tr></thead>
+<tbody>
+<tr><td>Пенное мыло</td><td class="r" style="color:var(--gold);">3-5</td><td class="r">15+</td><td class="r">10+</td><td class="r">—</td><td class="r">5+</td><td class="r">10+</td><td class="r">2</td><td class="r">10+</td></tr>
+<tr><td>Гель-мыло</td><td class="r" style="color:var(--gold);">3-5</td><td class="r">10+</td><td class="r">5+</td><td class="r">5+</td><td class="r">5+</td><td class="r">5+</td><td class="r">2</td><td class="r">10+</td></tr>
+<tr><td>Крем для тела</td><td class="r" style="color:var(--gold);">2-3</td><td class="r pos">50+</td><td class="r">20+</td><td class="r">15+</td><td class="r">10+</td><td class="r">15+</td><td class="r">5+</td><td class="r pos">80+</td></tr>
+<tr><td>Крем для рук</td><td class="r" style="color:var(--gold);">2-3</td><td class="r">20+</td><td class="r">10+</td><td class="r">5+</td><td class="r">5+</td><td class="r">10+</td><td class="r">3+</td><td class="r">30+</td></tr>
+<tr><td>Гель для душа</td><td class="r" style="color:var(--gold);">2-3</td><td class="r">30+</td><td class="r">15+</td><td class="r">10+</td><td class="r">10+</td><td class="r">10+</td><td class="r">—</td><td class="r pos">50+</td></tr>
+<tr><td>Шампунь</td><td class="r" style="color:var(--gold);">2-3</td><td class="r pos">40+</td><td class="r">10+</td><td class="r">10+</td><td class="r">5+</td><td class="r">—</td><td class="r">—</td><td class="r pos">100+</td></tr>
+<tr><td>Бальзам</td><td class="r" style="color:var(--gold);">1-2</td><td class="r">20+</td><td class="r">5+</td><td class="r">5+</td><td class="r">3+</td><td class="r">—</td><td class="r">—</td><td class="r">30+</td></tr>
+<tr><td>Аромадиффузор</td><td class="r" style="color:var(--gold);">2-3</td><td class="r">5+</td><td class="r">5+</td><td class="r pos">20+</td><td class="r pos">15+</td><td class="r pos">40+</td><td class="r pos">30+</td><td class="r">—</td></tr>
+<tr><td>Автопарфюм</td><td class="r" style="color:var(--gold);">1-2</td><td class="r">—</td><td class="r">—</td><td class="r">5+</td><td class="r">—</td><td class="r">5+</td><td class="r">5+</td><td class="r">—</td></tr>
+<tr><td>Интерьерный спрей</td><td class="r" style="color:var(--gold);">1-2</td><td class="r">—</td><td class="r">3+</td><td class="r">5+</td><td class="r">5+</td><td class="r">10+</td><td class="r">10+</td><td class="r">5+</td></tr>
+<tr><td>Антисептик</td><td class="r" style="color:var(--gold);">1-2</td><td class="r">3+</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td class="r">3+</td><td class="r">—</td><td class="r">5+</td></tr>
+<tr><td>Аромасвечи</td><td class="r" style="color:var(--gold);">2-3</td><td class="r">5+</td><td class="r">5+</td><td class="r pos">15+</td><td class="r pos">10+</td><td class="r pos">30+</td><td class="r pos">40+</td><td class="r">—</td></tr>
+<tr style="background:rgba(181,144,122,0.06); font-weight:700;"><td style="color:var(--gold);">ИТОГО SKU</td><td class="r" style="color:var(--gold);">~30</td><td class="r pos">1000+</td><td class="r pos">200+</td><td class="r">~120</td><td class="r">~150</td><td class="r pos">290</td><td class="r">~100</td><td class="r pos">700+</td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:0.82em; color:var(--text3); margin-top:8px;">Данные: сайты брендов, каталоги Ozon/WB. Значения приблизительные (±20%) из-за постоянного обновления ассортимента. «—» = категория отсутствует у бренда.</p>
+</div>
+</div>
+
+<!-- T10: Методология карт -->
+<div class="section" id="s41">
+<div class="section-head"><div class="section-num">41</div><h2>Методология перцептуальных карт и источники</h2></div>
+
+<div class="card">
+<h3>Как построены карты</h3>
+<table>
+<thead><tr><th>Карта</th><th>Ось X</th><th>Методология X</th><th>Ось Y</th><th>Методология Y</th><th>Размер пузыря</th></tr></thead>
+<tbody>
+<tr><td>B2B (секция 6)</td><td>Цена</td><td>Средняя цена литра жидкого мыла B2B (сайты, прайсы)</td><td>Кастомизация</td><td>Экспертная оценка: кол-во доп. услуг (брендирование, аромат, дозаторы)</td><td>Выручка (ФНС)</td></tr>
+<tr><td>B2C (секция 7)</td><td>Цена</td><td>Средняя цена на МП (Ozon, WB) в категории «гель для душа»</td><td>Бренд-престиж</td><td>Экспертная оценка: подписчики соцсетей + упоминания в СМИ + офлайн-точки</td><td>Выручка (ФНС)</td></tr>
+</tbody>
+</table>
+<div class="info-tip" style="margin-top:12px;"><div class="ii">i</div><span><strong>Прозрачность:</strong> Ось Y (кастомизация / бренд-престиж) — экспертная оценка по шкале 0-100, основанная на: кол-во подписчиков соцсетей (вес 30%), упоминания в деловых СМИ за 12 мес (вес 30%), кол-во офлайн-точек (вес 20%), наличие на полках люкс-ритейла (вес 20%). Размер пузыря пропорционален выручке по ФНС 2024.</span></div>
+</div>
+</div>
+
 </div><!-- /container -->
-</div><!-- /tab-full -->
 
 <!-- FOOTER -->
 <footer>
-    <p>Овсянников — Полный бизнес-анализ и Due Diligence &nbsp;|&nbsp; Февраль 2026</p>
-    <p style="margin-top:8px;">Данные: ФНС, Rusprofile, СБИС, Forbes, TAdviser, McKinsey, Euromonitor, INFOLine, ТАСС/Минпромторг</p>
-    <p style="margin-top:8px;">Автоматизированный анализ · 100+ источников · 7 частей · 31 секция · 36 цитат экспертов · 12 SVG · 16 фаундеров · 36 фактчек-коррекций</p>
+    <p>Овсянников — Стратегический бизнес-анализ v6.0 &nbsp;|&nbsp; Февраль 2026</p>
+    <p style="margin-top:8px;">Данные: ФНС, Rusprofile, СБИС, Forbes, TAdviser, McKinsey, Euromonitor, INFOLine, ТАСС/Минпромторг, данные компании (NDA)</p>
+    <p style="margin-top:8px;">41 секция · 8 частей · 14 SVG-графиков · 36 цитат экспертов · 16 фаундеров · 9 ответов на вопросы основателя · 100+ источников</p>
 </footer>
 
 <script>
-function switchTab(tab) {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    if (tab === 'overview') {
-        document.querySelectorAll('.tab-btn')[0].classList.add('active');
-        document.getElementById('tab-overview').classList.add('active');
-    } else {
-        document.querySelectorAll('.tab-btn')[1].classList.add('active');
-        document.getElementById('tab-full').classList.add('active');
-    }
-    window.scrollTo(0, 0);
-}
-</script>
 <script>
 // Tooltip
 const tip=document.createElement('div');tip.id='svg-tip';document.body.appendChild(tip);
