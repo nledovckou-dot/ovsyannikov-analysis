@@ -174,7 +174,6 @@ def emit(s):
 # ════════════════════════════════════════════
 cosm_market = next(m for m in market if m["key"] == "cosmetics")
 fmcg_market = next(m for m in market if m["key"] == "fmcg")
-horeca_market = next(m for m in market if m["key"] == "horeca")
 
 emit("""
 <!-- ═══════════════════════════════════════ -->
@@ -198,7 +197,7 @@ mp_ind = mp_pos.get("industry", {}).get("total", mp_pos["total_vacancies"])
 mp_gen = mp_pos.get("general", {}).get("total", 0)
 emit(f"""<div class="callout callout-gold" style="margin-top:16px;">
 <h4>Контекст: рынок труда в beauty перегрет</h4>
-<p>В косметике и парфюмерии <strong>{fmt_num(cosm_market['total_vacancies'])}</strong> вакансий по Москве и МО. Медиана зарплат в FMCG — <strong>{fmt_k(fmcg_market['salary']['median'])}₽</strong> (на 30% выше чем в beauty-ритейле). Менеджеры маркетплейсов — <strong>самый дефицитный профиль</strong>: {fmt_num(mp_ind)} в отрасли (и {fmt_num(mp_gen)} по всему рынку), {mp_pos['remote_pct']}% remote. HoReCa-сегмент (ключевой для B2B Овсянникова) — {fmt_num(horeca_market['total_vacancies'])} вакансий, медиана {fmt_k(horeca_market['salary']['median'])}₽.</p>
+<p>В косметике и парфюмерии <strong>{fmt_num(cosm_market['total_vacancies'])}</strong> вакансий по Москве и МО. Медиана зарплат в FMCG — <strong>{fmt_k(fmcg_market['salary']['median'])}₽</strong> (выше чем в beauty-ритейле — конкуренция за кадры с FMCG-гигантами). Менеджеры маркетплейсов — <strong>самый дефицитный профиль</strong>: {fmt_num(mp_ind)} в отрасли (и {fmt_num(mp_gen)} по всему рынку), {mp_pos['remote_pct']}% remote.</p>
 </div>
 
 <div class="info-tip"><div class="ii">i</div><span><strong>Источник:</strong> hh.ru API (GET /vacancies), дата сбора: {collected_at}. Регион: Москва + Московская область (area=1,46). Зарплаты net (после вычета 13% НДФЛ из gross). Только вакансии с указанной зарплатой, валюта RUB.</span></div>
@@ -692,7 +691,7 @@ emit(f"""<div class="grid-2" style="margin-top:16px;">
 <h4>Где Овсянников выиграет</h4>
 <ul style="margin-top:8px;">
 <li><strong>Технологи ({fmt_k(tech_ind_med)}₽) и операторы ({fmt_k(op_ind_med)}₽)</strong> — зарплаты по карману, собственное производство = конкурентное преимущество</li>
-<li><strong>B2B-менеджеры (HoReCa)</strong> — уникальная экспертиза в аменити, 1500+ партнёров как кейс</li>
+<li><strong>B2B-менеджеры</strong> — уникальная экспертиза в косметической дистрибуции, 1500+ партнёров как кейс</li>
 <li><strong>Remote МП-менеджеры из регионов</strong> — экономия 30-40% vs Москва при сопоставимом качестве</li>
 <li><strong>Карьерный рост</strong> — в компании ×17 за 2 года сотрудник растёт вместе с бизнесом</li>
 </ul>
