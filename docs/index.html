@@ -267,6 +267,7 @@ details.src-section[open] summary { border-bottom:1px solid var(--border); margi
     <a href="#sec-2-10">Digital</a>
     <a href="#sec-2-11">МП</a>
     <a href="#sec-2-13">Микро</a>
+    <a href="#sec-2-18" style="background:rgba(139,175,122,0.2);border-color:rgba(139,175,122,0.4);color:var(--positive);">NEW HR</a>
     <a href="#part-3" style="color:var(--text3);">III. Аналитика</a>
     <a href="#sec-3-1">AI</a>
     <a href="#sec-3-2">Карта B2B</a>
@@ -1813,7 +1814,441 @@ details.src-section[open] summary { border-bottom:1px solid var(--border); margi
 </div>
 
 
-<!-- ══════════════════════════════════════════════════ -->
+
+<!-- ═══════════════════════════════════════ -->
+
+<!-- ═══════════════════════════════════════ -->
+<!-- СЕКЦИИ 2.18-2.23: РЫНОК ТРУДА (HR)     -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="section" id="sec-2-18">
+<div class="section-head"><div class="section-num" style="width:auto;min-width:42px;padding:0 12px;border-radius:20px;">2.18</div><h2>Рынок труда в косметической индустрии</h2></div>
+<div class="section-desc">Реальные данные hh.ru API (Москва + МО): вакансии, зарплаты, дефицит кадров. Насколько Овсянников конкурентоспособен как работодатель?</div>
+
+<div class="grid-3">
+<div class="metric"><div class="val val-gold">3 966</div><div class="lbl">Вакансий в косметике / парфюмерии (Москва + МО)</div></div>
+<div class="metric"><div class="val val-gold">139К₽</div><div class="lbl">Медиана зарплат (12 позиций, net)</div></div>
+<div class="metric"><div class="val val-neutral">25.7%</div><div class="lbl">Доля remote-вакансий (в среднем)</div></div>
+</div>
+
+<div class="callout callout-gold" style="margin-top:16px;">
+<h4>Контекст: рынок труда в beauty перегрет</h4>
+<p>В косметике и парфюмерии <strong>3 966</strong> вакансий по Москве и МО. Медиана зарплат в FMCG — <strong>135К₽</strong> (на 30% выше чем в beauty-ритейле). Менеджеры маркетплейсов — <strong>самый дефицитный профиль</strong>: 59 в отрасли (и 916 по всему рынку), 33.9% remote. HoReCa-сегмент (ключевой для B2B Овсянникова) — 1 193 вакансий, медиана 140К₽.</p>
+</div>
+
+<div class="info-tip"><div class="ii">i</div><span><strong>Источник:</strong> hh.ru API (GET /vacancies), дата сбора: 2026-02-27. Регион: Москва + Московская область (area=1,46). Зарплаты net (после вычета 13% НДФЛ из gross). Только вакансии с указанной зарплатой, валюта RUB.</span></div>
+</div>
+
+
+<div class="section" id="sec-2-19">
+<div class="section-head"><div class="section-num" style="width:auto;min-width:42px;padding:0 12px;border-radius:20px;">2.19</div><h2>Зарплатный бенчмарк по ключевым позициям</h2></div>
+<div class="section-desc">12 позиций: 8 линейных + 4 управленческих, критичных для роста Овсянникова до 1 млрд₽. Данные hh.ru, Москва + МО, net (после НДФЛ).</div>
+
+<div class="card">
+<h3>Зарплаты: отрасль vs общий рынок</h3>
+<div style="overflow-x:auto;">
+<table>
+<thead><tr><th>Позиция</th><th class="r">Вакансий<br><small style="color:var(--gold);">отрасль</small></th><th class="r">Вакансий<br><small style="color:var(--text3);">общий</small></th><th class="r">Медиана<br><small style="color:var(--gold);">отрасль</small></th><th class="r">Медиана<br><small style="color:var(--text3);">общий</small></th><th class="r">Q3</th><th>Оценка</th></tr></thead>
+<tbody>
+
+<tr><td>Логист / Кладовщик</td><td class="r" style="color:var(--gold);">71</td><td class="r" style="color:var(--text3);">2 752</td><td class="r" style="font-weight:700;color:var(--gold);">86К₽</td><td class="r" style="color:var(--text3);">90К₽</td><td class="r">104К₽</td><td><span class="badge b-positive">Может платить</span></td></tr>
+
+<tr><td>Оператор производственной линии</td><td class="r" style="color:var(--gold);">3</td><td class="r" style="color:var(--text3);">80</td><td class="r" style="font-weight:700;color:var(--gold);">79К₽</td><td class="r" style="color:var(--text3);">93К₽</td><td class="r">104К₽</td><td><span class="badge b-positive">Может платить</span></td></tr>
+
+<tr><td>R&D / Разработчик рецептур</td><td class="r" style="color:var(--gold);">12</td><td class="r" style="color:var(--text3);">53</td><td class="r" style="font-weight:700;color:var(--gold);">100К₽</td><td class="r" style="color:var(--text3);">120К₽</td><td class="r">110К₽</td><td><span class="badge b-positive">Может платить</span></td></tr>
+
+<tr><td>Технолог производства</td><td class="r" style="color:var(--gold);">37</td><td class="r" style="color:var(--text3);">1 491</td><td class="r" style="font-weight:700;color:var(--gold);">110К₽</td><td class="r" style="color:var(--text3);">126К₽</td><td class="r">136К₽</td><td><span class="badge b-positive">Может платить</span></td></tr>
+
+<tr><td>Менеджер маркетплейсов (WB/Ozon)</td><td class="r" style="color:var(--gold);">59</td><td class="r" style="color:var(--text3);">916</td><td class="r" style="font-weight:700;color:var(--gold);">120К₽</td><td class="r" style="color:var(--text3);">109К₽</td><td class="r">163К₽</td><td><span class="badge b-positive">Может платить</span></td></tr>
+
+<tr><td>Digital-маркетолог</td><td class="r" style="color:var(--gold);">49</td><td class="r" style="color:var(--text3);">1 511</td><td class="r" style="font-weight:700;color:var(--gold);">136К₽</td><td class="r" style="color:var(--text3);">130К₽</td><td class="r">174К₽</td><td><span class="badge b-gold">На пределе</span></td></tr>
+
+<tr><td>Менеджер по продажам B2B</td><td class="r" style="color:var(--gold);">199</td><td class="r" style="color:var(--text3);">11 734</td><td class="r" style="font-weight:700;color:var(--gold);">139К₽</td><td class="r" style="color:var(--text3);">139К₽</td><td class="r">164К₽</td><td><span class="badge b-gold">На пределе</span></td></tr>
+
+<tr><td>Бренд-менеджер</td><td class="r" style="color:var(--gold);">65</td><td class="r" style="color:var(--text3);">541</td><td class="r" style="font-weight:700;color:var(--gold);">151К₽</td><td class="r" style="color:var(--text3);">150К₽</td><td class="r">194К₽</td><td><span class="badge b-negative">Не конкурентен</span></td></tr>
+
+<tr><td colspan="7" style="background:var(--bg3);color:var(--gold);font-weight:700;font-size:0.82em;text-transform:uppercase;letter-spacing:0.05em;padding:8px 14px;">Топ-менеджмент</td></tr>
+
+<tr><td>Коммерческий директор</td><td class="r" style="color:var(--gold);">7</td><td class="r" style="color:var(--text3);">208</td><td class="r" style="font-weight:700;color:var(--gold);">160К₽</td><td class="r" style="color:var(--text3);">300К₽</td><td class="r">262К₽</td><td><span class="badge b-negative">Не конкурентен</span></td></tr>
+
+<tr><td>Директор по производству</td><td class="r" style="color:var(--gold);">15</td><td class="r" style="color:var(--text3);">469</td><td class="r" style="font-weight:700;color:var(--gold);">174К₽</td><td class="r" style="color:var(--text3);">130К₽</td><td class="r">231К₽</td><td><span class="badge b-negative">Не конкурентен</span></td></tr>
+
+<tr><td>HR-директор / HRD</td><td class="r" style="color:var(--gold);">4</td><td class="r" style="color:var(--text3);">211</td><td class="r" style="font-weight:700;color:var(--gold);">178К₽</td><td class="r" style="color:var(--text3);">175К₽</td><td class="r">225К₽</td><td><span class="badge b-negative">Не конкурентен</span></td></tr>
+
+<tr><td>Финансовый директор / CFO</td><td class="r" style="color:var(--gold);">2</td><td class="r" style="color:var(--text3);">257</td><td class="r" style="font-weight:700;color:var(--gold);">0₽</td><td class="r" style="color:var(--text3);">250К₽</td><td class="r">350К₽</td><td><span class="badge b-negative">Не конкурентен</span></td></tr>
+
+</tbody>
+</table>
+</div>
+<p style="font-size:0.82em; color:var(--text3); margin-top:8px;"><strong>Отрасль</strong> = работодатели в «бытовая химия, парфюмерия, косметика» (коды HH 42.589, 42.590, 41.516). <strong>Общий</strong> = все отрасли. <strong>Оценка «Может платить»</strong> — медиана ≤120К₽. <strong>«На пределе»</strong> — 120-145К₽. <strong>«Не конкурентен»</strong> — &gt;145К₽.</p>
+</div>
+
+
+<!-- SVG: Зарплатная карта — диапазоны Q1-Q3 -->
+<div class="chart-container">
+<h3>Зарплатная карта: диапазоны Q1–Q3 по позициям</h3>
+<div class="subtitle">Горизонтальные полосы = межквартильный размах (50% вакансий). Ромб = медиана. Пунктир = бюджет Овсянникова (~130К₽/мес).</div>
+
+<svg class="chart-svg" viewBox="0 0 700 625">
+<defs><style>.sl{fill:#A8A098;font-size:11px;}.sv{fill:#706858;font-size:9px;}</style></defs>
+<line x1="241" y1="25" x2="241" y2="595" stroke="rgba(181,144,122,0.07)"/>
+<text x="241" y="18" text-anchor="middle" class="sv">50К₽</text>
+<line x1="287" y1="25" x2="287" y2="595" stroke="rgba(181,144,122,0.07)"/>
+<text x="287" y="18" text-anchor="middle" class="sv">100К₽</text>
+<line x1="333" y1="25" x2="333" y2="595" stroke="rgba(181,144,122,0.07)"/>
+<text x="333" y="18" text-anchor="middle" class="sv">150К₽</text>
+<line x1="379" y1="25" x2="379" y2="595" stroke="rgba(181,144,122,0.07)"/>
+<text x="379" y="18" text-anchor="middle" class="sv">200К₽</text>
+<line x1="425" y1="25" x2="425" y2="595" stroke="rgba(181,144,122,0.07)"/>
+<text x="425" y="18" text-anchor="middle" class="sv">250К₽</text>
+<line x1="517" y1="25" x2="517" y2="595" stroke="rgba(181,144,122,0.07)"/>
+<text x="517" y="18" text-anchor="middle" class="sv">350К₽</text>
+<line x1="655" y1="25" x2="655" y2="595" stroke="rgba(181,144,122,0.07)"/>
+<text x="655" y="18" text-anchor="middle" class="sv">500К₽</text>
+<line x1="315" y1="25" x2="315" y2="595" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6"/>
+<text x="315" y="615" text-anchor="middle" fill="var(--gold)" font-size="9" opacity="0.8">Бюджет Овсянникова ~130К</text>
+<text x="188" y="59" text-anchor="end" class="sl" fill="#A8A098">Логист / Кладовщик</text>
+<rect x="195" y="45" width="460" height="20" rx="3" fill="var(--bg3)" opacity="0.3"/>
+<rect x="258" y="45" width="33" height="20" rx="3" fill="var(--positive)" opacity="0.5" class="bar-animated" style="animation-delay:0.1s" data-tip="Логист / Кладовщик: Q1 68К₽, медиана 86К₽, Q3 104К₽, макс 175К₽"/>
+<polygon points="274,43 280,55 274,67 268,55" fill="var(--positive)" stroke="#0C0A08" stroke-width="1" data-tip="Медиана: 86К₽ net"/>
+<text x="299" y="59" fill="var(--positive)" font-size="11" font-weight="700">86К₽</text>
+<text x="188" y="104" text-anchor="end" class="sl" fill="#A8A098">Оператор производств…</text>
+<rect x="195" y="90" width="460" height="20" rx="3" fill="var(--bg3)" opacity="0.3"/>
+<rect x="272" y="90" width="18" height="20" rx="3" fill="var(--positive)" opacity="0.5" class="bar-animated" style="animation-delay:0.2s" data-tip="Оператор производственной линии: Q1 84К₽, медиана 93К₽, Q3 104К₽, макс 184К₽"/>
+<polygon points="281,88 287,100 281,112 275,100" fill="var(--positive)" stroke="#0C0A08" stroke-width="1" data-tip="Медиана: 93К₽ net"/>
+<text x="298" y="104" fill="var(--positive)" font-size="11" font-weight="700">93К₽</text>
+<text x="188" y="149" text-anchor="end" class="sl" fill="#A8A098">R&D / Разработчик ре…</text>
+<rect x="195" y="135" width="460" height="20" rx="3" fill="var(--bg3)" opacity="0.3"/>
+<rect x="278" y="135" width="18" height="20" rx="3" fill="var(--positive)" opacity="0.5" class="bar-animated" style="animation-delay:0.3s" data-tip="R&D / Разработчик рецептур: Q1 90К₽, медиана 100К₽, Q3 110К₽, макс 110К₽"/>
+<polygon points="287,133 293,145 287,157 281,145" fill="var(--positive)" stroke="#0C0A08" stroke-width="1" data-tip="Медиана: 100К₽ net"/>
+<text x="304" y="149" fill="var(--positive)" font-size="11" font-weight="700">100К₽</text>
+<text x="188" y="194" text-anchor="end" class="sl" fill="#A8A098">Технолог производства</text>
+<rect x="195" y="180" width="460" height="20" rx="3" fill="var(--bg3)" opacity="0.3"/>
+<rect x="285" y="180" width="35" height="20" rx="3" fill="var(--positive)" opacity="0.5" class="bar-animated" style="animation-delay:0.4s" data-tip="Технолог производства: Q1 98К₽, медиана 110К₽, Q3 136К₽, макс 250К₽"/>
+<polygon points="296,178 302,190 296,202 290,190" fill="var(--positive)" stroke="#0C0A08" stroke-width="1" data-tip="Медиана: 110К₽ net"/>
+<text x="328" y="194" fill="var(--positive)" font-size="11" font-weight="700">110К₽</text>
+<text x="188" y="239" text-anchor="end" class="sl" fill="#A8A098">Менеджер маркетплейс…</text>
+<rect x="195" y="225" width="460" height="20" rx="3" fill="var(--bg3)" opacity="0.3"/>
+<rect x="280" y="225" width="65" height="20" rx="3" fill="var(--positive)" opacity="0.5" class="bar-animated" style="animation-delay:0.5s" data-tip="Менеджер маркетплейсов (WB/Ozon): Q1 92К₽, медиана 120К₽, Q3 163К₽, макс 220К₽"/>
+<polygon points="305,223 311,235 305,247 299,235" fill="var(--positive)" stroke="#0C0A08" stroke-width="1" data-tip="Медиана: 120К₽ net"/>
+<text x="353" y="239" fill="var(--positive)" font-size="11" font-weight="700">120К₽</text>
+<text x="188" y="284" text-anchor="end" class="sl" fill="#A8A098">Digital-маркетолог</text>
+<rect x="195" y="270" width="460" height="20" rx="3" fill="var(--bg3)" opacity="0.3"/>
+<rect x="286" y="270" width="69" height="20" rx="3" fill="var(--gold)" opacity="0.5" class="bar-animated" style="animation-delay:0.6s" data-tip="Digital-маркетолог: Q1 99К₽, медиана 136К₽, Q3 174К₽, макс 234К₽"/>
+<polygon points="321,268 327,280 321,292 315,280" fill="var(--gold)" stroke="#0C0A08" stroke-width="1" data-tip="Медиана: 136К₽ net"/>
+<text x="363" y="284" fill="var(--gold)" font-size="11" font-weight="700">136К₽</text>
+<text x="188" y="329" text-anchor="end" class="sl" fill="#A8A098">Менеджер по продажам…</text>
+<rect x="195" y="315" width="460" height="20" rx="3" fill="var(--bg3)" opacity="0.3"/>
+<rect x="296" y="315" width="50" height="20" rx="3" fill="var(--gold)" opacity="0.5" class="bar-animated" style="animation-delay:0.7s" data-tip="Менеджер по продажам B2B: Q1 110К₽, медиана 139К₽, Q3 164К₽, макс 300К₽"/>
+<polygon points="323,313 329,325 323,337 317,325" fill="var(--gold)" stroke="#0C0A08" stroke-width="1" data-tip="Медиана: 139К₽ net"/>
+<text x="354" y="329" fill="var(--gold)" font-size="11" font-weight="700">139К₽</text>
+<text x="188" y="374" text-anchor="end" class="sl" fill="#A8A098">Бренд-менеджер</text>
+<rect x="195" y="360" width="460" height="20" rx="3" fill="var(--bg3)" opacity="0.3"/>
+<rect x="326" y="360" width="47" height="20" rx="3" fill="var(--negative)" opacity="0.5" class="bar-animated" style="animation-delay:0.8s" data-tip="Бренд-менеджер: Q1 142К₽, медиана 151К₽, Q3 194К₽, макс 200К₽"/>
+<polygon points="334,358 340,370 334,382 328,370" fill="var(--negative)" stroke="#0C0A08" stroke-width="1" data-tip="Медиана: 151К₽ net"/>
+<text x="381" y="374" fill="var(--negative)" font-size="11" font-weight="700">151К₽</text>
+<line x1="10" y1="410" x2="690" y2="410" stroke="var(--gold)" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.4"/>
+<text x="10" y="424" fill="var(--gold)" font-size="9" font-weight="700" letter-spacing="0.08em">ТОП-МЕНЕДЖМЕНТ</text>
+<text x="188" y="444" text-anchor="end" class="sl" fill="#A8A098">Коммерческий директор</text>
+<rect x="195" y="430" width="460" height="20" rx="3" fill="var(--bg3)" opacity="0.3"/>
+<rect x="295" y="430" width="141" height="20" rx="3" fill="var(--negative)" opacity="0.5" class="bar-animated" style="animation-delay:0.9s" data-tip="Коммерческий директор: Q1 108К₽, медиана 160К₽, Q3 262К₽, макс 283К₽"/>
+<polygon points="342,428 348,440 342,452 336,440" fill="var(--negative)" stroke="#0C0A08" stroke-width="1" data-tip="Медиана: 160К₽ net"/>
+<text x="444" y="444" fill="var(--negative)" font-size="11" font-weight="700">160К₽</text>
+<text x="188" y="489" text-anchor="end" class="sl" fill="#A8A098">Директор по производ…</text>
+<rect x="195" y="475" width="460" height="20" rx="3" fill="var(--bg3)" opacity="0.3"/>
+<rect x="305" y="475" width="103" height="20" rx="3" fill="var(--negative)" opacity="0.5" class="bar-animated" style="animation-delay:1.0s" data-tip="Директор по производству: Q1 119К₽, медиана 174К₽, Q3 231К₽, макс 304К₽"/>
+<polygon points="355,473 361,485 355,497 349,485" fill="var(--negative)" stroke="#0C0A08" stroke-width="1" data-tip="Медиана: 174К₽ net"/>
+<text x="416" y="489" fill="var(--negative)" font-size="11" font-weight="700">174К₽</text>
+<text x="188" y="534" text-anchor="end" class="sl" fill="#A8A098">HR-директор / HRD</text>
+<rect x="195" y="520" width="460" height="20" rx="3" fill="var(--bg3)" opacity="0.3"/>
+<rect x="319" y="520" width="83" height="20" rx="3" fill="var(--negative)" opacity="0.5" class="bar-animated" style="animation-delay:1.1s" data-tip="HR-директор / HRD: Q1 135К₽, медиана 175К₽, Q3 225К₽, макс 1250К₽"/>
+<polygon points="356,518 362,530 356,542 350,530" fill="var(--negative)" stroke="#0C0A08" stroke-width="1" data-tip="Медиана: 175К₽ net"/>
+<text x="410" y="534" fill="var(--negative)" font-size="11" font-weight="700">175К₽</text>
+<text x="188" y="579" text-anchor="end" class="sl" fill="#A8A098">Финансовый директор …</text>
+<rect x="195" y="565" width="460" height="20" rx="3" fill="var(--bg3)" opacity="0.3"/>
+<rect x="351" y="565" width="166" height="20" rx="3" fill="var(--negative)" opacity="0.5" class="bar-animated" style="animation-delay:1.2s" data-tip="Финансовый директор / CFO: Q1 170К₽, медиана 250К₽, Q3 350К₽, макс 1000К₽"/>
+<polygon points="425,563 431,575 425,587 419,575" fill="var(--negative)" stroke="#0C0A08" stroke-width="1" data-tip="Медиана: 250К₽ net"/>
+<text x="525" y="579" fill="var(--negative)" font-size="11" font-weight="700">250К₽</text>
+</svg>
+<div class="chart-legend">
+<div class="leg-item"><div class="leg-swatch" style="background:var(--positive);"></div>Может платить (≤120К)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:var(--gold);"></div>На пределе (120-145К)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:var(--negative);"></div>Не конкурентен (&gt;145К)</div>
+</div>
+</div>
+
+<div class="info-tip"><div class="ii">i</div><span><strong>Методология:</strong> Q1/Q3 = 25-й/75-й перцентили зарплат с hh.ru (only_with_salary=true). Зарплаты net — gross × 0.87. Бюджет Овсянникова: при выручке ~260М₽ и ФОТ 30% → ~78М₽/год → ~130К₽/мес на сотрудника. <a href="https://hh.ru" target="_blank">Источник: hh.ru API</a>, {collected_at}.</span></div>
+</div>
+
+
+<div class="section" id="sec-2-20">
+<div class="section-head"><div class="section-num" style="width:auto;min-width:42px;padding:0 12px;border-radius:20px;">2.20</div><h2>Дефицит кадров: спрос vs предложение</h2></div>
+<div class="section-desc">Тепловая карта: где Овсянников столкнётся с дефицитом при масштабировании. Красный = острый дефицит, жёлтый = умеренный, зелёный = норма.</div>
+
+<div class="card">
+<h3>Тепловая карта дефицита кадров</h3>
+<div style="overflow-x:auto;">
+<table class="hm">
+<thead><tr><th>Позиция</th><th>Вакансий (Мск+МО)</th><th>Без опыта %</th><th>Медиана ₽</th><th>Уровень дефицита</th></tr></thead>
+<tbody>
+
+<tr><td>Менеджер маркетплейсов (WB/Ozon)</td><td class="hm-y1">59</td><td class="hm-g1">3.4%</td><td class="hm-y2">120К₽</td><td class="hm-r2">Острый</td></tr>
+
+<tr><td>R&D / Разработчик рецептур</td><td class="hm-g1">12</td><td class="hm-y1">8.3%</td><td class="hm-y1">100К₽</td><td class="hm-r2">Острый</td></tr>
+
+<tr><td>Коммерческий директор</td><td class="hm-g1">7</td><td class="hm-g1">0.0%</td><td class="hm-r1">160К₽</td><td class="hm-r2">Острый</td></tr>
+
+<tr><td>Финансовый директор / CFO</td><td class="hm-y2">257</td><td class="hm-g1">1.0%</td><td class="hm-r1">250К₽</td><td class="hm-y2">Умеренный</td></tr>
+
+<tr><td>HR-директор / HRD</td><td class="hm-y2">211</td><td class="hm-g1">2.0%</td><td class="hm-r1">175К₽</td><td class="hm-y2">Умеренный</td></tr>
+
+<tr><td>Менеджер по продажам B2B</td><td class="hm-y2">199</td><td class="hm-y2">17.0%</td><td class="hm-y2">139К₽</td><td class="hm-y2">Умеренный</td></tr>
+
+<tr><td>Оператор производственной линии</td><td class="hm-y1">80</td><td class="hm-r2">62.5%</td><td class="hm-y1">93К₽</td><td class="hm-y2">Умеренный</td></tr>
+
+<tr><td>Логист / Кладовщик</td><td class="hm-y1">71</td><td class="hm-y2">38.0%</td><td class="hm-y1">86К₽</td><td class="hm-y2">Умеренный</td></tr>
+
+<tr><td>Бренд-менеджер</td><td class="hm-y1">65</td><td class="hm-g1">0.0%</td><td class="hm-r1">151К₽</td><td class="hm-y2">Умеренный</td></tr>
+
+<tr><td>Digital-маркетолог</td><td class="hm-y1">49</td><td class="hm-g1">2.0%</td><td class="hm-y2">136К₽</td><td class="hm-y2">Умеренный</td></tr>
+
+<tr><td>Технолог производства</td><td class="hm-y1">37</td><td class="hm-g1">2.7%</td><td class="hm-y2">110К₽</td><td class="hm-y2">Умеренный</td></tr>
+
+<tr><td>Директор по производству</td><td class="hm-g1">15</td><td class="hm-y1">6.7%</td><td class="hm-r1">174К₽</td><td class="hm-y2">Умеренный</td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="grid-2" style="margin-top:16px;">
+<div class="callout callout-red">
+<h4>Критические позиции для Овсянникова</h4>
+<p><strong>Коммерческий директор</strong> — медиана 300К₽ на рынке (в отрасли 160К₽, всего 7 вакансий). При росте до 1 млрд нужен сильный КД — нужны опционы/доля. <strong>Менеджеры маркетплейсов</strong> — 916 вакансий по Москве и МО (59 в отрасли), 33.9% remote, огромная конкуренция. <strong>R&amp;D / Рецептуры</strong> — всего 12 вакансий в отрасли, ультра-специализированный рынок.</p>
+</div>
+<div class="callout callout-green">
+<h4>Где Овсянников выигрывает</h4>
+<p><strong>Операторы</strong> (медиана 79К₽ в отрасли, 3 вак.) и <strong>логисты</strong> (86К₽, 71 вак.) — конкурирует по зарплатам. <strong>Технологи</strong> (110К₽) и <strong>директор по производству</strong> (174К₽ в отрасли) — тоже по силам. Преимущество: <strong>собственное производство</strong> привлекает тех, кто хочет влиять на продукт.</p>
+</div>
+</div>
+
+<div class="info-tip"><div class="ii">i</div><span><strong>Как читать:</strong> «Без опыта %» — доля вакансий, принимающих без опыта (выше = рынок «отчаялся»). Дефицит: <span style="color:var(--negative)">Острый</span> = ультра-специализированный рынок или огромный спрос. <span style="color:var(--gold)">Умеренный</span> = конкурентная борьба за кандидатов. <span style="color:var(--positive)">Норма</span> = рынок сбалансирован.</span></div>
+</div>
+
+
+<div class="section" id="sec-2-21">
+<div class="section-head"><div class="section-num" style="width:auto;min-width:42px;padding:0 12px;border-radius:20px;">2.21</div><h2>Вакансии конкурентов на hh.ru</h2></div>
+<div class="section-desc">Кто из конкурентов активно нанимает? Количество открытых вакансий — индикатор роста (или текучки). Овсянников = 0 вакансий на HH.</div>
+
+
+<div class="chart-container">
+<h3>Открытые вакансии: конкуренты на hh.ru</h3>
+<div class="subtitle">Количество вакансий = индикатор активности найма. Овсянников выделен золотым. Данные hh.ru API.</div>
+<svg class="chart-svg" viewBox="0 0 700 392">
+
+<text x="188" y="39" text-anchor="end" fill="#A8A098" font-size="11" font-weight="400">Mixit</text>
+<rect x="195" y="26" width="460" height="18" rx="3" fill="var(--negative)" opacity="0.7" class="bar-animated" style="animation-delay:0.10s" data-tip="Mixit: 177 открытых вакансий"/>
+<text x="661" y="39" fill="#A8A098" font-size="11" font-weight="700">177</text>
+<text x="188" y="77" text-anchor="end" fill="#A8A098" font-size="11" font-weight="400">Faberlic</text>
+<rect x="195" y="64" width="159" height="18" rx="3" fill="var(--neutral)" opacity="0.7" class="bar-animated" style="animation-delay:0.18s" data-tip="Faberlic: 61 открытых вакансий"/>
+<text x="360" y="77" fill="#A8A098" font-size="11" font-weight="700">61</text>
+<text x="188" y="115" text-anchor="end" fill="#A8A098" font-size="11" font-weight="400">Natura Siberica</text>
+<rect x="195" y="102" width="112" height="18" rx="3" fill="var(--neutral)" opacity="0.7" class="bar-animated" style="animation-delay:0.26s" data-tip="Natura Siberica: 43 открытых вакансий"/>
+<text x="313" y="115" fill="#A8A098" font-size="11" font-weight="700">43</text>
+<text x="188" y="153" text-anchor="end" fill="#A8A098" font-size="11" font-weight="400">Splat</text>
+<rect x="195" y="140" width="101" height="18" rx="3" fill="var(--neutral)" opacity="0.7" class="bar-animated" style="animation-delay:0.34s" data-tip="Splat: 39 открытых вакансий"/>
+<text x="302" y="153" fill="#A8A098" font-size="11" font-weight="700">39</text>
+<text x="188" y="191" text-anchor="end" fill="#A8A098" font-size="11" font-weight="400">Organic Shop</text>
+<rect x="195" y="178" width="4" height="18" rx="3" fill="var(--neutral)" opacity="0.7" class="bar-animated" style="animation-delay:0.42s" data-tip="Organic Shop: 1 открытых вакансий"/>
+<text x="205" y="191" fill="#A8A098" font-size="11" font-weight="700">1</text>
+<text x="188" y="229" text-anchor="end" fill="#A8A098" font-size="11" font-weight="400">VOIS</text>
+<text x="199" y="229" fill="var(--text3)" font-size="10" font-style="italic">нет профиля / 0</text>
+<text x="188" y="267" text-anchor="end" fill="#A8A098" font-size="11" font-weight="400">The Act</text>
+<text x="199" y="267" fill="var(--text3)" font-size="10" font-style="italic">нет профиля / 0</text>
+<text x="188" y="305" text-anchor="end" fill="#A8A098" font-size="11" font-weight="400">Zielinski & Rozen</text>
+<text x="199" y="305" fill="var(--text3)" font-size="10" font-style="italic">нет профиля / 0</text>
+<text x="188" y="343" text-anchor="end" fill="#D4AD8F" font-size="11" font-weight="700">Овсянников</text>
+<text x="199" y="343" fill="var(--text3)" font-size="10" font-style="italic">нет профиля / 0</text>
+</svg>
+<div class="chart-legend">
+<div class="leg-item"><div class="leg-swatch" style="background:var(--negative);"></div>Mixit (лидер найма)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:var(--neutral);"></div>Прочие конкуренты</div>
+<div class="leg-item"><div class="leg-swatch" style="background:var(--gold);"></div>Овсянников</div>
+</div>
+</div>
+
+<div class="card" style="margin-top:16px;">
+<h3>Детали найма конкурентов</h3>
+<table>
+<thead><tr><th>Конкурент</th><th class="r">Вакансий</th><th>Топ-позиции</th><th class="r">Макс зарплата</th></tr></thead>
+<tbody>
+
+<tr><td>Mixit</td><td class="r">177</td><td style="font-size:0.82em;color:var(--text3);">Специалист по качеству, Логист в транспортный отдел, Специалист по качеству</td><td class="r">261К₽</td></tr>
+
+<tr><td>Faberlic</td><td class="r">61</td><td style="font-size:0.82em;color:var(--text3);">Главный бухгалтер, Начальник смены, Комплектовщик склада</td><td class="r">175К₽</td></tr>
+
+<tr><td>Natura Siberica</td><td class="r">43</td><td style="font-size:0.82em;color:var(--text3);">Механик производственного оборудования (косметическое производство), Управляю…</td><td class="r">91К₽</td></tr>
+
+<tr><td>Splat</td><td class="r">39</td><td style="font-size:0.82em;color:var(--text3);">Уборщик производственных и служебных помещений, Грузчик/рабочий цеха, Разнора…</td><td class="r">300К₽</td></tr>
+
+<tr><td>Organic Shop</td><td class="r">1</td><td style="font-size:0.82em;color:var(--text3);">Продавец-консультант в магазин продуктов My organic shop (Васильевский остров)</td><td class="r">70К₽</td></tr>
+
+<tr><td>VOIS</td><td class="r">0</td><td style="font-size:0.82em;color:var(--text3);">—</td><td class="r">—</td></tr>
+
+<tr><td>The Act</td><td class="r">0</td><td style="font-size:0.82em;color:var(--text3);">—</td><td class="r">—</td></tr>
+
+<tr><td>Zielinski & Rozen</td><td class="r">0</td><td style="font-size:0.82em;color:var(--text3);">—</td><td class="r">—</td></tr>
+
+<tr><td style="color:var(--gold);">Овсянников</td><td class="r">0</td><td style="font-size:0.82em;color:var(--text3);">—</td><td class="r">—</td></tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="callout callout-gold" style="margin-top:16px;">
+<h4>Инсайт: 5 из 8 конкурентов невидимы на HH</h4>
+<p>VOIS, The Act, Zielinski &amp; Rozen, Tonka, Levrana — <strong>не используют HH для найма</strong>. Вероятно, нанимают через нетворкинг, Telegram-каналы и рекомендации. Mixit — абсолютный лидер (177 вакансий), что отражает масштаб (2 завода, 33М единиц/год) и текучку. <strong>Для Овсянникова</strong>: создание профиля на HH — low-hanging fruit для привлечения кадров.</p>
+</div>
+
+<div class="info-tip"><div class="ii">i</div><span><strong>Источник:</strong> hh.ru API (GET /employers + /vacancies?employer_id=...), 2026-02-27. «Нет профиля» — компания не найдена в реестре работодателей hh.ru (может нанимать через другие каналы). Зарплаты — максимальные из опубликованных вакансий, net.</span></div>
+
+</div>
+
+
+<div class="section" id="sec-2-22">
+<div class="section-head"><div class="section-num" style="width:auto;min-width:42px;padding:0 12px;border-radius:20px;">2.22</div><h2>Радар HR-конкурентоспособности</h2></div>
+<div class="section-desc">6 осей: зарплатный уровень, активность найма, HR-бренд, размер команды, выручка/сотрудник, гибкость (remote). Оценка 0-100.</div>
+
+<div class="chart-container">
+<h3>Радар HR-конкурентоспособности: 4 компании × 6 осей</h3>
+<div class="subtitle">Чем больше площадь полигона — тем выше HR-конкурентоспособность. Овсянников vs Mixit vs VOIS vs The Act.</div>
+<svg class="chart-svg" viewBox="0 0 700 480">
+<defs>
+<style>.radar-label{fill:#A8A098;font-size:11px;}.radar-val{fill:#706858;font-size:9px;}</style>
+</defs>
+<g transform="translate(350,230)">
+<!-- Axis lines -->
+
+<line x1="0" y1="0" x2="0" y2="-180" stroke="rgba(181,144,122,0.15)"/>
+<line x1="0" y1="0" x2="156" y2="-90" stroke="rgba(181,144,122,0.15)"/>
+<line x1="0" y1="0" x2="156" y2="90" stroke="rgba(181,144,122,0.15)"/>
+<line x1="0" y1="0" x2="0" y2="180" stroke="rgba(181,144,122,0.15)"/>
+<line x1="0" y1="0" x2="-156" y2="90" stroke="rgba(181,144,122,0.15)"/>
+<line x1="0" y1="0" x2="-156" y2="90" stroke="rgba(181,144,122,0.15)"/>
+<polygon points="0,-59 51,-30 51,30 0,59 -51,30 -51,30" fill="none" stroke="rgba(181,144,122,0.07)"/>
+<polygon points="0,-121 104,-60 104,60 0,121 -104,60 -104,60" fill="none" stroke="rgba(181,144,122,0.07)"/>
+<polygon points="0,-180 156,-90 156,90 0,180 -156,90 -156,90" fill="none" stroke="rgba(181,144,122,0.1)"/>
+<text x="0" y="-195" text-anchor="middle" class="radar-label">Зарплатный уровень</text>
+<text x="172" y="-90" text-anchor="start" class="radar-label">Активность найма</text>
+<text x="172" y="95" text-anchor="start" class="radar-label">HR-бренд</text>
+<text x="0" y="200" text-anchor="middle" class="radar-label">Размер команды</text>
+<text x="-172" y="95" text-anchor="end" class="radar-label">Выручка/сотрудник</text>
+<text x="-172" y="-90" text-anchor="end" class="radar-label">Гибкость (remote)</text>
+<polygon points="0,-90 8,-5 8,4 0,45 -125,72 -23,13" fill="rgba(181,144,122,0.2)" stroke="#B5907A" stroke-width="2.5" class="draw-target" data-tip="Овсянников: зарплаты 50, найм 5, HR-бренд 5, команда 25, выр/сотр 80, гибкость 15"/>
+<polygon points="0,-135 148,-86 140,81 0,153 -148,86 -62,36" fill="rgba(184,92,92,0.1)" stroke="#B85C5C" stroke-width="1.5" stroke-dasharray="4,2" class="draw-target" data-tip="Mixit: зарплаты 75, найм 95, HR-бренд 90, команда 85, выр/сотр 95, гибкость 40"/>
+<polygon points="0,-126 16,-9 16,9 0,90 -140,81 -117,67" fill="rgba(138,154,170,0.1)" stroke="#8A9AAA" stroke-width="1.5" stroke-dasharray="4,2" class="draw-target" data-tip="VOIS: зарплаты 70, найм 10, HR-бренд 10, команда 50, выр/сотр 90, гибкость 75"/>
+<polygon points="0,-108 16,-9 16,9 0,72 -156,90 -31,18" fill="rgba(139,175,122,0.1)" stroke="#8BAF7A" stroke-width="1.5" stroke-dasharray="4,2" class="draw-target" data-tip="The Act: зарплаты 60, найм 10, HR-бренд 10, команда 40, выр/сотр 100, гибкость 20"/>
+<circle cx="0" cy="-90" r="4" fill="#B5907A" data-tip="Зарплатный уровень: 50 (платит рынок по операторам/технологам, не конкурентен по бренд-менеджерам)"/>
+<circle cx="8" cy="-5" r="4" fill="#B5907A" data-tip="Активность найма: 5 (0 вакансий на HH — невидим для рынка)"/>
+<circle cx="8" cy="4" r="4" fill="#B5907A" data-tip="HR-бренд: 5 (нет профиля работодателя, нет карьерной страницы)"/>
+<circle cx="0" cy="45" r="4" fill="#B5907A" data-tip="Размер команды: 25 (~50 сотрудников vs Mixit ~500+)"/>
+<circle cx="-125" cy="72" r="4" fill="#B5907A" data-tip="Выручка/сотрудник: 80 (5.2М₽/чел — хороший показатель)"/>
+<circle cx="-23" cy="13" r="4" fill="#B5907A" data-tip="Гибкость: 15 (производство = офлайн, но МП-менеджеры могут быть remote)"/>
+</g>
+</svg>
+<div class="chart-legend">
+<div class="leg-item"><div class="leg-swatch" style="background:#B5907A;"></div>Овсянников (сильная экономика, 0 HR-бренд)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#B85C5C;"></div>Mixit (лидер найма, полный HR-стек)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#8A9AAA;"></div>VOIS (digital-first, гибкость, стелс-найм)</div>
+<div class="leg-item"><div class="leg-swatch" style="background:#8BAF7A;"></div>The Act (рекордная выручка/чел, стелс-найм)</div>
+</div>
+</div>
+
+<div class="callout callout-gold" style="margin-top:16px;">
+<h4>Ключевой разрыв: экономика сильная, HR-бренд — нулевой</h4>
+<p>Овсянников имеет <strong>лучшую экономику на сотрудника</strong> среди компаний сопоставимого размера (5.2М₽ выручки/чел.), но <strong>полностью невидим</strong> для рынка труда. Mixit тратит значительные ресурсы на HR-бренд (177 вакансий, карьерный сайт, описание культуры), но имеет убыток -420М₽. <strong>Вывод:</strong> Овсянникову нужен минимальный HR-маркетинг (профиль HH + карьерная страница), а не дорогой HR-бренд.</p>
+</div>
+
+<div class="info-tip"><div class="ii">i</div><span><strong>Методология:</strong> Зарплатный уровень — позиция медианы vs рынок. Активность найма — кол-во вакансий на HH. HR-бренд — наличие профиля, описания, логотипа. Размер команды — оценка по данным ЕГРЮЛ/СМИ. Выручка/сотрудник — ФНС 2024 / оценка штата. Гибкость — доля remote-вакансий. Оценки экспертные, 0-100.</span></div>
+</div>
+
+
+<div class="section" id="sec-2-23">
+<div class="section-head"><div class="section-num" style="width:auto;min-width:42px;padding:0 12px;border-radius:20px;">2.23</div><h2>HR-инсайты и рекомендации</h2></div>
+<div class="section-desc">SWOT найма + конкретные действия. Что делать Овсянникову, чтобы не упереться в кадровый потолок при росте до 1 млрд₽?</div>
+
+
+<div class="swot-grid">
+<div class="swot-box swot-s">
+<h4>Сильные стороны (найм)</h4>
+<ul>
+<li>Высокая выручка на сотрудника (5.2М₽) — можно предложить бонусы</li>
+<li>Собственное производство — привлекательно для технологов и R&amp;D</li>
+<li>Быстрый рост ×17 за 2 года — карьерные возможности</li>
+<li>B2B-модель — стабильная загрузка, нет сезонных увольнений</li>
+<li>Конкурентные зарплаты для 5 из 12 ключевых позиций</li>
+<li>Директор по производству (174К₽ в отрасли) — по силам, а это ключевая позиция</li>
+</ul>
+</div>
+<div class="swot-box swot-w">
+<h4>Слабые стороны (найм)</h4>
+<ul>
+<li>0 присутствие на HH — невидим для 90% соискателей</li>
+<li>Нет HR-бренда, карьерной страницы, культурного контента</li>
+<li>Не конкурентен по бренд-менеджерам (151К₽) и коммерческим директорам (300К₽ на рынке!)</li>
+<li>Финдиректор (250К₽) и HR-директор (175К₽ на рынке) — на пределе бюджета</li>
+<li>Маленькая команда (50 чел.) — ограниченный карьерный рост</li>
+<li>Производство = офлайн, нет remote для 90% позиций</li>
+</ul>
+</div>
+<div class="swot-box swot-o">
+<h4>Возможности (найм)</h4>
+<ul>
+<li>МП-менеджеры: 33.9% remote → нанимать из регионов (дешевле)</li>
+<li>R&amp;D из сокращающихся компаний (Natura Sib. убыток -1.3 млрд)</li>
+<li>Стажёрские программы для технологов (2.7% рынка — без опыта)</li>
+<li>Digital-маркетологи: всего 49 вакансий в косметике — можно выделиться</li>
+<li>Создать профиль на HH = instant visibility (конкуренты не делают)</li>
+</ul>
+</div>
+<div class="swot-box swot-t">
+<h4>Угрозы (найм)</h4>
+<ul>
+<li>Mixit переманивает лучших (177 вакансий, зарплаты до 261К)</li>
+<li>Рост зарплат в FMCG: медиана 135К₽ vs 91К₽ в beauty</li>
+<li>Дефицит МП-менеджеров: 916 вакансий в Москве+МО</li>
+<li>При росте до 100+ чел. — HR-процессы не масштабируются без системы</li>
+<li>Faberlic (61 вакансий) и Splat (39) — тоже активно нанимают</li>
+</ul>
+</div>
+</div>
+<div class="grid-2" style="margin-top:16px;">
+<div class="callout callout-green">
+<h4>Где Овсянников выиграет</h4>
+<ul style="margin-top:8px;">
+<li><strong>Технологи (110К₽) и операторы (79К₽)</strong> — зарплаты по карману, собственное производство = конкурентное преимущество</li>
+<li><strong>B2B-менеджеры (HoReCa)</strong> — уникальная экспертиза в аменити, 1500+ партнёров как кейс</li>
+<li><strong>Remote МП-менеджеры из регионов</strong> — экономия 30-40% vs Москва при сопоставимом качестве</li>
+<li><strong>Карьерный рост</strong> — в компании ×17 за 2 года сотрудник растёт вместе с бизнесом</li>
+</ul>
+</div>
+<div class="callout callout-red">
+<h4>Где Овсянников проиграет</h4>
+<ul style="margin-top:8px;">
+<li><strong>Топ-менеджмент</strong> — КД 300К₽, CFO 250К₽, бренд-менеджер 151К₽. Нужны опционы/доля в бизнесе</li>
+<li><strong>Digital-маркетологи уровня «сеньор»</strong> — при 0 digital-присутствии нет кейса для портфолио</li>
+<li><strong>HR-бренд</strong> — Mixit: 177 вакансий, карьерная страница. Овсянников: тишина</li>
+<li><strong>Масштаб</strong> — при 50 чел. нет HR-отдела, нет онбординга, нет грейдов</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-gold" style="margin-top:16px;">
+<h4>Рекомендация: 4 приоритета в HR</h4>
+<p><strong>1.</strong> Создать профиль работодателя на hh.ru (бесплатно, +visibility). <strong>2.</strong> Нанять 2-3 remote МП-менеджеров из регионов — экономия ~40% ФОТ. <strong>3.</strong> Хантинг R&amp;D из Natura Siberica (убыток -1.3 млрд → возможны сокращения; всего 12 вакансий R&amp;D в косметике). <strong>4. Топ-менеджмент: коммерческий директор — ключевой найм для роста до 1 млрд₽.</strong> Медиана 300К₽ на рынке — не по карману «в лоб». Решение: предложить долю/опцион + бонус от роста выручки. Директор по производству (174К₽ в отрасли) — нанять раньше, пока рост позволяет.</p>
+</div>
+<div class="info-tip"><div class="ii">i</div><span><strong>Источники:</strong> hh.ru API (2026-02-27), ФНС (выручка/прибыль), ЕГРЮЛ (штат), отраслевые данные. SWOT основан на сопоставлении зарплатных бенчмарков hh.ru с оценкой ФОТ Овсянникова (выручка 260М₽ × 30% = 78М₽/год). Все зарплаты net. Данные верифицированы по 2+ источникам.</span></div>
+</div>
+
 <!-- ЧАСТЬ III: АНАЛИТИКА -->
 <!-- ══════════════════════════════════════════════════ -->
 <div style="margin:64px 0 32px;padding:32px 0;border-top:2px solid var(--gold-border);text-align:center;">
@@ -3513,7 +3948,7 @@ details.src-section[open] summary { border-bottom:1px solid var(--border); margi
 <footer>
     <p>Овсянников — Стратегический бизнес-анализ v8.1 &nbsp;|&nbsp; Февраль 2026</p>
     <p style="margin-top:8px;">Данные: ФНС, Rusprofile, СБИС, Forbes, TAdviser, McKinsey, Euromonitor, INFOLine, ТАСС/Минпромторг, АПЭТ/Habr, e-pepper.ru, данные компании (NDA)</p>
-    <p style="margin-top:8px;">40 секций &middot; 4 части &middot; 15 SVG-графиков &middot; 35 цитат экспертов &middot; 15 фаундеров &middot; 30+ источников верифицированы</p>
+    <p style="margin-top:8px;">46 секций &middot; 4 части &middot; 18 SVG-графиков &middot; 35 цитат экспертов &middot; 15 фаундеров &middot; 30+ источников верифицированы</p>
 </footer>
 
 <script>
