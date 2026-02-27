@@ -1,0 +1,550 @@
+{
+  "collected_at": "2026-02-27T15:53:34.080566",
+  "source": "hh.ru API",
+  "positions": [
+    {
+      "key": "technologist",
+      "label": "Технолог производства",
+      "total_vacancies": 37,
+      "with_salary": 14,
+      "remote": 1,
+      "remote_pct": 2.7,
+      "salary": {
+        "count": 14,
+        "min": 87000,
+        "q1": 97500.0,
+        "median": 110000,
+        "q3": 135937.5,
+        "max": 249690
+      },
+      "no_experience_pct": 2.7,
+      "industry": {
+        "total": 37,
+        "salary_median": 110000,
+        "salary_q1": 97500.0,
+        "salary_q3": 135937.5,
+        "salary_max": 249690
+      },
+      "general": {
+        "total": 1491,
+        "salary_median": 125575,
+        "salary_q1": 100050.0,
+        "salary_q3": 150000.0,
+        "salary_max": 250000
+      }
+    },
+    {
+      "key": "operator",
+      "label": "Оператор производственной линии",
+      "total_vacancies": 80,
+      "with_salary": 73,
+      "remote": 403,
+      "remote_pct": 503.7,
+      "salary": {
+        "count": 73,
+        "min": 38280,
+        "q1": 84150.0,
+        "median": 93090,
+        "q3": 103500.0,
+        "max": 183874
+      },
+      "no_experience_pct": 62.5,
+      "industry": {
+        "total": 3,
+        "salary_median": 79150,
+        "salary_q1": 74000,
+        "salary_q3": 84300,
+        "salary_max": 84300
+      },
+      "general": {
+        "total": 80,
+        "salary_median": 93090,
+        "salary_q1": 84150.0,
+        "salary_q3": 103500.0,
+        "salary_max": 183874
+      }
+    },
+    {
+      "key": "sales_b2b",
+      "label": "Менеджер по продажам B2B",
+      "total_vacancies": 199,
+      "with_salary": 156,
+      "remote": 12,
+      "remote_pct": 6.0,
+      "salary": {
+        "count": 100,
+        "min": 52200,
+        "q1": 110000.0,
+        "median": 138750,
+        "q3": 163750.0,
+        "max": 300000
+      },
+      "no_experience_pct": 17.0,
+      "industry": {
+        "total": 199,
+        "salary_median": 138750,
+        "salary_q1": 110000.0,
+        "salary_q3": 163750.0,
+        "salary_max": 300000
+      },
+      "general": {
+        "total": 11734,
+        "salary_median": 139200,
+        "salary_q1": 110340.0,
+        "salary_q3": 163750.0,
+        "salary_max": 550000
+      }
+    },
+    {
+      "key": "marketplace",
+      "label": "Менеджер маркетплейсов (WB/Ozon)",
+      "total_vacancies": 59,
+      "with_salary": 37,
+      "remote": 20,
+      "remote_pct": 33.9,
+      "salary": {
+        "count": 37,
+        "min": 35000,
+        "q1": 92500.0,
+        "median": 120000,
+        "q3": 163125.0,
+        "max": 220000
+      },
+      "no_experience_pct": 3.4,
+      "industry": {
+        "total": 59,
+        "salary_median": 120000,
+        "salary_q1": 92500.0,
+        "salary_q3": 163125.0,
+        "salary_max": 220000
+      },
+      "general": {
+        "total": 916,
+        "salary_median": 109375,
+        "salary_q1": 77700.0,
+        "salary_q3": 148750.0,
+        "salary_max": 250000
+      }
+    },
+    {
+      "key": "marketing",
+      "label": "Digital-маркетолог",
+      "total_vacancies": 49,
+      "with_salary": 22,
+      "remote": 6,
+      "remote_pct": 12.2,
+      "salary": {
+        "count": 22,
+        "min": 80000,
+        "q1": 98787.5,
+        "median": 136500,
+        "q3": 174000.0,
+        "max": 233812
+      },
+      "no_experience_pct": 2.0,
+      "industry": {
+        "total": 49,
+        "salary_median": 136500,
+        "salary_q1": 98787.5,
+        "salary_q3": 174000.0,
+        "salary_max": 233812
+      },
+      "general": {
+        "total": 1511,
+        "salary_median": 130000,
+        "salary_q1": 100000.0,
+        "salary_q3": 150000.0,
+        "salary_max": 261000
+      }
+    },
+    {
+      "key": "logistics",
+      "label": "Логист / Кладовщик",
+      "total_vacancies": 71,
+      "with_salary": 60,
+      "remote": 0,
+      "remote_pct": 0.0,
+      "salary": {
+        "count": 60,
+        "min": 40000,
+        "q1": 68395.0,
+        "median": 86000,
+        "q3": 104175.0,
+        "max": 175000
+      },
+      "no_experience_pct": 38.0,
+      "industry": {
+        "total": 71,
+        "salary_median": 86000,
+        "salary_q1": 68395.0,
+        "salary_q3": 104175.0,
+        "salary_max": 175000
+      },
+      "general": {
+        "total": 2752,
+        "salary_median": 90000,
+        "salary_q1": 80000.0,
+        "salary_q3": 106725.0,
+        "salary_max": 169650
+      }
+    },
+    {
+      "key": "rnd",
+      "label": "R&D / Разработчик рецептур",
+      "total_vacancies": 12,
+      "with_salary": 3,
+      "remote": 0,
+      "remote_pct": 0.0,
+      "salary": {
+        "count": 3,
+        "min": 90000,
+        "q1": 90000,
+        "median": 100000,
+        "q3": 110000,
+        "max": 110000
+      },
+      "no_experience_pct": 8.3,
+      "industry": {
+        "total": 12,
+        "salary_median": 100000,
+        "salary_q1": 90000,
+        "salary_q3": 110000,
+        "salary_max": 110000
+      },
+      "general": {
+        "total": 53,
+        "salary_median": 120000,
+        "salary_q1": 104375.0,
+        "salary_q3": 150000.0,
+        "salary_max": 200000
+      }
+    },
+    {
+      "key": "brand",
+      "label": "Бренд-менеджер",
+      "total_vacancies": 65,
+      "with_salary": 16,
+      "remote": 6,
+      "remote_pct": 9.2,
+      "salary": {
+        "count": 16,
+        "min": 117450,
+        "q1": 141900.0,
+        "median": 151125,
+        "q3": 193500.0,
+        "max": 200100
+      },
+      "no_experience_pct": 0.0,
+      "industry": {
+        "total": 65,
+        "salary_median": 151125,
+        "salary_q1": 141900.0,
+        "salary_q3": 193500.0,
+        "salary_max": 200100
+      },
+      "general": {
+        "total": 541,
+        "salary_median": 150000,
+        "salary_q1": 104400.0,
+        "salary_q3": 180000.0,
+        "salary_max": 275000
+      }
+    },
+    {
+      "key": "commercial_dir",
+      "label": "Коммерческий директор",
+      "total_vacancies": 7,
+      "with_salary": 4,
+      "remote": 25,
+      "remote_pct": 357.1,
+      "salary": {
+        "count": 4,
+        "min": 104400,
+        "q1": 108300.0,
+        "median": 160000,
+        "q3": 262062.5,
+        "max": 282750
+      },
+      "no_experience_pct": 0.0,
+      "industry": {
+        "total": 7,
+        "salary_median": 160000,
+        "salary_q1": 108300.0,
+        "salary_q3": 262062.5,
+        "salary_max": 282750
+      },
+      "general": {
+        "total": 208,
+        "salary_median": 300000,
+        "salary_q1": 217500.0,
+        "salary_q3": 400000.0,
+        "salary_max": 3262500
+      }
+    },
+    {
+      "key": "production_dir",
+      "label": "Директор по производству",
+      "total_vacancies": 15,
+      "with_salary": 10,
+      "remote": 2,
+      "remote_pct": 13.3,
+      "salary": {
+        "count": 10,
+        "min": 70000,
+        "q1": 119306.25,
+        "median": 174000,
+        "q3": 231250.0,
+        "max": 304500
+      },
+      "no_experience_pct": 6.7,
+      "industry": {
+        "total": 15,
+        "salary_median": 174000,
+        "salary_q1": 119306.25,
+        "salary_q3": 231250.0,
+        "salary_max": 304500
+      },
+      "general": {
+        "total": 469,
+        "salary_median": 130000,
+        "salary_q1": 92220.0,
+        "salary_q3": 200000.0,
+        "salary_max": 700000
+      }
+    },
+    {
+      "key": "hr_dir",
+      "label": "HR-директор / HRD",
+      "total_vacancies": 211,
+      "with_salary": 103,
+      "remote": 32,
+      "remote_pct": 15.2,
+      "salary": {
+        "count": 98,
+        "min": 78300,
+        "q1": 134745.0,
+        "median": 175000,
+        "q3": 225000.0,
+        "max": 1250000
+      },
+      "no_experience_pct": 2.0,
+      "industry": {
+        "total": 4,
+        "salary_median": 177500,
+        "salary_q1": 130000,
+        "salary_q3": 225000,
+        "salary_max": 225000
+      },
+      "general": {
+        "total": 211,
+        "salary_median": 175000,
+        "salary_q1": 134745.0,
+        "salary_q3": 225000.0,
+        "salary_max": 1250000
+      }
+    },
+    {
+      "key": "cfo",
+      "label": "Финансовый директор / CFO",
+      "total_vacancies": 257,
+      "with_salary": 107,
+      "remote": 40,
+      "remote_pct": 15.6,
+      "salary": {
+        "count": 99,
+        "min": 40000,
+        "q1": 170000.0,
+        "median": 250000,
+        "q3": 350000.0,
+        "max": 1000000
+      },
+      "no_experience_pct": 1.0,
+      "industry": {
+        "total": 2,
+        "salary_median": 0,
+        "salary_q1": 0,
+        "salary_q3": 0,
+        "salary_max": 0
+      },
+      "general": {
+        "total": 257,
+        "salary_median": 250000,
+        "salary_q1": 170000.0,
+        "salary_q3": 350000.0,
+        "salary_max": 1000000
+      }
+    }
+  ],
+  "market": [
+    {
+      "key": "cosmetics",
+      "label": "Косметика и парфюмерия",
+      "total_vacancies": 3966,
+      "with_salary": 3404,
+      "salary": {
+        "count": 100,
+        "min": 4568,
+        "q1": 65468.0,
+        "median": 91000,
+        "q3": 130500.0,
+        "max": 450000
+      }
+    },
+    {
+      "key": "fmcg",
+      "label": "FMCG (контрольная)",
+      "total_vacancies": 2071,
+      "with_salary": 874,
+      "salary": {
+        "count": 100,
+        "min": 42650,
+        "q1": 90000.0,
+        "median": 135000,
+        "q3": 197500.0,
+        "max": 652500
+      }
+    },
+    {
+      "key": "horeca",
+      "label": "HoReCa",
+      "total_vacancies": 1193,
+      "with_salary": 841,
+      "salary": {
+        "count": 100,
+        "min": 73950,
+        "q1": 110000.0,
+        "median": 140000,
+        "q3": 174750.0,
+        "max": 350000
+      }
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Mixit",
+      "employer_id": "2314605",
+      "employer_name_hh": "MIXIT",
+      "open_vacancies": 177,
+      "hh_url": "https://hh.ru/employer/2314605",
+      "top_positions": [
+        "Специалист по качеству",
+        "Логист в транспортный отдел",
+        "Специалист по качеству",
+        "Рилсмейкер / Контент-продюсер (по работе с основателем MIXIT)",
+        "Рилсмейкер / Контент-продюсер вертикальных видео"
+      ],
+      "max_salary": 261000,
+      "description": "<p><strong>Привет! Мы - команда MIXIT!</strong><br /><br /><em>Мы делаем косметику, которая вдохновляет людей быть собой. У нас есть собственная лаборатория, производство и крутые специалисты, которые",
+      "site_url": "http://www.mixit.ru",
+      "logo": "https://img.hhcdn.ru/employer-logo/7451618.png"
+    },
+    {
+      "name": "VOIS",
+      "employer_id": null,
+      "open_vacancies": 0,
+      "top_positions": [],
+      "max_salary": 0
+    },
+    {
+      "name": "The Act",
+      "employer_id": null,
+      "open_vacancies": 0,
+      "top_positions": [],
+      "max_salary": 0
+    },
+    {
+      "name": "Natura Siberica",
+      "employer_id": "216221",
+      "employer_name_hh": "Natura Siberica",
+      "open_vacancies": 43,
+      "hh_url": "https://hh.ru/employer/216221",
+      "top_positions": [
+        "Механик производственного оборудования (косметическое производство)",
+        "Управляющая/управляющий магазином NATURA SIBERICA (МЕГА)",
+        "Старший менеджер-консультант ORGANIC SHOP (ТЦ Парк Хаус)",
+        "Менеджер-консультант NATURA SIBERICA в г. Саратов (ТРЦ Тау Галерея)",
+        "Менеджер-консультант NATURA SIBERICA (ТЦ Алмаз)"
+      ],
+      "max_salary": 91350,
+      "description": "<p>Группа компаний Natura Siberica — лидер на российском рынке натуральной и органической косметики. Уже более 20 лет мы создаём эффективные и безопасные средства по уходу за кожей, волосами и телом, ",
+      "site_url": "https://naturasiberica.ru/",
+      "logo": "https://img.hhcdn.ru/employer-logo-round/4093431.jpeg"
+    },
+    {
+      "name": "Zielinski & Rozen",
+      "employer_id": null,
+      "open_vacancies": 0,
+      "top_positions": [],
+      "max_salary": 0
+    },
+    {
+      "name": "Tonka",
+      "employer_id": null,
+      "open_vacancies": 0,
+      "top_positions": [],
+      "max_salary": 0
+    },
+    {
+      "name": "Levrana",
+      "employer_id": null,
+      "open_vacancies": 0,
+      "top_positions": [],
+      "max_salary": 0
+    },
+    {
+      "name": "Splat",
+      "employer_id": "659",
+      "employer_name_hh": "SPLAT",
+      "open_vacancies": 39,
+      "hh_url": "https://hh.ru/employer/659",
+      "top_positions": [
+        "Уборщик производственных и служебных помещений",
+        "Грузчик/рабочий цеха",
+        "Разнорабочий на участок упаковки",
+        "Оператор-техник",
+        "Младший технолог-разработчик"
+      ],
+      "max_salary": 300000,
+      "description": "<p><strong>SPLAT</strong> – лидер рынка натуральной косметики и товаров для здоровья полости рта. Присоединившись к нашей команде, вы станете частью динамичной и креативной среды, разрабатывающей прод",
+      "site_url": "http://www.splatglobal.com",
+      "logo": "https://img.hhcdn.ru/employer-logo-round/5946457.png"
+    },
+    {
+      "name": "Organic Shop",
+      "employer_id": "9220063",
+      "employer_name_hh": "My organic shop",
+      "open_vacancies": 1,
+      "hh_url": "https://hh.ru/employer/9220063",
+      "top_positions": [
+        "Продавец-консультант в магазин продуктов My organic shop (Васильевский остров)"
+      ],
+      "max_salary": 70000,
+      "description": "",
+      "site_url": "http://myorganicshop.ru",
+      "logo": "https://img.hhcdn.ru/employer-logo/7224695.png"
+    },
+    {
+      "name": "Faberlic",
+      "employer_id": "2617",
+      "employer_name_hh": "Faberlic",
+      "open_vacancies": 61,
+      "hh_url": "https://hh.ru/employer/2617",
+      "top_positions": [
+        "Главный бухгалтер",
+        "Начальник смены",
+        "Комплектовщик склада",
+        "Контролер",
+        "Старший контролёр экспедиции"
+      ],
+      "max_salary": 175000,
+      "description": "<p><strong>F</strong><strong>ABERLIC </strong>– крупнейшая косметическая компания на рынке прямых продаж, основанная в 1997 году, производитель уникальной запатентованной кислородной косметики.  </p> ",
+      "site_url": "http://www.faberlic.com",
+      "logo": "https://img.hhcdn.ru/employer-logo-round/3063920.png"
+    }
+  ],
+  "summary": {
+    "total_vacancies_positions": 1062,
+    "median_salary_overall": 137625,
+    "avg_remote_pct": 80.7
+  }
+}
